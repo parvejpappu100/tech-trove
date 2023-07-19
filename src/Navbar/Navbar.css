@@ -5,9 +5,20 @@
     border-radius: 0%; 
   }
 
+  .custom summary:hover {
+    background-color: #113366; 
+    color: white;
+    border-radius: 0%; 
+  }
+
   .custom a{
     padding-top: 12px ;
     padding-bottom: 12px;
+  }
+
+  .custom summary{
+    padding-bottom: 12px;
+    padding-top: 12px;
   }
   
   /* Add custom styles for the select dropdown options */

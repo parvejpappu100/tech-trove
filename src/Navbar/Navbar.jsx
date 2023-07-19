@@ -8,8 +8,21 @@ const Navbar = () => {
         <li>
             <a>Home</a>
         </li>
-        <li>
-            <a>Pages</a>
+        <li tabIndex={0}>
+            <details>
+                <summary>Pages</summary>
+                <ul className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:w-[500px] pr-3 rounded-none shadow-sm border">
+                    <li><a>Submenu 1</a></li>
+                    <li><a>Submenu 2</a></li>
+                    <li><a>Submenu 2</a></li>
+                    <li><a>Submenu 2</a></li>
+                    <li><a>Submenu 2</a></li>
+                    <li><a>Submenu 2</a></li>
+                    <li><a>Submenu 2</a></li>
+                    <li><a>Submenu 2</a></li>
+                    <li><a>Submenu 2</a></li>
+                </ul>
+            </details>
         </li>
         <li>
             <a>Shop</a>
