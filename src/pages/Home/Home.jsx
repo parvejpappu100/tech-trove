@@ -1,9 +1,10 @@
 import React from 'react';
+import BannerCarousel from '../../components/BannerCarousel/BannerCarousel';
 
 const Home = () => {
     return (
-        <div className='mt-32'>
-            <h1>This is home page</h1>
+        <div className=''>
+            <BannerCarousel></BannerCarousel>
         </div>
     );
 };
