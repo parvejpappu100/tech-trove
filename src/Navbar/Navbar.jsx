@@ -1,73 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./Navbar.css"
-import { FaAlignLeft } from 'react-icons/fa';
+import {  FaBars } from 'react-icons/fa';
+import { FaXmark } from "react-icons/fa6";
+
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
-    const navOptions = <>
-        <li>
-            <a>Home</a>
-        </li>
-        <li tabIndex={0}>
-            <details>
-                <summary>Pages</summary>
-                <ul className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:w-[500px] pr-3 rounded-none shadow-sm border">
-                    <li><a>Submenu 1</a></li>
-                    <li><a>Submenu 2</a></li>
-                    <li><a>Submenu 2</a></li>
-                    <li><a>Submenu 2</a></li>
-                    <li><a>Submenu 2</a></li>
-                    <li><a>Submenu 2</a></li>
-                    <li><a>Submenu 2</a></li>
-                    <li><a>Submenu 2</a></li>
-                    <li><a>Submenu 2</a></li>
-                </ul>
-            </details>
-        </li>
-        <li>
-            <a>Shop</a>
-        </li>
-        <li>
-            <a>Blog</a>
-        </li>
-        <li>
-            <a>Contact</a>
-        </li>
-    </>
+    const [open, setOpen] = useState(false);
 
     return (
-        <div className=''>
-            <div className="navbar lg:container mx-auto py-0 -mt-2">
-                <div className="navbar-start custom">
-                    <div className="dropdown ">
-                        <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                            <FaAlignLeft className='text-2xl'></FaAlignLeft>
-                        </label>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52 text-xl">
-                            {navOptions}
-                        </ul>
-                    </div>
-                    <div className='py-1 bg-[#113366]'>
-                        <select className=" select bg-[#113366]  text-white rounded-none w-full max-w-xs  focus:outline-none hidden lg:block">
-                            <option disabled selected>All Categories</option>
-                            <option>Svelte</option>
-                            <option>Vue</option>
-                            <option>React</option>
-                        </select>
-                    </div>
-                </div>
-                <div className="navbar-center hidden lg:flex custom ">
-                    <ul className="menu menu-horizontal px-1 text-xl ">
-                        {navOptions}
-                    </ul>
-                </div>
-                <div className="navbar-end ">
-                    <p className='font-bold hover:text-red-600 hidden lg:block'><span className='text-red-600'>Hotline : </span>+467247 - 94546</p>
-                    <div>
-                        <h5 className='text-2xl text-[#15407F] font-bold lg:hidden'>TechTrove</h5>
-                    </div>
+        <div className=' bg-white shadow '>
+            <div className="flex flex-row-reverse items-center justify-between lg:hidden">
+                <button onClick={() => setOpen(!open)}>
+                    <span>
+                        {open === true ? (
+                            <FaXmark className="h-10 w-10" />
+                        ) : (
+                            <FaBars className="h-10 w-10" />
+                        )}
+                    </span>
+                </button>
+                <div>
+                    <h5 className='text-2xl text-[#15407F] font-bold lg:hidden'>TechTrove</h5>
                 </div>
             </div>
+            <nav className='flex items-center justify-between lg:container mx-auto pb-2'>
+                <div className='py-1 bg-[#113366] hidden lg:block'>
+                    <select className=" select bg-[#113366]  text-white rounded-none w-full max-w-xs  focus:outline-none ">
+                        <option disabled selected>All Categories</option>
+                        <option>Svelte</option>
+                        <option>Vue</option>
+                        <option>React</option>
+                    </select>
+
+                </div>
+                <ul className={`z-50 rounded-bl-md lg:flex text-xl absolute lg:static duration-500 ${open ? `top-[270px] md:top-[247px] right-0 w-40 duration-[1s]` : `-top-[300px] right-0 duration-[1s] w-40`}  hover-nav-link font-semibold text-xl bg-white text-black  `}>
+                    <li>
+                        <Link>Home</Link>
+                    </li>
+                    <li>
+                        <Link>Shop</Link>
+                    </li>
+                    <li>
+                        <Link>Dashboard</Link>
+                    </li>
+                    <li>
+                        <Link>Blogs</Link>
+                    </li>
+                    <li>
+                        <Link>Contact</Link>
+                    </li>
+                </ul>
+                <div className='hidden lg:block'>
+                    <p className='font-bold hover:text-red-600 '><span className='text-red-600'>Hotline : </span>+467247 - 94546</p>
+                </div>
+            </nav>
         </div>
     );
 };

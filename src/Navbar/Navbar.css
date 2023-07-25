@@ -1,29 +1,9 @@
+.hover-nav-link li:hover{
+  background-color: #113366;
+  color: white;
+  transition-duration: 1s;
+}
 
-.custom a:hover {
-    background-color: #113366; 
-    color: white;
-    border-radius: 0%; 
-  }
-
-  .custom summary:hover {
-    background-color: #113366; 
-    color: white;
-    border-radius: 0%; 
-  }
-
-  .custom a{
-    padding-top: 12px ;
-    padding-bottom: 12px;
-  }
-
-  .custom summary{
-    padding-bottom: 12px;
-    padding-top: 12px;
-  }
-  
-  /* Add custom styles for the select dropdown options */
-  .select option:hover {
-    background-color: green; /* Change the background color to green on hover */
-    color: white; /* Change the text color to white on hover */
-  }
-  
+.hover-nav-link li{
+  padding: 14px 16px;
+}
