@@ -27,11 +27,11 @@ const BannerCarousel = () => {
                 {sliders.map(slider => <SwiperSlide
                     key={slider._id}
                 >
-                    <div className='flex lg:gap-10 px-4 lg:px-0 justify-between lg:container mx-auto items-center '>
+                    <div className='flex flex-col lg:flex-row lg:gap-10 px-4 lg:px-0 justify-between lg:container mx-auto items-center '>
                         <div className='w-full'>
                             <p className='text-red-500'>Big sale offer</p>
                             <h3 className='text-2xl my-3 md:my-0 lg:text-7xl font-semibold'>{slider.title}</h3>
-                            <p className='hidden md:block my-4'>{slider.details}</p>
+                            <p className=' my-4'>{slider.details}</p>
                             <button className='btn  bg-[#113366] border-none rounded-none text-white lg:px-8 hover:bg-white hover:text-black duration-500'>
                                 <FaShoppingCart className='hidden md:block'></FaShoppingCart>
                                 <span>Shop Now</span>
