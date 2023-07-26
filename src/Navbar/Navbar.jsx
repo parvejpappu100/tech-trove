@@ -37,7 +37,7 @@ const Navbar = () => {
                 </div>
                 <ul className={`z-50 rounded-bl-md lg:flex justify-center text-xl absolute lg:static duration-500 ${open ? `top-[270px] md:top-[247px] right-0 w-40 duration-[1s]` : `-top-[300px] right-0 duration-[1s] w-40`}  hover-nav-link font-semibold text-xl bg-white text-black  `}>
                     <li>
-                        <Link>Home</Link>
+                        <Link to="/">Home</Link>
                     </li>
                     <li>
                         <Link>Shop</Link>

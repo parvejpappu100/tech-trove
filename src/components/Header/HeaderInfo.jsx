@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaCheck, FaLock } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const HeaderInfo = () => {
     return (
@@ -19,7 +20,7 @@ const HeaderInfo = () => {
                     <span>|</span>
                     <div className='flex items-center gap-3'>
                         <FaLock></FaLock>
-                        <button>Login</button>
+                        <Link to="/login"><button>Login</button></Link>
                         <span>Or</span>
                         <button>Register</button>
                     </div>
