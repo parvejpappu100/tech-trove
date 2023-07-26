@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PageTitle from '../../components/PageTitle/PageTitle';
 import Services from '../../components/Services/Services';
+import { Link } from 'react-router-dom';
 
 const SingUp = () => {
 
@@ -13,9 +14,9 @@ const SingUp = () => {
     return (
         <div>
             <PageTitle currentPage={"Sing Up"}></PageTitle>
-            <div className='my-16 bg-white p-8 max-w-2xl mx-auto'>
-                <div className="">
-                    <div className="">
+            <div className='my-16 bg-white  max-w-2xl mx-auto'>
+                <div className="hero w-full">
+                    <div className="hero-content w-full">
                         <div className="card flex-shrink-0 w-full">
                             <form className="card-body">
                                 <h3 className='text-4xl font-semibold border-b mb-3'>Sing Up</h3>
@@ -63,6 +64,7 @@ const SingUp = () => {
                                     <input className='bg-[#113366] text-white font-semibold py-3 rounded cursor-pointer hover:bg-[#ED1D24] duration-700' type="submit" value="Sing Up" />
                                 </div>
                             </form>
+                            <p className='text-center font-semibold'>Already have an account? <Link to="/login" className='text-[#113366]'> Login Now!</Link></p>
                         </div>
                     </div>
                 </div>
