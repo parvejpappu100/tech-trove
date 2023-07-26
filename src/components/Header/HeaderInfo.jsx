@@ -22,7 +22,7 @@ const HeaderInfo = () => {
                         <FaLock></FaLock>
                         <Link to="/login"><button>Login</button></Link>
                         <span>Or</span>
-                        <button>Register</button>
+                        <Link to="/singUp"><button>Register</button></Link>
                     </div>
                 </div>
             </div>
