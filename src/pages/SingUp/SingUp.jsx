@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PageTitle from '../../components/PageTitle/PageTitle';
 import Services from '../../components/Services/Services';
 import { Link } from 'react-router-dom';
+import SocialLogin from '../../components/SocialLogin/SocialLogin';
 
 const SingUp = () => {
 
@@ -42,7 +43,7 @@ const SingUp = () => {
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="password" placeholder="Password" className="input input-bordered " />
+                                    <input type={checked ? "text" : "password"} placeholder="Password" className="input input-bordered " />
                                     <label className="label cursor-pointer">
                                         <input onClick={handleChecked} type="checkbox" checked={checked} className="checkbox" />
                                         <span className="label-text">Show Password</span>
@@ -52,13 +53,13 @@ const SingUp = () => {
                                     <label className="label">
                                         <span className="label-text">Confirm Password</span>
                                     </label>
-                                    <input type="password" placeholder="Confirm Password" className="input input-bordered " />
+                                    <input type={checked ? "text" : "password"} placeholder="Confirm Password" className="input input-bordered " />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Your Photo</span>
                                     </label>
-                                    <input type="file" className="file-input file-input-bordered w-full " />
+                                    <input type="file" className="file-input file-input-bordered w-full f" />
                                 </div>
                                 <div className="form-control mt-6">
                                     <input className='bg-[#113366] text-white font-semibold py-3 rounded cursor-pointer hover:bg-[#ED1D24] duration-700' type="submit" value="Sing Up" />
@@ -67,6 +68,9 @@ const SingUp = () => {
                             <p className='text-center font-semibold'>Already have an account? <Link to="/login" className='text-[#113366]'> Login Now!</Link></p>
                         </div>
                     </div>
+                </div>
+                <div>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
             <Services></Services>

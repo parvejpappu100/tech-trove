@@ -2,6 +2,7 @@ import React from 'react';
 import PageTitle from '../../components/PageTitle/PageTitle';
 import Services from '../../components/Services/Services';
 import { Link } from 'react-router-dom';
+import SocialLogin from '../../components/SocialLogin/SocialLogin';
 
 const Login = () => {
     return (
@@ -35,6 +36,9 @@ const Login = () => {
                             <p className='text-center font-semibold'>Don't have an account? <Link to="/singUp" className='text-[#113366]'> Register Now!</Link></p>
                         </div>
                     </div>
+                </div>
+                <div>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
             <Services></Services>
