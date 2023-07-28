@@ -5,6 +5,7 @@ import Services from '../../components/Services/Services';
 import NewArrivals from '../../components/NewArrivals/NewArrivals';
 import OffersProducts from '../../components/OffersProducts/OffersProducts';
 import NewArrivalBanner from '../../components/NewArrivalBanner/NewArrivalBanner';
+import BestSellers from '../../components/BestSellers/BestSellers';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <NewArrivals></NewArrivals>
             <OffersProducts></OffersProducts>
             <NewArrivalBanner></NewArrivalBanner>
+            <BestSellers></BestSellers>
         </div>
     );
 };
