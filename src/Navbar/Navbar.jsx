@@ -28,10 +28,16 @@ const Navbar = () => {
             <nav className='flex items-center justify-between lg:container mx-auto pb-2'>
                 <div className='py-1 bg-[#113366] hidden lg:block'>
                     <select className=" select bg-[#113366]  text-white rounded-none w-full max-w-xs  focus:outline-none ">
-                        <option disabled selected>All Categories</option>
-                        <option>Svelte</option>
-                        <option>Vue</option>
-                        <option>React</option>
+                        <option  selected>All Categories</option>
+                        <option>Cameras</option>
+                        <option>Electronics</option>
+                        <option>Audio</option>
+                        <option>Computers</option>
+                        <option>Accessories</option>
+                        <option>Laptop</option>
+                        <option>Watches</option>
+                        <option>Mobile</option>
+                        <option>Headphone</option>
                     </select>
 
                 </div>
