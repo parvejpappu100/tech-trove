@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import PageTitle from '../../components/PageTitle/PageTitle';
 import Services from '../../components/Services/Services';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../../components/SocialLogin/SocialLogin';
 import useAuth from '../../hooks/useAuth';
 import { useForm } from 'react-hook-form';
-import { updateProfile } from 'firebase/auth';
+import { sendEmailVerification, updateProfile } from 'firebase/auth';
 import Swal from 'sweetalert2';
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_Token;
@@ -16,6 +16,8 @@ const SingUp = () => {
     const [singUpError, setSingUpError] = useState("");
     const { createUser } = useAuth();
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
     const handleChecked = () => {
         setChecked(!checked)
@@ -46,14 +48,8 @@ const SingUp = () => {
                                 const user = result.user;
                                 updateUserData(user, data.name, imgURL)
                                 setSingUpError("");
-                                Swal.fire({
-                                    position: 'top',
-                                    icon: 'success',
-                                    title: 'User Create Successfully',
-                                    showConfirmButton: false,
-                                    timer: 1500
-                                })
-                                navigate("/");
+                                sendVerificationEmail(user)
+                                navigate(from, { replace: true });
                                 reset();
                             })
                             .catch(error => {
@@ -68,6 +64,16 @@ const SingUp = () => {
             return;
         }
     };
+
+    const sendVerificationEmail = user => {
+        sendEmailVerification(user)
+            .then(() => {
+                Swal.fire('Please verify your email ! Check Inbox.')
+            })
+            .catch(error => {
+                setSingUpError(error.message)
+            })
+    }
 
     const updateUserData = (user, name, photoUrl) => {
         updateProfile(user, {

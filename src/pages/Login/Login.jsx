@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import PageTitle from '../../components/PageTitle/PageTitle';
 import Services from '../../components/Services/Services';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../../components/SocialLogin/SocialLogin';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
@@ -9,21 +9,25 @@ import { useForm } from 'react-hook-form';
 
 const Login = () => {
 
-    const { singIn } = useAuth();
+    const { singIn, restPassword } = useAuth();
     const [logInError, setLogInError] = useState("");
+    const [userEmail, setUserEmail] = useState("");
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = (data, event) => {
         event.preventDefault();
         const email = data.email;
+        setUserEmail(email)
         const password = data.password;
         singIn(email, password)
             .then(result => {
                 const user = result.user;
                 setLogInError("")
-                navigate("/");
+                navigate(from, { replace: true });
                 Swal.fire({
                     position: 'top',
                     icon: 'success',
@@ -31,9 +35,30 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 })
+                setUserEmail("")
             })
             .catch(error => {
                 setLogInError(error.message)
+            })
+    };
+
+    const handleRestPassword = (event) => {
+        const email = userEmail;
+        console.log(email)
+        if (!email) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Please provide a email!'
+            })
+            return;
+        }
+        restPassword(email)
+            .then(() => {
+                Swal.fire('Check your email !')
+            })
+            .catch(() => {
+
             })
     }
 
@@ -50,7 +75,7 @@ const Login = () => {
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="text" {...register("email", { required: true })} placeholder="Email" className="input input-bordered " />
+                                    <input name='email' type="email" {...register("email", { required: true })} placeholder="Email" className="input input-bordered " />
                                     {errors.email && <span className='text-red-600'>Email is required</span>}
                                 </div>
                                 <div className="form-control">
@@ -58,9 +83,11 @@ const Login = () => {
                                         <span className="label-text">Password</span>
                                     </label>
                                     <input type="password" {...register("password", { required: true })} placeholder="Password" className="input input-bordered " />
-                                    <label className="label">
-                                        <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                    </label>
+                                    {
+                                        userEmail && <label className="label">
+                                            <a onClick={handleRestPassword} className="label-text-alt text-red-600 link link-hover">Forgot password?</a>
+                                        </label>
+                                    }
                                     {errors.password && <span className='text-red-600'>Password is required</span>}
                                 </div>
                                 <div className="form-control mt-6">
