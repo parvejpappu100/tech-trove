@@ -4,6 +4,7 @@ import SpecialDiscount from '../../components/SpeacialDiscount/SpecialDiscount';
 import Services from '../../components/Services/Services';
 import NewArrivals from '../../components/NewArrivals/NewArrivals';
 import OffersProducts from '../../components/OffersProducts/OffersProducts';
+import NewArrivalBanner from '../../components/NewArrivalBanner/NewArrivalBanner';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <Services></Services>
             <NewArrivals></NewArrivals>
             <OffersProducts></OffersProducts>
+            <NewArrivalBanner></NewArrivalBanner>
         </div>
     );
 };
