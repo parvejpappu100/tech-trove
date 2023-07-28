@@ -1,21 +1,32 @@
 import React from 'react';
 import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
 import useAuth from '../../hooks/useAuth';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const SocialLogin = () => {
 
     const { googleSingIn } = useAuth();
+    const navigate = useNavigate();
 
     const handleGoogleLogin = () => {
         googleSingIn()
-        .then(result => {
-            const user = result.user;
-        })
-        .catch(error => {
-            console.log(error.message)
-        })
+            .then(result => {
+                const user = result.user;
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Login Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                navigate("/");
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
     }
-    
+
     return (
         <div className='max-w-xs mx-auto py-8'>
             <div className="divider text-xl font-semibold">Or continue with</div>
