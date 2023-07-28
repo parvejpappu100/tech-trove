@@ -3,6 +3,7 @@ import BannerCarousel from '../../components/BannerCarousel/BannerCarousel';
 import SpecialDiscount from '../../components/SpeacialDiscount/SpecialDiscount';
 import Services from '../../components/Services/Services';
 import NewArrivals from '../../components/NewArrivals/NewArrivals';
+import OffersProducts from '../../components/OffersProducts/OffersProducts';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <SpecialDiscount></SpecialDiscount>
             <Services></Services>
             <NewArrivals></NewArrivals>
+            <OffersProducts></OffersProducts>
         </div>
     );
 };

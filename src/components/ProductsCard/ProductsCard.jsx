@@ -17,13 +17,21 @@ const ProductsCard = ({ product }) => {
                     <Rating style={{ maxWidth: 100 }} value={rating} readOnly />
                     <p>{rating}</p>
                 </div>
-                <p className='text-xl font-bold'>${price}</p>
+                {
+                    product.offer ? <div className='flex gap-5 items-center'>
+                        <p className='text-xl font-bold'>${price - (price * product.offer / 100)}</p>
+                        <p className='text-xl text-red-500 line-through'>${price}</p>
+                    </div> : <p className='text-xl font-bold'>${price}</p>
+                }
                 <div className='bg-black bg-opacity-75 opacity-0 hover:opacity-100 absolute inset-0 flex justify-center items-center text-center transition-opacity duration-1000'>
                     <div className=' flex gap-4 items-center text-3xl'>
                         <button className='bg-white p-2 rounded-full tooltip' data-tip="Add To Cart"><FaCartPlus></FaCartPlus></button>
                         <button className='bg-white p-2 rounded-full tooltip' data-tip="Save Product"><FaRegHeart></FaRegHeart></button>
                         <button className='bg-white p-2 rounded-full tooltip' data-tip="Details"><FaRegEye></FaRegEye></button>
                     </div>
+                </div>
+                <div className={`absolute top-0 right-0 w-20 h-20 rounded-full ${product.offer ? "bg-red-700 hover:bg-[#113366] duration-1000" : "bg-[#113366] hover:bg-red-700 duration-500"} text-white font-bold`}>
+                    <h5 className='py-6 px-5 text-xl'>{product.offer ? `-${product.offer}%` : "New"}</h5>
                 </div>
             </div>
         </div>
