@@ -24,7 +24,7 @@ const ProductsCard = ({ product }) => {
                     </div> : <p className='text-xl font-bold'>${price}</p>
                 }
                 <div className='bg-black bg-opacity-75 opacity-0 hover:opacity-100 absolute inset-0 flex justify-center items-center text-center transition-opacity duration-1000'>
-                    <div className=' flex gap-4 items-center text-3xl'>
+                    <div className=' flex gap-4 items-center text-xl'>
                         <button className='bg-white p-2 rounded-full tooltip' data-tip="Add To Cart"><FaCartPlus></FaCartPlus></button>
                         <button className='bg-white p-2 rounded-full tooltip' data-tip="Save Product"><FaRegHeart></FaRegHeart></button>
                         <button className='bg-white p-2 rounded-full tooltip' data-tip="Details"><FaRegEye></FaRegEye></button>

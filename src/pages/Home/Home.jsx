@@ -6,6 +6,8 @@ import NewArrivals from '../../components/NewArrivals/NewArrivals';
 import OffersProducts from '../../components/OffersProducts/OffersProducts';
 import NewArrivalBanner from '../../components/NewArrivalBanner/NewArrivalBanner';
 import BestSellers from '../../components/BestSellers/BestSellers';
+import Blogs from '../../components/Blogs/Blogs';
+import Sponsors from '../../components/Sponsors/Sponsors';
 
 const Home = () => {
     return (
@@ -17,6 +19,8 @@ const Home = () => {
             <OffersProducts></OffersProducts>
             <NewArrivalBanner></NewArrivalBanner>
             <BestSellers></BestSellers>
+            <Blogs></Blogs>
+            <Sponsors></Sponsors>
         </div>
     );
 };
