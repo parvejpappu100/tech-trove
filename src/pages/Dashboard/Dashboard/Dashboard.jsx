@@ -1,9 +1,10 @@
 import React from 'react';
+import PageTitle from '../../../components/PageTitle/PageTitle';
 
 const Dashboard = () => {
     return (
         <div>
-            <h1 className='text-5xl'>This is dashboard page</h1>
+            <PageTitle currentPage={"Dashboard"}></PageTitle>
         </div>
     );
 };

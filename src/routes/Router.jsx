@@ -5,6 +5,8 @@ import Login from "../pages/Login/Login";
 import SingUp from "../pages/SingUp/SingUp";
 import Dashboard from "../pages/Dashboard/Dashboard/Dashboard";
 import PrivateRoutes from "./PrivateRoutes";
+import Blog from "../pages/Blog/Blog";
+import Shop from "../pages/Shop/Shop";
 
 
 const router = createBrowserRouter([
@@ -27,6 +29,14 @@ const router = createBrowserRouter([
             {
                 path: "dashboard",
                 element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>
+            },
+            {
+                path: "blog",
+                element: <Blog></Blog>
+            },
+            {
+                path: "shop",
+                element: <Shop></Shop>
             }
         ]
     },

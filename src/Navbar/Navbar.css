@@ -7,3 +7,13 @@
 .hover-nav-link li{
   padding: 14px 16px;
 }
+
+.bg{
+  background-color: white;
+}
+
+.dp :hover{
+  color: black;
+  background-color: white;
+  padding: 0px;
+}

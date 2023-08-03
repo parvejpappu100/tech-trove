@@ -10,7 +10,7 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className=' bg-white shadow '>
+        <div className=' bg-white shadow lg:sticky lg:z-50 lg:top-0'>
             <div className="flex flex-row-reverse items-center justify-between lg:hidden">
                 <button onClick={() => setOpen(!open)}>
                     <span>
@@ -25,7 +25,7 @@ const Navbar = () => {
                     <h5 className='text-2xl text-[#15407F] font-bold lg:hidden'>TechTrove</h5>
                 </div>
             </div>
-            <nav className='flex items-center justify-between lg:container mx-auto pb-2'>
+            <nav className='flex items-center justify-between lg:container mx-auto pb-2 lg:pb-0 '>
                 <div className='py-1 bg-[#113366] hidden lg:block'>
                     <select className=" select bg-[#113366]  text-white rounded-none w-full max-w-xs  focus:outline-none ">
                         <option  selected>All Categories</option>
@@ -46,13 +46,13 @@ const Navbar = () => {
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link>Shop</Link>
+                        <Link to="/shop">Shop</Link>
                     </li>
                     <li>
                         <Link to="/dashboard">Dashboard</Link>
                     </li>
                     <li>
-                        <Link>Blogs</Link>
+                        <Link to="blog">Blog</Link>
                     </li>
                     <li>
                         <Link>Contact</Link>

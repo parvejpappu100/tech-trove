@@ -22,7 +22,7 @@ const SpecialDiscount = () => {
                             <p>{product.reason}</p>
                             <div className="card-actions mt-9 ">
                                 <button className='btn  bg-[#113366] border-none rounded-none text-white lg:px-8 hover:bg-white hover:text-black duration-500'>
-                                    <FaShoppingCart className='hidden md:block'></FaShoppingCart>
+                                    <FaShoppingCart></FaShoppingCart>
                                     <span>Shop Now</span>
                                 </button>
                             </div>
