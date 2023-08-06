@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCartArrowDown } from 'react-icons/fa';
+import { FaCartArrowDown, FaHeart } from 'react-icons/fa';
 
 const SearchBar = () => {
     return (
@@ -19,9 +19,15 @@ const SearchBar = () => {
                         <input type="text" placeholder="Type here" className="input input-bordered w-full rounded-none text-black" />
                     </div>
                 </div>
-                <div className='text-3xl indicator'>
-                    <span className="indicator-item badge badge-secondary">1</span>
-                    <button><FaCartArrowDown></FaCartArrowDown></button>
+                <div className='text-3xl flex gap-5 items-center'>
+                    <div className='text-[#F75298] indicator'>
+                    <span className="indicator-item indicator-start badge badge-secondary">4</span>
+                        <button><FaHeart></FaHeart></button>
+                    </div>
+                    <div className=' indicator'>
+                        <span className="indicator-item badge badge-secondary">1</span>
+                        <button><FaCartArrowDown></FaCartArrowDown></button>
+                    </div>
                 </div>
             </div>
         </div>

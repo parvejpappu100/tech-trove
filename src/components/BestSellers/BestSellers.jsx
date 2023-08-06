@@ -1,36 +1,63 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import ProductsCard from '../ProductsCard/ProductsCard';
+import useProduct from '../../hooks/useProduct';
+import { useLocation } from 'react-router-dom';
+import ReactPaginate from 'react-paginate';
+import "./BestSellers.css"
 
 const BestSellers = () => {
 
-    const [allProducts, setAllProducts] = useState([]);
+    const [product] = useProduct();
 
-    useEffect(() => {
-        fetch("allProducts.json")
-            .then(res => res.json())
-            .then(data => setAllProducts(data))
-    }, []);
+    const location = useLocation();
 
-    const cameras = allProducts.filter(products => products.category === "Cameras");
-    const electronics = allProducts.filter(products => products.category === "Electronics");
-    const audio = allProducts.filter(products => products.category === "Audio");
-    const computers = allProducts.filter(products => products.category === "Computers");
-    const accessories = allProducts.filter(products => products.category === "Accessories");
-    const laptop = allProducts.filter(products => products.category === "Laptop");
-    const watches = allProducts.filter(products => products.category === "Watches");
-    const mobile = allProducts.filter(products => products.category === "Mobile");
-    const headphone = allProducts.filter(products => products.category === "Headphone");
+    const shopPage = location.pathname.includes("shop");
+
+    const [currentPage, setCurrentPage] = useState(0);
+    const itemsPerPage = 8;
+
+    const cameras = product.filter(products => products.category === "Cameras");
+    const electronics = product.filter(products => products.category === "Electronics");
+    const audio = product.filter(products => products.category === "Audio");
+    const computers = product.filter(products => products.category === "Computers");
+    const accessories = product.filter(products => products.category === "Accessories");
+    const laptop = product.filter(products => products.category === "Laptop");
+    const watches = product.filter(products => products.category === "Watches");
+    const mobile = product.filter(products => products.category === "Mobile");
+    const headphone = product.filter(products => products.category === "Headphone");
+
+
+    const totalCamerasPages = Math.ceil(cameras.length / itemsPerPage);
+    const totalElectronicsPages = Math.ceil(electronics.length / itemsPerPage);
+    const totalAudioPages = Math.ceil(audio.length / itemsPerPage);
+    const totalComputersPages = Math.ceil(computers.length / itemsPerPage);
+    const totalAccessoriesPages = Math.ceil(accessories.length / itemsPerPage);
+    const totalLaptopPages = Math.ceil(laptop.length / itemsPerPage);
+    const totalWatchesPages = Math.ceil(watches.length / itemsPerPage);
+    const totalMobilePages = Math.ceil(mobile.length / itemsPerPage);
+    const totalHeadphonePages = Math.ceil(headphone.length / itemsPerPage);
+
+
+    const handlePageChange = ({ selected }) => {
+        setCurrentPage(selected);
+    };
+
+    const getItemsForPage = (items, currentPage) => {
+        const startIndex = currentPage * itemsPerPage;
+        return items.slice(startIndex, startIndex + itemsPerPage);
+    };
 
     return (
         <div className='lg:container mx-auto my-12'>
-            <SectionTitle title={"Bestsellers"}></SectionTitle>
+            {shopPage || <SectionTitle title={"Bestsellers"}></SectionTitle>}
             <div>
                 <Tabs>
                     <div className='text-center text-xl font-semibold'>
                         <TabList>
+                            {shopPage && <Tab>All Products</Tab>}
                             <Tab>Cameras</Tab>
                             <Tab>Electronics</Tab>
                             <Tab>Audio</Tab>
@@ -43,94 +70,176 @@ const BestSellers = () => {
                         </TabList>
                     </div>
 
+                    {shopPage && (
+                        <TabPanel>
+                            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 my-12'>
+                                {getItemsForPage(product, currentPage).map((offerProduct) => (
+                                    <ProductsCard key={offerProduct._id} product={offerProduct}></ProductsCard>
+                                ))}
+                            </div>
+                            <div className='flex justify-center'>
+                                <ReactPaginate
+                                    pageCount={Math.ceil(product.length / itemsPerPage)}
+                                    pageRangeDisplayed={3}
+                                    marginPagesDisplayed={1}
+                                    onPageChange={handlePageChange}
+                                    containerClassName={'pagination'}
+                                    activeClassName={'active'}
+                                />
+                            </div>
+                        </TabPanel>
+                    )}
                     <TabPanel>
-                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-8 my-12'>
-                            {
-                                cameras.map(offerProduct => <ProductsCard
-                                    key={offerProduct._id}
-                                    product={offerProduct}
-                                ></ProductsCard>)
-                            }
+                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 my-12'>
+                            {getItemsForPage(cameras, currentPage).map((offerProduct) => (
+                                <ProductsCard key={offerProduct._id} product={offerProduct}></ProductsCard>
+                            ))}
+                        </div>
+                        <div className='flex justify-center'>
+                            <ReactPaginate
+                                pageCount={totalCamerasPages}
+                                pageRangeDisplayed={3}
+                                marginPagesDisplayed={1}
+                                onPageChange={handlePageChange}
+                                containerClassName={'pagination'}
+                                activeClassName={'active'}
+                            />
                         </div>
                     </TabPanel>
                     <TabPanel>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-8 my-12'>
-                            {
-                                electronics.map(offerProduct => <ProductsCard
-                                    key={offerProduct._id}
-                                    product={offerProduct}
-                                ></ProductsCard>)
-                            }
+                            {getItemsForPage(electronics, currentPage).map((offerProduct) => (
+                                <ProductsCard key={offerProduct._id} product={offerProduct}></ProductsCard>
+                            ))}
+                        </div>
+                        <div className='flex justify-center'>
+                            <ReactPaginate
+                                pageCount={totalElectronicsPages}
+                                pageRangeDisplayed={3}
+                                marginPagesDisplayed={1}
+                                onPageChange={handlePageChange}
+                                containerClassName={'pagination'}
+                                activeClassName={'active'}
+                            />
                         </div>
                     </TabPanel>
                     <TabPanel>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-8 my-12'>
-                            {
-                                audio.map(offerProduct => <ProductsCard
-                                    key={offerProduct._id}
-                                    product={offerProduct}
-                                ></ProductsCard>)
-                            }
+                            {getItemsForPage(audio, currentPage).map((offerProduct) => (
+                                <ProductsCard key={offerProduct._id} product={offerProduct}></ProductsCard>
+                            ))}
+                        </div>
+                        <div className='flex justify-center'>
+                            <ReactPaginate
+                                pageCount={totalAudioPages}
+                                pageRangeDisplayed={3}
+                                marginPagesDisplayed={1}
+                                onPageChange={handlePageChange}
+                                containerClassName={'pagination'}
+                                activeClassName={'active'}
+                            />
                         </div>
                     </TabPanel>
                     <TabPanel>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-8 my-12'>
-                            {
-                                computers.map(offerProduct => <ProductsCard
-                                    key={offerProduct._id}
-                                    product={offerProduct}
-                                ></ProductsCard>)
-                            }
+                            {getItemsForPage(computers, currentPage).map((offerProduct) => (
+                                <ProductsCard key={offerProduct._id} product={offerProduct}></ProductsCard>
+                            ))}
+                        </div>
+                        <div className='flex justify-center'>
+                            <ReactPaginate
+                                pageCount={totalComputersPages}
+                                pageRangeDisplayed={3}
+                                marginPagesDisplayed={1}
+                                onPageChange={handlePageChange}
+                                containerClassName={'pagination'}
+                                activeClassName={'active'}
+                            />
                         </div>
                     </TabPanel>
                     <TabPanel>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-8 my-12'>
-                            {
-                                accessories.map(offerProduct => <ProductsCard
-                                    key={offerProduct._id}
-                                    product={offerProduct}
-                                ></ProductsCard>)
-                            }
+                            {getItemsForPage(computers, currentPage).map((offerProduct) => (
+                                <ProductsCard key={offerProduct._id} product={offerProduct}></ProductsCard>
+                            ))}
+                        </div>
+                        <div className='flex justify-center'>
+                            <ReactPaginate
+                                pageCount={totalAccessoriesPages}
+                                pageRangeDisplayed={3}
+                                marginPagesDisplayed={1}
+                                onPageChange={handlePageChange}
+                                containerClassName={'pagination'}
+                                activeClassName={'active'}
+                            />
                         </div>
                     </TabPanel>
                     <TabPanel>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-8 my-12'>
-                            {
-                                laptop.map(offerProduct => <ProductsCard
-                                    key={offerProduct._id}
-                                    product={offerProduct}
-                                ></ProductsCard>)
-                            }
+                            {getItemsForPage(laptop, currentPage).map((offerProduct) => (
+                                <ProductsCard key={offerProduct._id} product={offerProduct}></ProductsCard>
+                            ))}
+                        </div>
+                        <div className='flex justify-center'>
+                            <ReactPaginate
+                                pageCount={totalLaptopPages}
+                                pageRangeDisplayed={3}
+                                marginPagesDisplayed={1}
+                                onPageChange={handlePageChange}
+                                containerClassName={'pagination'}
+                                activeClassName={'active'}
+                            />
                         </div>
                     </TabPanel>
                     <TabPanel>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-8 my-12'>
-                            {
-                                watches.map(offerProduct => <ProductsCard
-                                    key={offerProduct._id}
-                                    product={offerProduct}
-                                ></ProductsCard>)
-                            }
+                            {getItemsForPage(watches, currentPage).map((offerProduct) => (
+                                <ProductsCard key={offerProduct._id} product={offerProduct}></ProductsCard>
+                            ))}
+                        </div>
+                        <div className='flex justify-center'>
+                            <ReactPaginate
+                                pageCount={totalWatchesPages}
+                                pageRangeDisplayed={3}
+                                marginPagesDisplayed={1}
+                                onPageChange={handlePageChange}
+                                containerClassName={'pagination'}
+                                activeClassName={'active'}
+                            />
                         </div>
                     </TabPanel>
                     <TabPanel>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-8 my-12'>
-                            {
-                                mobile.map(offerProduct => <ProductsCard
-                                    key={offerProduct._id}
-                                    product={offerProduct}
-                                ></ProductsCard>)
-                            }
+                            {getItemsForPage(mobile, currentPage).map((offerProduct) => (
+                                <ProductsCard key={offerProduct._id} product={offerProduct}></ProductsCard>
+                            ))}
+                        </div>
+                        <div className='flex justify-center'>
+                            <ReactPaginate
+                                pageCount={totalMobilePages}
+                                pageRangeDisplayed={3}
+                                marginPagesDisplayed={1}
+                                onPageChange={handlePageChange}
+                                containerClassName={'pagination'}
+                                activeClassName={'active'}
+                            />
                         </div>
                     </TabPanel>
                     <TabPanel>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-8 my-12'>
-                            {
-                                headphone.map(offerProduct => <ProductsCard
-                                    key={offerProduct._id}
-                                    product={offerProduct}
-                                ></ProductsCard>)
-                            }
+                            {getItemsForPage(headphone, currentPage).map((offerProduct) => (
+                                <ProductsCard key={offerProduct._id} product={offerProduct}></ProductsCard>
+                            ))}
+                        </div>
+                        <div className='flex justify-center'>
+                            <ReactPaginate
+                                pageCount={totalHeadphonePages}
+                                pageRangeDisplayed={3}
+                                marginPagesDisplayed={1}
+                                onPageChange={handlePageChange}
+                                containerClassName={'pagination'}
+                                activeClassName={'active'}
+                            />
                         </div>
                     </TabPanel>
                 </Tabs>

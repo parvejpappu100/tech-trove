@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
-import { FaShoppingCart } from 'react-icons/fa';
+import { FaShoppingCart, FaWindowClose } from 'react-icons/fa';
 
 const ProductDetailsModal = ({ showModal, setShowModal, product, number }) => {
 
@@ -35,17 +35,17 @@ const ProductDetailsModal = ({ showModal, setShowModal, product, number }) => {
                                         {product.name}
                                     </h3>
                                     <button
-                                        className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                        className="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                                         onClick={() => setShowModal(false)}
                                     >
-                                        <span className="bg-transparent text-black  h-6 w-6 text-2xl block outline-none focus:outline-none">
-                                            ×
+                                        <span className="h-6 w-6 text-2xl focus:outline-none">
+                                           <FaWindowClose></FaWindowClose>
                                         </span>
                                     </button>
                                 </div>
                                 {/*body*/}
                                 <div className="relative p-6 flex-auto">
-                                    <div className='flex gap-12 flex-col lg:flex-row items-center justify-center'>
+                                    <div className='flex gap-5 lg:gap-12 flex-col lg:flex-row items-center justify-center'>
                                         <div className='w-full'>
                                             <img src={product.image} alt="" />
                                         </div>
