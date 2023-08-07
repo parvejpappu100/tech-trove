@@ -7,6 +7,7 @@ import Dashboard from "../pages/Dashboard/Dashboard/Dashboard";
 import PrivateRoutes from "./PrivateRoutes";
 import Blog from "../pages/Blog/Blog";
 import Shop from "../pages/Shop/Shop";
+import ProductDetails from "../components/ProductDetails/ProductDetails";
 
 
 const router = createBrowserRouter([
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
             {
                 path: "shop",
                 element: <Shop></Shop>
+            },
+            {
+                path: "productDetails/:id",
+                element: <ProductDetails></ProductDetails>
             }
         ]
     },

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { FaShoppingCart, FaWindowClose } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ProductDetailsModal = ({ showModal, setShowModal, product, number }) => {
 
@@ -39,7 +40,7 @@ const ProductDetailsModal = ({ showModal, setShowModal, product, number }) => {
                                         onClick={() => setShowModal(false)}
                                     >
                                         <span className="h-6 w-6 text-2xl focus:outline-none">
-                                           <FaWindowClose></FaWindowClose>
+                                            <FaWindowClose></FaWindowClose>
                                         </span>
                                     </button>
                                 </div>
@@ -67,15 +68,22 @@ const ProductDetailsModal = ({ showModal, setShowModal, product, number }) => {
                                                 <strong className='text-xl'>Quantity:</strong>
                                                 <div className='bg-gray-200 flex items-center text-xl px-4'>
                                                     <button onClick={lessQuantity} className='text-3xl'>-</button>
-                                                    <input className='mx-4 w-16 h-10 bg-gray-200 text-center  font-semibold' type="number" name="number" value={quantity} min="0" id="" />
+                                                    <input className='mx-4 w-16 h-10 bg-gray-200 text-center  font-semibold' type="number" name="number" value={quantity} min="0" id="" readOnly />
                                                     <button onClick={addQuantity} className='text-3xl'>+</button>
                                                 </div>
                                             </div>
-                                            <div className='mt-5'>
+                                            <div className='mt-5 flex items-center gap-5'>
                                                 <button className='btn  bg-[#113366] border hover:border-[#113366]  rounded-none text-white lg:px-8 hover:bg-white hover:text-black duration-500'>
                                                     <FaShoppingCart></FaShoppingCart>
                                                     <span>Add To Cart</span>
                                                 </button>
+                                                {
+                                                    product.category && <Link to={`/productDetails/${product._id}`}>
+                                                        <button className='btn  bg-[#113366] border hover:border-[#113366]  rounded-none text-white lg:px-8 hover:bg-white hover:text-black duration-500'>
+                                                            Overview
+                                                        </button>
+                                                    </Link>
+                                                }
                                             </div>
                                         </div>
                                     </div>

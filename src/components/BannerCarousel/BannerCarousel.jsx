@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Navigation } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 
 const BannerCarousel = () => {
 
@@ -32,10 +33,12 @@ const BannerCarousel = () => {
                             <p className='text-red-500'>Big sale offer</p>
                             <h3 className='text-2xl my-3 md:my-0 lg:text-7xl font-semibold'>{slider.title}</h3>
                             <p className=' my-4'>{slider.details}</p>
-                            <button className='btn  bg-[#113366] border-none rounded-none text-white lg:px-8 hover:bg-white hover:text-black duration-500'>
-                                <FaShoppingCart></FaShoppingCart>
-                                <span>Shop Now</span>
-                            </button>
+                            <Link to="/shop">
+                                <button className='btn  bg-[#113366] border-none rounded-none text-white lg:px-8 hover:bg-white hover:text-black duration-500'>
+                                    <FaShoppingCart></FaShoppingCart>
+                                    <span>Shop Now</span>
+                                </button>
+                            </Link>
                         </div>
                         <div className='lg:w-full'>
                             <img className='lg:w-[600px] lg:h-[600px]' src={slider.image} alt="" />

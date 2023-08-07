@@ -3,10 +3,17 @@ import { FaCheck, FaLock, FaUserCircle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
+import { useState } from 'react';
 
 const HeaderInfo = () => {
 
     const { user, logOut } = useAuth();
+
+    const [selectedCategory, setSelectedCategory] = useState('');
+
+    const handleCategoryChange = event => {
+        setSelectedCategory(event.target.value);
+    }
 
     const handleLogout = () => {
         logOut()
@@ -30,11 +37,11 @@ const HeaderInfo = () => {
                     <h4>Free shipping on all orders over 50$</h4>
                 </div>
                 <div className='flex items-center  gap-3'>
-                    <select className="select bg-[#113366] max-w-xs">
-                        <option disabled selected>Languages</option>
-                        <option>Svelte</option>
-                        <option>Vue</option>
-                        <option>React</option>
+                    <select className="select bg-[#113366] max-w-xs" value={selectedCategory} onChange={handleCategoryChange}>
+                        <option disabled value="">Languages</option>
+                        <option value="s">Svelte</option>
+                        <option value="v">Vue</option>
+                        <option value="r">React</option>
                     </select>
                     <span>|</span>
                     <div>

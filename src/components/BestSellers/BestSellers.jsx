@@ -10,7 +10,7 @@ import "./BestSellers.css"
 
 const BestSellers = () => {
 
-    const [product] = useProduct();
+    const [product, loading] = useProduct();
 
     const location = useLocation();
 
@@ -69,6 +69,9 @@ const BestSellers = () => {
                             <Tab>Headphone</Tab>
                         </TabList>
                     </div>
+                    {loading && <div className='text-center'>
+                        <progress className="progress w-56"></progress>
+                    </div>}
 
                     {shopPage && (
                         <TabPanel>
@@ -159,7 +162,7 @@ const BestSellers = () => {
                     </TabPanel>
                     <TabPanel>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-8 my-12'>
-                            {getItemsForPage(computers, currentPage).map((offerProduct) => (
+                            {getItemsForPage(accessories, currentPage).map((offerProduct) => (
                                 <ProductsCard key={offerProduct._id} product={offerProduct}></ProductsCard>
                             ))}
                         </div>

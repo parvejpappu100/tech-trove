@@ -10,8 +10,8 @@ const NewArrivals = () => {
         fetch("arrivals.json")
             .then(res => res.json())
             .then(data => setNewProducts(data))
-    }, [])
-    console.log(newProducts)
+    }, []);
+    
     return (
         <div className='max-w-3xl mx-auto'>
             <SectionTitle title={"New Arrivals"}></SectionTitle>

@@ -1,18 +1,18 @@
 [
     {
-        "-id": "1",
+        "_id": "1",
         "title":"The Drone Has an Attractive Gift Free",
         "details": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus sequi ut consequuntur veritatis cum fugit inventore itaque quidem natus",
         "image": "https://i.ibb.co/hshvL3K/car.png"
     },
     {
-        "-id": "2",
+        "_id": "2",
         "title":"Get The Best Deal on Smart TV",
         "details": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus sequi ut consequuntur veritatis cum fugit inventore itaque quidem natus",
         "image": "https://i.ibb.co/KN7jVTZ/monitor-10ea7214.png"
     },
     {
-        "-id": "3",
+        "_id": "3",
         "title":"The High Quality Product is Ready",
         "details": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus sequi ut consequuntur veritatis cum fugit inventore itaque quidem natus",
         "image": "https://i.ibb.co/Tb7jgwT/headphone-cde0b982.png"
