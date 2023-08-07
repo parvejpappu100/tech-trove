@@ -50,7 +50,11 @@ const ProductOverview = ({ product }) => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 2</h2>
+                    <div className='text-xl my-10'>
+                        <h3><strong>Address :</strong> 16347 Banani, Dhaka, Bangladesh RN/4612</h3>
+                        <h3><strong>Email :</strong> tech.trove@info.com</h3>
+                        <h3><strong>Phone :</strong> + 5448 - 451567</h3>
+                    </div>
                 </TabPanel>
             </Tabs>
         </div>
