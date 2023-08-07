@@ -1,452 +1,974 @@
 [
-    {
+  {
+    "_id": "1",
+    "name": "Web Cam",
+    "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "rating": 4.8,
+    "price": 25,
+    "category": "Cameras",
+    "availability": "In Stock (11)",
+    "code": "L343-23",
+    "description": {
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "features": [
+        "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+        "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+        "Various versions have evolved over the years, sometimes by accident sometimes on purpose.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
+      ]
+    },
+    "reviews": [
+      {
         "_id": "1",
-        "name": "Web Cam",
-        "image": "https://i.ibb.co/bgGL1TM/offer.png",
-        "rating": 4.8,
-        "price": 25,
-        "category": "Cameras",
-        "availability": "In Stock (11)",
-        "code": "L343-23",
-        "description":{
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "features":[
-                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.", "Contrary to popular belief, Lorem Ipsum is not simply random text.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.", "Various versions have evolved over the years, sometimes by accident sometimes on purpose.","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
-            ]
-        },
-        "reviews": [
-            {
-                "name": "Devid Bekham",
-                "date": "12 june, 2023",
-                "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
-                "rating": 4.5,
-                "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
-            }
-        ]
-    },
-    {
+        "name": "Devid Bekham",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
         "_id": "2",
-        "name": "Cameras 1",
-        "image": "https://i.ibb.co/bgGL1TM/offer.png",
+        "name": "Jon Doe",
+        "date": "1 January, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
         "rating": 4.5,
-        "price": 42,
-        "category": "Cameras",
-        "availability": "In Stock (12)",
-        "code": "L343-12",
-        "description":{
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "features":[
-                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.", "Contrary to popular belief, Lorem Ipsum is not simply random text.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.", "Various versions have evolved over the years, sometimes by accident sometimes on purpose.","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
-            ]
-        },
-        "reviews": [
-            {
-                "name": "Carlos Disuja",
-                "date": "21 july, 2023",
-                "img": "https://i.ibb.co/ydS8hbV/collection-1-068eda16.png",
-                "rating": 4.5,
-                "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
-            }
-        ]
-    },
-    {
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
         "_id": "3",
-        "name": "Electronics1",
-        "image": "https://i.ibb.co/bgGL1TM/offer.png",
-        "rating": 4.8,
-        "price": 25,
-        "category": "Electronics",
-        "availability": "In Stock (11)",
-        "code": "L343-90",
-        "description":{
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "features":[
-                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.", "Contrary to popular belief, Lorem Ipsum is not simply random text.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.", "Various versions have evolved over the years, sometimes by accident sometimes on purpose.","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
-            ]
-        },
-        "reviews": [
-            {
-                "name": "Devid Bekham",
-                "date": "12 june, 2023",
-                "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
-                "rating": 4.5,
-                "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
-            }
-        ]
-    },
-    {
+        "name": "Roberto",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
         "_id": "4",
-        "name": "Electronics 2",
-        "image": "https://i.ibb.co/bgGL1TM/offer.png",
+        "name": "Lolita",
+        "date": "5 July, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
         "rating": 4.5,
-        "price": 422,
-        "category": "Electronics",
-        "availability": "In Stock (12)",
-        "code": "L343-12",
-        "description":{
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "features":[
-                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.", "Contrary to popular belief, Lorem Ipsum is not simply random text.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.", "Various versions have evolved over the years, sometimes by accident sometimes on purpose.","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
-            ]
-        },
-        "reviews": [
-            {
-                "name": "Carlos Disuja",
-                "date": "21 july, 2023",
-                "img": "https://i.ibb.co/ydS8hbV/collection-1-068eda16.png",
-                "rating": 4.5,
-                "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
-            }
-        ]
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    ]
+  },
+  {
+    "_id": "2",
+    "name": "Cameras 1",
+    "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "rating": 4.5,
+    "price": 42,
+    "category": "Cameras",
+    "availability": "In Stock (12)",
+    "code": "L343-12",
+    "description": {
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "features": [
+        "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+        "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+        "Various versions have evolved over the years, sometimes by accident sometimes on purpose.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
+      ]
     },
-    {
-        "_id": "5",
-        "name": "Audio 1",
-        "image": "https://i.ibb.co/bgGL1TM/offer.png",
-        "rating": 5,
-        "price": 54,
-        "category": "Audio",
-        "availability": "In Stock (12)",
-        "code": "L343-AI",
-        "description":{
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "features":[
-                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.", "Contrary to popular belief, Lorem Ipsum is not simply random text.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.", "Various versions have evolved over the years, sometimes by accident sometimes on purpose.","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
-            ]
-        },
-        "reviews": [
-            {
-                "name": "Carlos Disuja",
-                "date": "21 july, 2023",
-                "img": "https://i.ibb.co/ydS8hbV/collection-1-068eda16.png",
-                "rating": 4.5,
-                "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
-            }
-        ]
-    },
-    {
-        "_id": "6",
-        "name": "Audio 2",
-        "image": "https://i.ibb.co/bgGL1TM/offer.png",
-        "rating": 5,
-        "price": 565,
-        "category": "Audio",
-        "availability": "In Stock (12)",
-        "code": "L343-ET",
-        "description":{
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "features":[
-                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.", "Contrary to popular belief, Lorem Ipsum is not simply random text.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.", "Various versions have evolved over the years, sometimes by accident sometimes on purpose.","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
-            ]
-        },
-        "reviews": [
-            {
-                "name": "Carlos Disuja",
-                "date": "21 july, 2023",
-                "img": "https://i.ibb.co/ydS8hbV/collection-1-068eda16.png",
-                "rating": 4.5,
-                "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
-            }
-        ]
-    },
-    {
-        "_id": "7",
-        "name": "Computers 1",
-        "image": "https://i.ibb.co/bgGL1TM/offer.png",
-        "rating": 5,
-        "price": 342,
-        "category": "Computers",
-        "availability": "In Stock (12)",
-        "code": "L343-CE",
-        "description":{
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "features":[
-                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.", "Contrary to popular belief, Lorem Ipsum is not simply random text.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.", "Various versions have evolved over the years, sometimes by accident sometimes on purpose.","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
-            ]
-        },
-        "reviews": [
-            {
-                "name": "Carlos Disuja",
-                "date": "21 july, 2023",
-                "img": "https://i.ibb.co/ydS8hbV/collection-1-068eda16.png",
-                "rating": 4.5,
-                "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
-            }
-        ]
-    },
-    {
-        "_id": "8",
-        "name": "Computers 2",
-        "image": "https://i.ibb.co/bgGL1TM/offer.png",
-        "rating": 4,
-        "price": 122,
-        "category": "Computers",
-        "availability": "In Stock (12)",
-        "code": "L343-CM",
-        "description":{
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "features":[
-                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.", "Contrary to popular belief, Lorem Ipsum is not simply random text.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.", "Various versions have evolved over the years, sometimes by accident sometimes on purpose.","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
-            ]
-        },
-        "reviews": [
-            {
-                "name": "Carlos Disuja",
-                "date": "21 july, 2023",
-                "img": "https://i.ibb.co/ydS8hbV/collection-1-068eda16.png",
-                "rating": 4.5,
-                "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
-            }
-        ]
-    },
-    {
-        "_id": "9",
-        "name": "Accessories 1",
-        "image": "https://i.ibb.co/bgGL1TM/offer.png",
-        "rating": 4,
-        "price": 423,
-        "category": "Accessories",
-        "availability": "In Stock (12)",
-        "code": "L343-TE",
-        "description":{
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "features":[
-                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.", "Contrary to popular belief, Lorem Ipsum is not simply random text.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.", "Various versions have evolved over the years, sometimes by accident sometimes on purpose.","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
-            ]
-        },
-        "reviews": [
-            {
-                "name": "Carlos Disuja",
-                "date": "21 july, 2023",
-                "img": "https://i.ibb.co/ydS8hbV/collection-1-068eda16.png",
-                "rating": 4.5,
-                "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
-            }
-        ]
-    },
-    {
-        "_id": "10",
-        "name": "Accessories 2",
-        "image": "https://i.ibb.co/bgGL1TM/offer.png",
-        "rating": 4,
-        "price": 231,
-        "category": "Accessories",
-        "availability": "In Stock (12)",
-        "code": "L343-XD",
-        "description":{
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "features":[
-                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.", "Contrary to popular belief, Lorem Ipsum is not simply random text.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.", "Various versions have evolved over the years, sometimes by accident sometimes on purpose.","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
-            ]
-        },
-        "reviews": [
-            {
-                "name": "Carlos Disuja",
-                "date": "21 july, 2023",
-                "img": "https://i.ibb.co/ydS8hbV/collection-1-068eda16.png",
-                "rating": 4.5,
-                "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
-            }
-        ]
-    },
-    {
-        "_id": "11",
-        "name": "Laptop 1",
-        "image": "https://i.ibb.co/bgGL1TM/offer.png",
-        "rating": 4,
-        "price": 564,
-        "category": "Laptop",
-        "availability": "In Stock (12)",
-        "code": "L343-LT",
-        "description":{
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "features":[
-                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.", "Contrary to popular belief, Lorem Ipsum is not simply random text.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.", "Various versions have evolved over the years, sometimes by accident sometimes on purpose.","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
-            ]
-        },
-        "reviews": [
-            {
-                "name": "Carlos Disuja",
-                "date": "21 july, 2023",
-                "img": "https://i.ibb.co/ydS8hbV/collection-1-068eda16.png",
-                "rating": 4.5,
-                "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
-            }
-        ]
-    },
-    {
-        "_id": "12",
-        "name": "Laptop 2",
-        "image": "https://i.ibb.co/bgGL1TM/offer.png",
-        "rating": 4,
-        "price": 987,
-        "category": "Laptop",
-        "availability": "In Stock (12)",
-        "code": "L343-LT2",
-        "description":{
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "features":[
-                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.", "Contrary to popular belief, Lorem Ipsum is not simply random text.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.", "Various versions have evolved over the years, sometimes by accident sometimes on purpose.","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
-            ]
-        },
-        "reviews": [
-            {
-                "name": "Carlos Disuja",
-                "date": "21 july, 2023",
-                "img": "https://i.ibb.co/ydS8hbV/collection-1-068eda16.png",
-                "rating": 4.5,
-                "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
-            }
-        ]
-    },
-    {
-        "_id": "13",
-        "name": "Watches 1",
-        "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "reviews": [
+      {
+        "_id": "1",
+        "name": "Devid Bekham",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
         "rating": 4.5,
-        "price": 123,
-        "category": "Watches",
-        "availability": "In Stock (12)",
-        "code": "L343-WE",
-        "description":{
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "features":[
-                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.", "Contrary to popular belief, Lorem Ipsum is not simply random text.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.", "Various versions have evolved over the years, sometimes by accident sometimes on purpose.","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
-            ]
-        },
-        "reviews": [
-            {
-                "name": "Carlos Disuja",
-                "date": "21 july, 2023",
-                "img": "https://i.ibb.co/ydS8hbV/collection-1-068eda16.png",
-                "rating": 4.5,
-                "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
-            }
-        ]
-    },
-    {
-        "_id": "14",
-        "name": "Watches 2",
-        "image": "https://i.ibb.co/bgGL1TM/offer.png",
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "2",
+        "name": "Jon Doe",
+        "date": "1 January, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
         "rating": 4.5,
-        "price": 42,
-        "category": "Watches",
-        "availability": "In Stock (12)",
-        "code": "L343-WE",
-        "description":{
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "features":[
-                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.", "Contrary to popular belief, Lorem Ipsum is not simply random text.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.", "Various versions have evolved over the years, sometimes by accident sometimes on purpose.","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
-            ]
-        },
-        "reviews": [
-            {
-                "name": "Carlos Disuja",
-                "date": "21 july, 2023",
-                "img": "https://i.ibb.co/ydS8hbV/collection-1-068eda16.png",
-                "rating": 4.5,
-                "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
-            }
-        ]
-    },
-    {
-        "_id": "15",
-        "name": "Mobile 1",
-        "image": "https://i.ibb.co/bgGL1TM/offer.png",
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "3",
+        "name": "Roberto",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
         "rating": 4.5,
-        "price": 554,
-        "category": "Mobile",
-        "availability": "In Stock (12)",
-        "code": "L343-MB1",
-        "description":{
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "features":[
-                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.", "Contrary to popular belief, Lorem Ipsum is not simply random text.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.", "Various versions have evolved over the years, sometimes by accident sometimes on purpose.","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
-            ]
-        },
-        "reviews": [
-            {
-                "name": "Carlos Disuja",
-                "date": "21 july, 2023",
-                "img": "https://i.ibb.co/ydS8hbV/collection-1-068eda16.png",
-                "rating": 4.5,
-                "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
-            }
-        ]
-    },
-    {
-        "_id": "16",
-        "name": "Mobile 2",
-        "image": "https://i.ibb.co/bgGL1TM/offer.png",
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "4",
+        "name": "Lolita",
+        "date": "5 July, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
         "rating": 4.5,
-        "price": 332,
-        "category": "Mobile",
-        "availability": "In Stock (12)",
-        "code": "L343-MB2",
-        "description":{
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "features":[
-                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.", "Contrary to popular belief, Lorem Ipsum is not simply random text.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.", "Various versions have evolved over the years, sometimes by accident sometimes on purpose.","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
-            ]
-        },
-        "reviews": [
-            {
-                "name": "Carlos Disuja",
-                "date": "21 july, 2023",
-                "img": "https://i.ibb.co/ydS8hbV/collection-1-068eda16.png",
-                "rating": 4.5,
-                "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
-            }
-        ]
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    ]
+  },
+  {
+    "_id": "3",
+    "name": "Electronics1",
+    "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "rating": 4.8,
+    "price": 25,
+    "category": "Electronics",
+    "availability": "In Stock (11)",
+    "code": "L343-90",
+    "description": {
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "features": [
+        "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+        "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+        "Various versions have evolved over the years, sometimes by accident sometimes on purpose.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
+      ]
     },
-    {
-        "_id": "17",
-        "name": "Headphone 1",
-        "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "reviews": [
+      {
+        "_id": "1",
+        "name": "Devid Bekham",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
         "rating": 4.5,
-        "price": 27,
-        "category": "Headphone",
-        "availability": "In Stock (12)",
-        "code": "L343-HP1",
-        "description":{
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "features":[
-                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.", "Contrary to popular belief, Lorem Ipsum is not simply random text.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.", "Various versions have evolved over the years, sometimes by accident sometimes on purpose.","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
-            ]
-        },
-        "reviews": [
-            {
-                "name": "Carlos Disuja",
-                "date": "21 july, 2023",
-                "img": "https://i.ibb.co/ydS8hbV/collection-1-068eda16.png",
-                "rating": 4.5,
-                "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
-            }
-        ]
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "2",
+        "name": "Jon Doe",
+        "date": "1 January, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "3",
+        "name": "Roberto",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "4",
+        "name": "Lolita",
+        "date": "5 July, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    ]
+  },
+  {
+    "_id": "4",
+    "name": "Electronics 2",
+    "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "rating": 4.5,
+    "price": 422,
+    "category": "Electronics",
+    "availability": "In Stock (12)",
+    "code": "L343-12",
+    "description": {
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "features": [
+        "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+        "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+        "Various versions have evolved over the years, sometimes by accident sometimes on purpose.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
+      ]
     },
-    {
-        "_id": "18",
-        "name": "Headphone 2",
-        "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "reviews": [
+      {
+        "_id": "1",
+        "name": "Devid Bekham",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
         "rating": 4.5,
-        "price": 87,
-        "category": "Headphone",
-        "availability": "In Stock (12)",
-        "code": "L343-HP2",
-        "description":{
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "features":[
-                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.", "Contrary to popular belief, Lorem Ipsum is not simply random text.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.", "Various versions have evolved over the years, sometimes by accident sometimes on purpose.","Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
-            ]
-        },
-        "reviews": [
-            {
-                "name": "Carlos Disuja",
-                "date": "21 july, 2023",
-                "img": "https://i.ibb.co/ydS8hbV/collection-1-068eda16.png",
-                "rating": 4.5,
-                "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
-            }
-        ]
-    }
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "2",
+        "name": "Jon Doe",
+        "date": "1 January, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "3",
+        "name": "Roberto",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "4",
+        "name": "Lolita",
+        "date": "5 July, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    ]
+  },
+  {
+    "_id": "5",
+    "name": "Audio 1",
+    "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "rating": 5,
+    "price": 54,
+    "category": "Audio",
+    "availability": "In Stock (12)",
+    "code": "L343-AI",
+    "description": {
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "features": [
+        "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+        "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+        "Various versions have evolved over the years, sometimes by accident sometimes on purpose.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
+      ]
+    },
+    "reviews": [
+      {
+        "_id": "1",
+        "name": "Devid Bekham",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "2",
+        "name": "Jon Doe",
+        "date": "1 January, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "3",
+        "name": "Roberto",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "4",
+        "name": "Lolita",
+        "date": "5 July, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    ]
+  },
+  {
+    "_id": "6",
+    "name": "Audio 2",
+    "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "rating": 5,
+    "price": 565,
+    "category": "Audio",
+    "availability": "In Stock (12)",
+    "code": "L343-ET",
+    "description": {
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "features": [
+        "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+        "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+        "Various versions have evolved over the years, sometimes by accident sometimes on purpose.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
+      ]
+    },
+    "reviews": [
+      {
+        "_id": "1",
+        "name": "Devid Bekham",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "2",
+        "name": "Jon Doe",
+        "date": "1 January, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "3",
+        "name": "Roberto",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "4",
+        "name": "Lolita",
+        "date": "5 July, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    ]
+  },
+  {
+    "_id": "7",
+    "name": "Computers 1",
+    "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "rating": 5,
+    "price": 342,
+    "category": "Computers",
+    "availability": "In Stock (12)",
+    "code": "L343-CE",
+    "description": {
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "features": [
+        "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+        "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+        "Various versions have evolved over the years, sometimes by accident sometimes on purpose.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
+      ]
+    },
+    "reviews": [
+      {
+        "_id": "1",
+        "name": "Devid Bekham",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "2",
+        "name": "Jon Doe",
+        "date": "1 January, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "3",
+        "name": "Roberto",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "4",
+        "name": "Lolita",
+        "date": "5 July, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    ]
+  },
+  {
+    "_id": "8",
+    "name": "Computers 2",
+    "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "rating": 4,
+    "price": 122,
+    "category": "Computers",
+    "availability": "In Stock (12)",
+    "code": "L343-CM",
+    "description": {
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "features": [
+        "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+        "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+        "Various versions have evolved over the years, sometimes by accident sometimes on purpose.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
+      ]
+    },
+    "reviews": [
+      {
+        "_id": "1",
+        "name": "Devid Bekham",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "2",
+        "name": "Jon Doe",
+        "date": "1 January, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "3",
+        "name": "Roberto",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "4",
+        "name": "Lolita",
+        "date": "5 July, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    ]
+  },
+  {
+    "_id": "9",
+    "name": "Accessories 1",
+    "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "rating": 4,
+    "price": 423,
+    "category": "Accessories",
+    "availability": "In Stock (12)",
+    "code": "L343-TE",
+    "description": {
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "features": [
+        "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+        "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+        "Various versions have evolved over the years, sometimes by accident sometimes on purpose.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
+      ]
+    },
+    "reviews": [
+      {
+        "_id": "1",
+        "name": "Devid Bekham",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "2",
+        "name": "Jon Doe",
+        "date": "1 January, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "3",
+        "name": "Roberto",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "4",
+        "name": "Lolita",
+        "date": "5 July, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    ]
+  },
+  {
+    "_id": "10",
+    "name": "Accessories 2",
+    "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "rating": 4,
+    "price": 231,
+    "category": "Accessories",
+    "availability": "In Stock (12)",
+    "code": "L343-XD",
+    "description": {
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "features": [
+        "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+        "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+        "Various versions have evolved over the years, sometimes by accident sometimes on purpose.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
+      ]
+    },
+    "reviews": [
+      {
+        "_id": "1",
+        "name": "Devid Bekham",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "2",
+        "name": "Jon Doe",
+        "date": "1 January, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "3",
+        "name": "Roberto",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "4",
+        "name": "Lolita",
+        "date": "5 July, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    ]
+  },
+  {
+    "_id": "11",
+    "name": "Laptop 1",
+    "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "rating": 4,
+    "price": 564,
+    "category": "Laptop",
+    "availability": "In Stock (12)",
+    "code": "L343-LT",
+    "description": {
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "features": [
+        "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+        "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+        "Various versions have evolved over the years, sometimes by accident sometimes on purpose.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
+      ]
+    },
+    "reviews": [
+      {
+        "_id": "1",
+        "name": "Devid Bekham",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "2",
+        "name": "Jon Doe",
+        "date": "1 January, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "3",
+        "name": "Roberto",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "4",
+        "name": "Lolita",
+        "date": "5 July, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    ]
+  },
+  {
+    "_id": "12",
+    "name": "Laptop 2",
+    "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "rating": 4,
+    "price": 987,
+    "category": "Laptop",
+    "availability": "In Stock (12)",
+    "code": "L343-LT2",
+    "description": {
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "features": [
+        "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+        "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+        "Various versions have evolved over the years, sometimes by accident sometimes on purpose.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
+      ]
+    },
+    "reviews": [
+      {
+        "_id": "1",
+        "name": "Devid Bekham",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "2",
+        "name": "Jon Doe",
+        "date": "1 January, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "3",
+        "name": "Roberto",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "4",
+        "name": "Lolita",
+        "date": "5 July, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    ]
+  },
+  {
+    "_id": "13",
+    "name": "Watches 1",
+    "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "rating": 4.5,
+    "price": 123,
+    "category": "Watches",
+    "availability": "In Stock (12)",
+    "code": "L343-WE",
+    "description": {
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "features": [
+        "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+        "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+        "Various versions have evolved over the years, sometimes by accident sometimes on purpose.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
+      ]
+    },
+    "reviews": [
+      {
+        "_id": "1",
+        "name": "Devid Bekham",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "2",
+        "name": "Jon Doe",
+        "date": "1 January, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "3",
+        "name": "Roberto",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "4",
+        "name": "Lolita",
+        "date": "5 July, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    ]
+  },
+  {
+    "_id": "14",
+    "name": "Watches 2",
+    "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "rating": 4.5,
+    "price": 42,
+    "category": "Watches",
+    "availability": "In Stock (12)",
+    "code": "L343-WE",
+    "description": {
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "features": [
+        "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+        "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+        "Various versions have evolved over the years, sometimes by accident sometimes on purpose.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
+      ]
+    },
+    "reviews": [
+      {
+        "_id": "1",
+        "name": "Devid Bekham",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "2",
+        "name": "Jon Doe",
+        "date": "1 January, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "3",
+        "name": "Roberto",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "4",
+        "name": "Lolita",
+        "date": "5 July, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    ]
+  },
+  {
+    "_id": "15",
+    "name": "Mobile 1",
+    "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "rating": 4.5,
+    "price": 554,
+    "category": "Mobile",
+    "availability": "In Stock (12)",
+    "code": "L343-MB1",
+    "description": {
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "features": [
+        "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+        "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+        "Various versions have evolved over the years, sometimes by accident sometimes on purpose.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
+      ]
+    },
+    "reviews": [
+      {
+        "_id": "1",
+        "name": "Devid Bekham",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "2",
+        "name": "Jon Doe",
+        "date": "1 January, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "3",
+        "name": "Roberto",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "4",
+        "name": "Lolita",
+        "date": "5 July, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    ]
+  },
+  {
+    "_id": "16",
+    "name": "Mobile 2",
+    "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "rating": 4.5,
+    "price": 332,
+    "category": "Mobile",
+    "availability": "In Stock (12)",
+    "code": "L343-MB2",
+    "description": {
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "features": [
+        "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+        "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+        "Various versions have evolved over the years, sometimes by accident sometimes on purpose.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
+      ]
+    },
+    "reviews": [
+      {
+        "_id": "1",
+        "name": "Devid Bekham",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "2",
+        "name": "Jon Doe",
+        "date": "1 January, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "3",
+        "name": "Roberto",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "4",
+        "name": "Lolita",
+        "date": "5 July, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    ]
+  },
+  {
+    "_id": "17",
+    "name": "Headphone 1",
+    "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "rating": 4.5,
+    "price": 27,
+    "category": "Headphone",
+    "availability": "In Stock (12)",
+    "code": "L343-HP1",
+    "description": {
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "features": [
+        "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+        "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+        "Various versions have evolved over the years, sometimes by accident sometimes on purpose.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
+      ]
+    },
+    "reviews": [
+      {
+        "_id": "1",
+        "name": "Devid Bekham",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "2",
+        "name": "Jon Doe",
+        "date": "1 January, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "3",
+        "name": "Roberto",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "4",
+        "name": "Lolita",
+        "date": "5 July, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    ]
+  },
+  {
+    "_id": "18",
+    "name": "Headphone 2",
+    "image": "https://i.ibb.co/bgGL1TM/offer.png",
+    "rating": 4.5,
+    "price": 87,
+    "category": "Headphone",
+    "availability": "In Stock (12)",
+    "code": "L343-HP2",
+    "description": {
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "features": [
+        "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+        "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
+        "Various versions have evolved over the years, sometimes by accident sometimes on purpose.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur."
+      ]
+    },
+    "reviews": [
+      {
+        "_id": "1",
+        "name": "Devid Bekham",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "2",
+        "name": "Jon Doe",
+        "date": "1 January, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "3",
+        "name": "Roberto",
+        "date": "12 june, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      },
+      {
+        "_id": "4",
+        "name": "Lolita",
+        "date": "5 July, 2023",
+        "img": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
+        "rating": 4.5,
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    ]
+  }
 ]
