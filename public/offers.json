@@ -1,6 +1,5 @@
 [
     {
-        "_id": "1",
         "name": "Web Cam",
         "image": "https://i.ibb.co/bgGL1TM/offer.png",
         "rating": 4.8,
@@ -25,7 +24,6 @@
         ]
     },
     {
-        "_id": "2",
         "name": "Monitor",
         "image": "https://i.ibb.co/bgGL1TM/offer.png",
         "rating": 4.5,

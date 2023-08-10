@@ -12,7 +12,7 @@ const Sponsors = () => {
     const [sponsors, setSponsors] = useState([]);
 
     useEffect(() => {
-        fetch("sponsors.json")
+        fetch("http://localhost:5000/sponsors")
             .then(res => res.json())
             .then(data => setSponsors(data))
     }, []);

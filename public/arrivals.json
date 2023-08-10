@@ -1,6 +1,5 @@
 [
-    {
-        "_id": "1",
+    {  
         "name": "Havit Headphone",
         "image": "https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png",
         "rating": 4.8,
@@ -24,7 +23,6 @@
         ]
     },
     {
-        "_id": "2",
         "name": "Watch",
         "image": "https://i.ibb.co/ydS8hbV/collection-1-068eda16.png",
         "rating": 4.5,

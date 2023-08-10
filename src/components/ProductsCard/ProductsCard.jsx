@@ -7,7 +7,7 @@ import ProductDetailsModal from '../ProductDetailsModal/ProductDetailsModal';
 
 const ProductsCard = ({ product }) => {
 
-    const { name, image, rating, _id, price } = product;
+    const { name, image, rating, price } = product;
 
     const [showModal, setShowModal] = useState(false);
 

@@ -17,7 +17,7 @@ const BannerCarousel = () => {
     const [sliders, setSlider] = useState([]);
 
     useEffect(() => {
-        fetch("slider.json")
+        fetch("http://localhost:5000/sliders")
             .then(res => res.json())
             .then(data => setSlider(data))
     }, [])

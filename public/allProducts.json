@@ -1,6 +1,5 @@
 [
   {
-    "_id": "1",
     "name": "Web Cam",
     "image": "https://i.ibb.co/bgGL1TM/offer.png",
     "rating": 4.8,
@@ -54,7 +53,6 @@
     ]
   },
   {
-    "_id": "2",
     "name": "Cameras 1",
     "image": "https://i.ibb.co/bgGL1TM/offer.png",
     "rating": 4.5,
@@ -108,7 +106,6 @@
     ]
   },
   {
-    "_id": "3",
     "name": "Electronics1",
     "image": "https://i.ibb.co/bgGL1TM/offer.png",
     "rating": 4.8,
@@ -162,7 +159,6 @@
     ]
   },
   {
-    "_id": "4",
     "name": "Electronics 2",
     "image": "https://i.ibb.co/bgGL1TM/offer.png",
     "rating": 4.5,
@@ -216,7 +212,6 @@
     ]
   },
   {
-    "_id": "5",
     "name": "Audio 1",
     "image": "https://i.ibb.co/bgGL1TM/offer.png",
     "rating": 5,
@@ -270,7 +265,6 @@
     ]
   },
   {
-    "_id": "6",
     "name": "Audio 2",
     "image": "https://i.ibb.co/bgGL1TM/offer.png",
     "rating": 5,
@@ -324,7 +318,6 @@
     ]
   },
   {
-    "_id": "7",
     "name": "Computers 1",
     "image": "https://i.ibb.co/bgGL1TM/offer.png",
     "rating": 5,
@@ -378,7 +371,6 @@
     ]
   },
   {
-    "_id": "8",
     "name": "Computers 2",
     "image": "https://i.ibb.co/bgGL1TM/offer.png",
     "rating": 4,
@@ -432,7 +424,6 @@
     ]
   },
   {
-    "_id": "9",
     "name": "Accessories 1",
     "image": "https://i.ibb.co/bgGL1TM/offer.png",
     "rating": 4,
@@ -486,7 +477,6 @@
     ]
   },
   {
-    "_id": "10",
     "name": "Accessories 2",
     "image": "https://i.ibb.co/bgGL1TM/offer.png",
     "rating": 4,
@@ -540,7 +530,6 @@
     ]
   },
   {
-    "_id": "11",
     "name": "Laptop 1",
     "image": "https://i.ibb.co/bgGL1TM/offer.png",
     "rating": 4,
@@ -594,7 +583,6 @@
     ]
   },
   {
-    "_id": "12",
     "name": "Laptop 2",
     "image": "https://i.ibb.co/bgGL1TM/offer.png",
     "rating": 4,
@@ -648,7 +636,6 @@
     ]
   },
   {
-    "_id": "13",
     "name": "Watches 1",
     "image": "https://i.ibb.co/bgGL1TM/offer.png",
     "rating": 4.5,
@@ -702,7 +689,6 @@
     ]
   },
   {
-    "_id": "14",
     "name": "Watches 2",
     "image": "https://i.ibb.co/bgGL1TM/offer.png",
     "rating": 4.5,
@@ -756,7 +742,6 @@
     ]
   },
   {
-    "_id": "15",
     "name": "Mobile 1",
     "image": "https://i.ibb.co/bgGL1TM/offer.png",
     "rating": 4.5,
@@ -810,7 +795,6 @@
     ]
   },
   {
-    "_id": "16",
     "name": "Mobile 2",
     "image": "https://i.ibb.co/bgGL1TM/offer.png",
     "rating": 4.5,
@@ -864,7 +848,6 @@
     ]
   },
   {
-    "_id": "17",
     "name": "Headphone 1",
     "image": "https://i.ibb.co/bgGL1TM/offer.png",
     "rating": 4.5,
@@ -918,7 +901,6 @@
     ]
   },
   {
-    "_id": "18",
     "name": "Headphone 2",
     "image": "https://i.ibb.co/bgGL1TM/offer.png",
     "rating": 4.5,
