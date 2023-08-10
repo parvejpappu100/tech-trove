@@ -7,6 +7,7 @@ import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import ProductOverview from '../ProductOverview/ProductOverview';
 import Services from '../Services/Services';
+import { Helmet } from 'react-helmet-async';
 
 const ProductDetails = () => {
 
@@ -36,12 +37,15 @@ const ProductDetails = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Product Details | Tech Trove</title>
+            </Helmet>
             <PageTitle currentPage={"Product Details"}></PageTitle>
             {loading && <div className='text-center'>
                 <progress className="progress w-56"></progress>
             </div>}
 
-            <div className='max-w-7xl mx-auto my-24'>
+            <div className='max-w-7xl mx-auto my-24 px-4 lg:px-0'>
                 <div className='flex gap-5 lg:gap-12 flex-col lg:flex-row items-center'>
                     <div className='w-full'>
                         <img src={productDetail?.image} alt="" />

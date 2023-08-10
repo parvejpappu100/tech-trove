@@ -8,10 +8,14 @@ import NewArrivalBanner from '../../components/NewArrivalBanner/NewArrivalBanner
 import BestSellers from '../../components/BestSellers/BestSellers';
 import Blogs from '../../components/Blogs/Blogs';
 import Sponsors from '../../components/Sponsors/Sponsors';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
     return (
         <div className=''>
+            <Helmet>
+                <title>Home | Tech Trove</title>
+            </Helmet>
             <BannerCarousel></BannerCarousel>
             <SpecialDiscount></SpecialDiscount>
             <Services></Services>

@@ -19,7 +19,7 @@ const ProductOverview = ({ product }) => {
                 <TabPanel>
                     <h2 className='text-2xl my-8 font-semibold'>Overview</h2>
                     <p>{product?.description.details}</p>
-                    <div className='mt-12'>
+                    <div className='mt-12 px-5'>
                         {
                             product?.description.features.map(feature => <div>
                                 <ul className='list-disc'><li className='my-3'>{feature}</li></ul>

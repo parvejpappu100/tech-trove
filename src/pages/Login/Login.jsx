@@ -6,6 +6,7 @@ import SocialLogin from '../../components/SocialLogin/SocialLogin';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
 import { useForm } from 'react-hook-form';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
 
@@ -64,6 +65,9 @@ const Login = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Login | Tech Trove</title>
+            </Helmet>
             <PageTitle currentPage={"Login"}></PageTitle>
             <div className='my-16 bg-white max-w-2xl mx-auto'>
                 <div className="hero w-full">

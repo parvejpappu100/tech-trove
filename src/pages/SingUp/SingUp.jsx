@@ -7,6 +7,7 @@ import useAuth from '../../hooks/useAuth';
 import { useForm } from 'react-hook-form';
 import { sendEmailVerification, updateProfile } from 'firebase/auth';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_Token;
 const SingUp = () => {
@@ -90,6 +91,9 @@ const SingUp = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Sing Up | Tech Trove</title>
+            </Helmet>
             <PageTitle currentPage={"Sing Up"}></PageTitle>
             <div className='my-16 bg-white  max-w-2xl mx-auto'>
                 <div className="hero w-full">
