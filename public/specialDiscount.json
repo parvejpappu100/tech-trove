@@ -1,12 +1,14 @@
 [
     {
         "title": "Special Discount Offer",
+        "category": "Laptop",
         "reason": "for 12-12 Festival",
         "img": "https://i.ibb.co/YXrk2RP/overview1-1093dfc5.png"
     },
     {
         "title": "Best Price and Great Quality",
+        "category": "Computers",
         "reason": "Featured",
-        "img": "https://i.ibb.co/YXrk2RP/overview1-1093dfc5.png"
+        "img": "https://i.ibb.co/PcJ748W/cm-removebg-preview.png"
     }
 ]

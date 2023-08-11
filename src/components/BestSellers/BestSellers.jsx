@@ -4,11 +4,18 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import ProductsCard from '../ProductsCard/ProductsCard';
 import useProduct from '../../hooks/useProduct';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import "./BestSellers.css"
 
 const BestSellers = () => {
+
+    const categories = ["product", "Cameras", "Electronics", "Audio", "Computers", "Accessories", "Laptop", "Watches", "Mobile", "Headphone"];
+    const { category } = useParams();
+    const initialIndex = categories.indexOf(category);
+
+    const [tabIndex, setTabIndex] = useState(initialIndex);
+    console.log(tabIndex)
 
     const [product, loading] = useProduct();
 
@@ -54,7 +61,7 @@ const BestSellers = () => {
         <div className='lg:container mx-auto my-12'>
             {shopPage || <SectionTitle title={"Bestsellers"}></SectionTitle>}
             <div>
-                <Tabs>
+                <Tabs defaultIndex={tabIndex == -1 ? 0 : tabIndex} onSelect={(index => setTabIndex(index))}>
                     <div className='text-center text-xl font-semibold'>
                         <TabList>
                             {shopPage && <Tab>All Products</Tab>}

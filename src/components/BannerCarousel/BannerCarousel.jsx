@@ -33,7 +33,7 @@ const BannerCarousel = () => {
                             <p className='text-red-500'>Big sale offer</p>
                             <h3 className='text-2xl my-3 md:my-0 lg:text-7xl font-semibold'>{slider.title}</h3>
                             <p className=' my-4'>{slider.details}</p>
-                            <Link to="/shop">
+                            <Link to={`/shop/${slider.category}`}>
                                 <button className='btn  bg-[#113366] border-none rounded-none text-white lg:px-8 hover:bg-white hover:text-black duration-500'>
                                     <FaShoppingCart></FaShoppingCart>
                                     <span>Shop Now</span>

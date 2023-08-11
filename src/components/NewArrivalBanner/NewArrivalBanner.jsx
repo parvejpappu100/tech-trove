@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const NewArrivalBanner = () => {
     return (
@@ -12,10 +13,12 @@ const NewArrivalBanner = () => {
                     <h4 className='text-3xl font-semibold'>New Arrival</h4>
                     <h4 className='my-5 font-bold text-5xl'>Best Gadget</h4>
                     <h4 className='text-2xl'>Collection</h4>
-                    <button className='btn mt-5 bg-[#113366] border-none rounded-none text-white lg:px-8 hover:bg-white hover:text-black duration-500'>
-                        <FaShoppingCart className='hidden md:block'></FaShoppingCart>
-                        <span>Shop Now</span>
-                    </button>
+                    <Link to={`/shop/${"Watches"}`}>
+                        <button className='btn mt-5 bg-[#113366] border-none rounded-none text-white lg:px-8 hover:bg-white hover:text-black duration-500'>
+                            <FaShoppingCart className='hidden md:block'></FaShoppingCart>
+                            <span>Shop Now</span>
+                        </button>
+                    </Link>
                 </div>
                 <div className=' w-full flex justify-center py-20 md:py-0'>
                     <img className='lg:w-3/4 transform -rotate-90' src="https://i.ibb.co/4JYYQWs/collection-2-1cbe80ac.png" alt="" />
