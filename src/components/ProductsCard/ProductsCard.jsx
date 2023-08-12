@@ -3,6 +3,10 @@ import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { FaCartPlus, FaRegEye, FaRegHeart } from 'react-icons/fa';
 import ProductDetailsModal from '../ProductDetailsModal/ProductDetailsModal';
+import useAuth from '../../hooks/useAuth';
+import { useLocation, useNavigate } from 'react-router-dom';
+import useCart from '../../hooks/useCart';
+import Swal from 'sweetalert2';
 
 
 const ProductsCard = ({ product }) => {
@@ -13,6 +17,52 @@ const ProductsCard = ({ product }) => {
 
     const productCurrentQuantity = product.availability;
     const number = parseInt(productCurrentQuantity.split('(')[1], 10);
+
+    const { user } = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [ , refetch] = useCart();
+
+    const handleAddToCart = () => {
+        if (user && user.email) {
+            const cartItem = { productId: product._id, productQuantity: 1, name: product.name, image: product.image, email: user.email, price: product.price, offer: product.offer ? product.offer : 0 }
+            fetch("http://localhost:5000/carts", {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify(cartItem)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        refetch();
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Product Added Successfully !',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                })
+        }
+        else {
+            Swal.fire({
+                title: 'You have to Login first!',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Go to login'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate("/login", { state: { from: location } })
+                }
+            })
+        }
+    }
 
 
     return (
@@ -32,7 +82,7 @@ const ProductsCard = ({ product }) => {
                 }
                 <div className='bg-black bg-opacity-75 opacity-0 hover:opacity-100 absolute inset-0 flex justify-center items-center text-center transition-opacity duration-1000'>
                     <div className=' flex gap-4 items-center text-xl'>
-                        <button className='bg-white p-2 rounded-full tooltip' data-tip="Add To Cart"><FaCartPlus></FaCartPlus></button>
+                        <button onClick={handleAddToCart} className='bg-white p-2 rounded-full tooltip' data-tip="Add To Cart"><FaCartPlus></FaCartPlus></button>
                         <button className='bg-white p-2 rounded-full tooltip' data-tip="Save Product"><FaRegHeart></FaRegHeart></button>
                         <button onClick={() => setShowModal(true)} className='bg-white p-2 rounded-full tooltip' data-tip="Details"><FaRegEye></FaRegEye></button>
                     </div>
