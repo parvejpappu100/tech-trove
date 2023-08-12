@@ -43,7 +43,7 @@ const ProductDetails = () => {
     const location = useLocation();
     const [, refetch] = useCart();
 
-    const handleAddToCart = () => {
+    const handleAddToCart = (product) => {
         if (user && user.email) {
             const cartItem = { productId: product._id, productQuantity: 1, name: product.name, image: product.image, email: user.email, price: product.price, offer: product.offer ? product.offer : 0 }
             fetch("http://localhost:5000/carts", {
@@ -123,7 +123,7 @@ const ProductDetails = () => {
                             </div>
                         </div>
                         <div className='mt-5'>
-                            <button onClick={handleAddToCart} className='btn  bg-[#113366] border hover:border-[#113366]  rounded-none text-white lg:px-8 hover:bg-white hover:text-black duration-500'>
+                            <button onClick={() => handleAddToCart(productDetail)} className='btn  bg-[#113366] border hover:border-[#113366]  rounded-none text-white lg:px-8 hover:bg-white hover:text-black duration-500'>
                                 <FaShoppingCart></FaShoppingCart>
                                 <span>Add To Cart</span>
                             </button>

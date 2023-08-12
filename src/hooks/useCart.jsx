@@ -5,6 +5,7 @@ const useCart = () => {
     const { user , loading} = useAuth();
     const { data: cart = [] , refetch} = useQuery({
         queryKey: ["carts" , user?.email],
+        enabled: !loading,
         queryFn: async () => {
             const response = await fetch(`http://localhost:5000/carts?email=${user?.email}`)
             return response.json();

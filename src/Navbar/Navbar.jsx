@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./Navbar.css"
-import { FaBars } from 'react-icons/fa';
+import { FaAngleDown, FaBars } from 'react-icons/fa';
 import { FaXmark } from "react-icons/fa6";
 
 import { Link } from 'react-router-dom';
@@ -48,17 +48,17 @@ const Navbar = () => {
                     </select>
 
                 </div>
-                <ul className={`z-50 rounded-bl-md lg:flex justify-center text-xl absolute lg:static duration-500 ${open ? `top-[270px] md:top-[247px] right-0 w-40 duration-[1s]` : `-top-[300px] right-0 duration-[1s] w-40`} font-semibold text-xl bg-white text-black space-y-5 lg:space-y-0 py-4 lg:py-0 `}>
+                <ul className={`z-50 rounded-bl-md lg:flex justify-center items-center text-xl absolute lg:static duration-500 ${open ? `top-[270px] md:top-[247px] right-0 w-40 duration-[1s]` : `-top-[400px] right-0 duration-[1s] w-40`} font-semibold text-xl bg-white text-black space-y-5 lg:space-y-0 py-4 lg:py-0 `}>
                     <li>
                         <Link className='link-hover-custom link-style' to="/">Home</Link>
                     </li>
                     <li>
                         <div className="dropdown dropdown-hover">
-                            <label tabIndex={0} className='link-hover-custom link-style'>Shop</label>
-                            <ul tabIndex={0} className="dropdown-content z-50 menu shadow mt-3 bg-white w-52">
+                            <label tabIndex={0} className='link-hover-custom link-style flex items-center'><span>Shop</span> <FaAngleDown></FaAngleDown></label>
+                            <ul tabIndex={0} className="dropdown-content z-50 menu shadow bg-white w-52">
                                 <li className='shop-dropdown'><Link to={`/shop/${"product"}`}>Shop</Link></li>
-                                <li className='shop-dropdown'><Link>My Cart</Link></li>
-                                <li className='shop-dropdown'><Link>Wishlist</Link></li>
+                                <li className='shop-dropdown'><Link to="/myCart">My Cart</Link></li>
+                                <li className='shop-dropdown'><Link to="/wishlist">Wishlist</Link></li>
                             </ul>
                         </div>
                     </li>
@@ -73,14 +73,13 @@ const Navbar = () => {
                     </li>
                     <li>
                         <div className="dropdown dropdown-hover">
-                            <label tabIndex={0} className='link-hover-custom link-style'>Pages</label>
-                            <ul tabIndex={0} className="grid lg:grid-cols-3 lg:gap-5 dropdown-content z-50 menu shadow mt-3 bg-white lg:w-[400px]">
+                            <label tabIndex={0} className='link-hover-custom link-style flex items-center'><span>Pages</span> <FaAngleDown></FaAngleDown></label>
+                            <ul tabIndex={0} className="grid lg:grid-cols-3 lg:gap-5 dropdown-content z-50 menu shadow  bg-white lg:w-[400px]">
                                 <li><Link>About Us</Link></li>
                                 <li><Link>FAQ'S</Link></li>
                                 <li><Link>Our Team</Link></li>
-                                <li><Link>Our Team</Link></li>
-                                <li><Link>Login</Link></li>
-                                <li><Link>Register</Link></li>
+                                <li><Link to="/login">Login</Link></li>
+                                <li><Link to="/singUp">Register</Link></li>
                                 <li><Link>My Account</Link></li>
                                 <li><Link>404 Error</Link></li>
                                 <li><Link>Coming Soon</Link></li>
