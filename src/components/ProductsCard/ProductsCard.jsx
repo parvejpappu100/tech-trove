@@ -15,7 +15,6 @@ const ProductsCard = ({ product }) => {
     const { name, image, rating, price } = product;
 
     const [showModal, setShowModal] = useState(false);
-    const [isSaved, setIsSaved] = useState(false);
 
     const productCurrentQuantity = product.availability;
     const number = parseInt(productCurrentQuantity.split('(')[1], 10);
@@ -24,7 +23,9 @@ const ProductsCard = ({ product }) => {
     const navigate = useNavigate();
     const location = useLocation();
     const [, refetch] = useCart();
-    const [, refetchSaved] = useSaved();
+    const [saved, refetchSaved] = useSaved();
+    const savedProduct = saved.find(sp => sp.productId == product._id);
+    
 
     const handleAddToCart = () => {
         if (user && user.email) {
@@ -81,7 +82,6 @@ const ProductsCard = ({ product }) => {
                 .then(data => {
                     if (data.insertedId) {
                         refetchSaved();
-                        setIsSaved(true);
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
@@ -128,8 +128,8 @@ const ProductsCard = ({ product }) => {
                 <div className='bg-black bg-opacity-75 opacity-0 hover:opacity-100 absolute inset-0 flex justify-center items-center text-center transition-opacity duration-1000'>
                     <div className=' flex gap-4 items-center text-xl'>
                         <button onClick={handleAddToCart} className='bg-white p-2 rounded-full tooltip' data-tip="Add To Cart"><FaCartPlus></FaCartPlus></button>
-                        <button disabled={isSaved} onClick={handleSavedProduct} className='bg-white p-2 rounded-full tooltip' data-tip={isSaved ? "Saved" : "Saved Product"}>
-                            {isSaved ? <FaHeart className='text-pink-500'></FaHeart> : <FaRegHeart></FaRegHeart>}
+                        <button disabled={savedProduct} onClick={handleSavedProduct} className='bg-white p-2 rounded-full tooltip' data-tip={savedProduct ? "Saved" : "Saved Product"}>
+                            {savedProduct ? <FaHeart className='text-pink-500'></FaHeart> : <FaRegHeart></FaRegHeart>}
                         </button>
                         <button onClick={() => setShowModal(true)} className='bg-white p-2 rounded-full tooltip' data-tip="Details"><FaRegEye></FaRegEye></button>
                     </div>
