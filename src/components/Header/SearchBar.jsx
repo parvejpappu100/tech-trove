@@ -1,10 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
 import { FaCartArrowDown, FaHeart } from 'react-icons/fa';
+import useCart from '../../hooks/useCart';
 
 const SearchBar = () => {
 
     const [selectedCategory, setSelectedCategory] = useState('');
+    const [cart , refetch] = useCart();
 
     const handleCategoryChange = event => {
         setSelectedCategory(event.target.value);
@@ -33,7 +35,7 @@ const SearchBar = () => {
                         <button><FaHeart></FaHeart></button>
                     </div>
                     <div className=' indicator'>
-                        <span className="indicator-item badge badge-secondary">1</span>
+                        <span className="indicator-item badge badge-secondary">+ {cart?.length || 0}</span>
                         <button><FaCartArrowDown></FaCartArrowDown></button>
                     </div>
                 </div>

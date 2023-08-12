@@ -2,12 +2,14 @@ import React from 'react';
 import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const SocialLogin = () => {
 
     const { googleSingIn } = useAuth();
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
     const handleGoogleLogin = () => {
         googleSingIn()
@@ -20,7 +22,7 @@ const SocialLogin = () => {
                     showConfirmButton: false,
                     timer: 1500
                 })
-                navigate("/");
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error.message)

@@ -2,11 +2,18 @@ import React, { useState } from 'react';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { FaShoppingCart, FaWindowClose } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
+import Swal from 'sweetalert2';
+import useCart from '../../hooks/useCart';
 
 const ProductDetailsModal = ({ showModal, setShowModal, product, number }) => {
 
     const [quantity, setQuantity] = useState(1);
+    const { user } = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [ , refetch] = useCart();
 
     const addQuantity = () => {
         if (quantity < number) {
@@ -17,6 +24,47 @@ const ProductDetailsModal = ({ showModal, setShowModal, product, number }) => {
     const lessQuantity = () => {
         if (quantity > 1) {
             setQuantity(quantity - 1)
+        }
+    }
+
+    const handleAddToCart = () => {
+        if (user && user.email) {
+            const cartItem = {productId: product._id , productQuantity: quantity , name: product.name , image: product.image , email: user.email , price: product.price , offer: product.offer ? product.offer : 0}
+            fetch("http://localhost:5000/carts", {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify(cartItem)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        refetch();
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Product Added Successfully !',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                })
+        }
+        else {
+            Swal.fire({
+                title: 'You have to Login first!',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Go to login'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate("/login", { state: { from: location } })
+                }
+            })
         }
     }
 
@@ -73,7 +121,7 @@ const ProductDetailsModal = ({ showModal, setShowModal, product, number }) => {
                                                 </div>
                                             </div>
                                             <div className='mt-5 flex items-center gap-5'>
-                                                <button className='btn  bg-[#113366] border hover:border-[#113366]  rounded-none text-white lg:px-8 hover:bg-white hover:text-black duration-500'>
+                                                <button onClick={handleAddToCart} className='btn  bg-[#113366] border hover:border-[#113366]  rounded-none text-white lg:px-8 hover:bg-white hover:text-black duration-500'>
                                                     <FaShoppingCart></FaShoppingCart>
                                                     <span>Add To Cart</span>
                                                 </button>
