@@ -12,7 +12,9 @@ const Navbar = () => {
 
     const handleCategoryChange = event => {
         setSelectedCategory(event.target.value);
-    }
+    };
+
+    const isAdmin = false;
 
     return (
         <div className=' bg-white shadow lg:sticky lg:z-50 lg:top-0'>
@@ -46,21 +48,44 @@ const Navbar = () => {
                     </select>
 
                 </div>
-                <ul className={`z-50 rounded-bl-md lg:flex justify-center text-xl absolute lg:static duration-500 ${open ? `top-[270px] md:top-[247px] right-0 w-40 duration-[1s]` : `-top-[300px] right-0 duration-[1s] w-40`}  hover-nav-link font-semibold text-xl bg-white text-black  `}>
+                <ul className={`z-50 rounded-bl-md lg:flex justify-center text-xl absolute lg:static duration-500 ${open ? `top-[270px] md:top-[247px] right-0 w-40 duration-[1s]` : `-top-[300px] right-0 duration-[1s] w-40`} font-semibold text-xl bg-white text-black space-y-5 lg:space-y-0 py-4 lg:py-0 `}>
                     <li>
-                        <Link to="/">Home</Link>
+                        <Link className='link-hover-custom link-style' to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to={`/shop/${"product"}`}>Shop</Link>
+                        <div className="dropdown dropdown-hover">
+                            <label tabIndex={0} className='link-hover-custom link-style'>Shop</label>
+                            <ul tabIndex={0} className="dropdown-content z-50 menu shadow mt-3 bg-white w-52">
+                                <li className='shop-dropdown'><Link to={`/shop/${"product"}`}>Shop</Link></li>
+                                <li className='shop-dropdown'><Link>My Cart</Link></li>
+                                <li className='shop-dropdown'><Link>Wishlist</Link></li>
+                            </ul>
+                        </div>
+                    </li>
+                    {isAdmin && <li>
+                        <Link className='link-hover-custom link-style' to="/dashboard">Dashboard</Link>
+                    </li>}
+                    <li>
+                        <Link className='link-hover-custom link-style' to="blog">Blog</Link>
                     </li>
                     <li>
-                        <Link to="/dashboard">Dashboard</Link>
+                        <Link className='link-hover-custom link-style'>Contact</Link>
                     </li>
                     <li>
-                        <Link to="blog">Blog</Link>
-                    </li>
-                    <li>
-                        <Link>Contact</Link>
+                        <div className="dropdown dropdown-hover">
+                            <label tabIndex={0} className='link-hover-custom link-style'>Pages</label>
+                            <ul tabIndex={0} className="grid lg:grid-cols-3 lg:gap-5 dropdown-content z-50 menu shadow mt-3 bg-white lg:w-[400px]">
+                                <li><Link>About Us</Link></li>
+                                <li><Link>FAQ'S</Link></li>
+                                <li><Link>Our Team</Link></li>
+                                <li><Link>Our Team</Link></li>
+                                <li><Link>Login</Link></li>
+                                <li><Link>Register</Link></li>
+                                <li><Link>My Account</Link></li>
+                                <li><Link>404 Error</Link></li>
+                                <li><Link>Coming Soon</Link></li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
                 <div className='hidden lg:block'>

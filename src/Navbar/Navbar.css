@@ -1,19 +1,9 @@
-.hover-nav-link li:hover{
+.link-hover-custom:hover{
   background-color: #113366;
   color: white;
   transition-duration: 1s;
 }
 
-.hover-nav-link li{
-  padding: 14px 16px;
-}
-
-.bg{
-  background-color: white;
-}
-
-.dp :hover{
-  color: black;
-  background-color: white;
-  padding: 0px;
+.link-style{
+  padding: 15px 16px;
 }
