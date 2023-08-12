@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
-import { FaCartPlus, FaRegEye, FaRegHeart } from 'react-icons/fa';
+import { FaCartPlus, FaHeart, FaRegEye, FaRegHeart } from 'react-icons/fa';
 import ProductDetailsModal from '../ProductDetailsModal/ProductDetailsModal';
 import useAuth from '../../hooks/useAuth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
 import Swal from 'sweetalert2';
+import useSaved from '../../hooks/useSaved';
 
 
 const ProductsCard = ({ product }) => {
@@ -14,6 +15,7 @@ const ProductsCard = ({ product }) => {
     const { name, image, rating, price } = product;
 
     const [showModal, setShowModal] = useState(false);
+    const [isSaved, setIsSaved] = useState(false);
 
     const productCurrentQuantity = product.availability;
     const number = parseInt(productCurrentQuantity.split('(')[1], 10);
@@ -21,7 +23,8 @@ const ProductsCard = ({ product }) => {
     const { user } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
-    const [ , refetch] = useCart();
+    const [, refetch] = useCart();
+    const [, refetchSaved] = useSaved();
 
     const handleAddToCart = () => {
         if (user && user.email) {
@@ -64,6 +67,48 @@ const ProductsCard = ({ product }) => {
         }
     }
 
+    const handleSavedProduct = () => {
+        if (user && user.email) {
+            const savedItem = { productId: product._id, name: product.name, image: product.image, email: user.email, price: product.price, offer: product.offer ? product.offer : 0 }
+            fetch("http://localhost:5000/saved", {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify(savedItem)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        refetchSaved();
+                        setIsSaved(true);
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Product Saved Wishlist !',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                })
+        }
+        else {
+            Swal.fire({
+                title: 'You have to Login first!',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Go to login'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate("/login", { state: { from: location } })
+                }
+            })
+        }
+    }
+
 
     return (
         <div className={` ${product.offer ? "border border-black" : "bg-white"}`}>
@@ -83,7 +128,9 @@ const ProductsCard = ({ product }) => {
                 <div className='bg-black bg-opacity-75 opacity-0 hover:opacity-100 absolute inset-0 flex justify-center items-center text-center transition-opacity duration-1000'>
                     <div className=' flex gap-4 items-center text-xl'>
                         <button onClick={handleAddToCart} className='bg-white p-2 rounded-full tooltip' data-tip="Add To Cart"><FaCartPlus></FaCartPlus></button>
-                        <button className='bg-white p-2 rounded-full tooltip' data-tip="Save Product"><FaRegHeart></FaRegHeart></button>
+                        <button disabled={isSaved} onClick={handleSavedProduct} className='bg-white p-2 rounded-full tooltip' data-tip={isSaved ? "Saved" : "Saved Product"}>
+                            {isSaved ? <FaHeart className='text-pink-500'></FaHeart> : <FaRegHeart></FaRegHeart>}
+                        </button>
                         <button onClick={() => setShowModal(true)} className='bg-white p-2 rounded-full tooltip' data-tip="Details"><FaRegEye></FaRegEye></button>
                     </div>
                 </div>

@@ -2,11 +2,13 @@ import React from 'react';
 import { useState } from 'react';
 import { FaCartArrowDown, FaHeart } from 'react-icons/fa';
 import useCart from '../../hooks/useCart';
+import useSaved from '../../hooks/useSaved';
 
 const SearchBar = () => {
 
     const [selectedCategory, setSelectedCategory] = useState('');
-    const [cart , refetch] = useCart();
+    const [cart] = useCart();
+    const [saved] = useSaved();
 
     const handleCategoryChange = event => {
         setSelectedCategory(event.target.value);
@@ -31,7 +33,7 @@ const SearchBar = () => {
                 </div>
                 <div className='text-3xl flex gap-5 items-center'>
                     <div className='text-[#F75298] indicator'>
-                        <span className="indicator-item indicator-start badge badge-secondary">4</span>
+                        <span className="indicator-item indicator-start badge badge-secondary">+ {saved?.length || 0}</span>
                         <button><FaHeart></FaHeart></button>
                     </div>
                     <div className=' indicator'>
