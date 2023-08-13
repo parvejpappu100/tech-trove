@@ -71,7 +71,7 @@ const MyCartProducts = ({ item, refetch }) => {
 
     return (
         <div>
-            <div className='bg-white p-8 my-5'>
+            <div className='bg-white p-8 mb-5'>
                 <div className='flex flex-col md:flex-row gap-5 md:gap-0 justify-between'>
                     <img className='w-[80px] h-[80px]' src={item.image} alt="" />
                     <h4 className='font-semibold'>{item.name}</h4>
