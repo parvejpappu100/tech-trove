@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { FaCartArrowDown, FaHeart } from 'react-icons/fa';
 import useCart from '../../hooks/useCart';
 import useSaved from '../../hooks/useSaved';
+import { Link } from 'react-router-dom';
 
 const SearchBar = () => {
 
@@ -37,8 +38,12 @@ const SearchBar = () => {
                         <button><FaHeart></FaHeart></button>
                     </div>
                     <div className=' indicator'>
-                        <span className="indicator-item badge badge-secondary">+ {cart?.length || 0}</span>
-                        <button><FaCartArrowDown></FaCartArrowDown></button>
+                        <Link to="/myCart">
+                            <button>
+                                <span className="indicator-item badge badge-secondary">+ {cart?.length || 0}</span>
+                                <FaCartArrowDown></FaCartArrowDown>
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>

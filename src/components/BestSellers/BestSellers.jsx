@@ -15,7 +15,6 @@ const BestSellers = () => {
     const initialIndex = categories.indexOf(category);
 
     const [tabIndex, setTabIndex] = useState(initialIndex);
-    console.log(tabIndex)
 
     const [product, loading] = useProduct();
 
