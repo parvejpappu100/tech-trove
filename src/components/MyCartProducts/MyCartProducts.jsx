@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import { FaMinus, FaPlus, FaRegHeart, FaTrashAlt } from 'react-icons/fa';
 
 
-const MyCartProducts = ({ item }) => {
+const MyCartProducts = ({ item , refetch }) => {
 
-    const [isDisable , setIsDisable] = useState(true);
-    
+    const [isDisable, setIsDisable] = useState(true);
+
     const handleChangeQuantity = (event) => {
         console.log()
-        if(item.productQuantity !== parseInt(event.target.value)){
+        if (item.productQuantity !== parseInt(event.target.value)) {
             setIsDisable(false)
         }
-        else{
+        else {
             setIsDisable(true)
         }
     }
@@ -19,8 +19,22 @@ const MyCartProducts = ({ item }) => {
     const handleUpdatePrice = (event) => {
         event.preventDefault();
         const quantity = parseInt(event.target.quantity.value);
-        console.log(quantity)
-        
+        const updatedQuantity = { newQuantity: quantity }
+        fetch(`http://localhost:5000/carts/${item._id}`, {
+            method: "PUT",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(updatedQuantity)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                refetch();
+                setIsDisable(true)
+
+            })
+
     };
 
     return (
@@ -37,7 +51,7 @@ const MyCartProducts = ({ item }) => {
                     </div>
                     <form onSubmit={handleUpdatePrice} className='flex flex-col justify-between'>
                         <input onChange={handleChangeQuantity} className='border bg-gray-200 text-center w-[100px]' type="number" name="quantity" defaultValue={item.productQuantity} id="" />
-                        <input disabled={isDisable}  className='btn btn-xs normal-case bg-[#15407F] hover:bg-[#15407F] p-0 text-white font-semibold rounded-none' type="submit" value="Update Price" />
+                        <input disabled={isDisable} className='btn btn-xs normal-case bg-[#15407F] hover:bg-[#15407F] p-0 text-white font-semibold rounded-none' type="submit" value="Update Price" />
                     </form>
                 </div>
             </div>

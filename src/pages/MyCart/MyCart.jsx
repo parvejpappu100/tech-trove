@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const MyCart = () => {
 
-    const [cart] = useCart();
+    const [cart , refetch] = useCart();
 
     return (
         <div className='bg-[#F5F5F5]'>
@@ -17,7 +17,7 @@ const MyCart = () => {
                 <div>
                     <div className='max-w-4xl'>
                         {
-                           cart.length !== 0 ?  cart.map(item => <MyCartProducts key={item._id} item={item}></MyCartProducts>) : <div className='bg-[#15407F] py-3 text-white ps-5 font-semibold'>
+                           cart.length !== 0 ?  cart.map(item => <MyCartProducts key={item._id} refetch={refetch} item={item}></MyCartProducts>) : <div className='bg-[#15407F] py-3 text-white ps-5 font-semibold'>
                             <h3>Your cart is currently empty ! <Link className='text-red-500' to={`/shop/${"product"}`}>Shop Now</Link></h3>
                            </div>
                         }
