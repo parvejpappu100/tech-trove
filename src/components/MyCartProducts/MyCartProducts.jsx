@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { FaMinus, FaPlus, FaRegHeart, FaTrashAlt } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 
-const MyCartProducts = ({ item , refetch }) => {
+const MyCartProducts = ({ item, refetch }) => {
 
     const [isDisable, setIsDisable] = useState(true);
 
@@ -37,6 +38,37 @@ const MyCartProducts = ({ item , refetch }) => {
 
     };
 
+    const handleDeleteProduct = () => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                console.log("delete confirm")
+                fetch(`http://localhost:5000/carts/${item._id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        if (data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+            }
+        })
+    }
+
     return (
         <div>
             <div className='bg-white p-8 my-5'>
@@ -44,10 +76,10 @@ const MyCartProducts = ({ item , refetch }) => {
                     <img className='w-[80px] h-[80px]' src={item.image} alt="" />
                     <h4 className='font-semibold'>{item.name}</h4>
                     <div className='flex items-center flex-col  gap-3'>
-                        <p>${item.price * item.productQuantity}</p>
-                        <p className='text-red-500 font-bold'>${item.price}</p>
+                        <p className='text-yellow-400 font-bold'>${item.price * item.productQuantity}</p>
+                        <p className=' font-bold'>${item.price}</p>
                         <button><FaRegHeart></FaRegHeart></button>
-                        <button><FaTrashAlt></FaTrashAlt></button>
+                        <button onClick={handleDeleteProduct} className='text-red-500'><FaTrashAlt></FaTrashAlt></button>
                     </div>
                     <form onSubmit={handleUpdatePrice} className='flex flex-col justify-between'>
                         <input onChange={handleChangeQuantity} className='border bg-gray-200 text-center w-[100px]' type="number" name="quantity" defaultValue={item.productQuantity} id="" />

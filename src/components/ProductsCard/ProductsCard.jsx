@@ -70,7 +70,7 @@ const ProductsCard = ({ product }) => {
 
     const handleSavedProduct = () => {
         if (user && user.email) {
-            const savedItem = { productId: product._id, name: product.name, image: product.image, email: user.email, price: product.price, offer: product.offer ? product.offer : 0 }
+            const savedItem = { productId: product._id, productQuantity: 1, name: product.name, image: product.image, email: user.email, price: product.offer ? product.price - (product.price * product.offer / 100) : product.price }
             fetch("http://localhost:5000/saved", {
                 method: "POST",
                 headers: {
