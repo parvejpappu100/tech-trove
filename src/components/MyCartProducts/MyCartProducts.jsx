@@ -3,7 +3,7 @@ import { FaMinus, FaPlus, FaRegHeart, FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 
-const MyCartProducts = ({ item, refetch }) => {
+const MyCartProducts = ({ item, refetch , setDisable }) => {
 
     const [isDisable, setIsDisable] = useState(true);
     const [updating , setUpdating] = useState(false);
@@ -12,9 +12,11 @@ const MyCartProducts = ({ item, refetch }) => {
         console.log()
         if (item.productQuantity !== parseInt(event.target.value)) {
             setIsDisable(false)
+            setDisable(true)
         }
         else {
             setIsDisable(true)
+            setDisable(false)
         }
     }
 
@@ -36,6 +38,7 @@ const MyCartProducts = ({ item, refetch }) => {
                 refetch();
                 setIsDisable(true)
                 setUpdating(false)
+                setDisable(false)
 
             })
 
