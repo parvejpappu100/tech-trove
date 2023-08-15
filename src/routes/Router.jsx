@@ -10,6 +10,7 @@ import Shop from "../pages/Shop/Shop";
 import ProductDetails from "../components/ProductDetails/ProductDetails";
 import MyCart from "../pages/MyCart/MyCart";
 import Wishlist from "../pages/Wishlist/Wishlist";
+import Checkout from "../pages/Checkout/Checkout";
 
 
 const router = createBrowserRouter([
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
             {
                 path: 'wishlist',
                 element: <PrivateRoutes><Wishlist></Wishlist></PrivateRoutes>
+            },
+            {
+                path: "checkout",
+                element: <PrivateRoutes><Checkout></Checkout></PrivateRoutes>
             }
         ]
     },

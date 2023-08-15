@@ -59,6 +59,7 @@ const Navbar = () => {
                                 <li className='shop-dropdown'><Link to={`/shop/${"product"}`}>Shop</Link></li>
                                 <li className='shop-dropdown'><Link to="/myCart">My Cart</Link></li>
                                 <li className='shop-dropdown'><Link to="/wishlist">Wishlist</Link></li>
+                                <li className='shop-dropdown'><Link to="/checkout">Checkout</Link></li>
                             </ul>
                         </div>
                     </li>

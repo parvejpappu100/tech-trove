@@ -13,9 +13,9 @@ const OffersProducts = () => {
     }, [])
 
     return (
-        <div className='max-w-3xl mx-auto'>
+        <div className=''>
             <SectionTitle title={"Special Offer"}></SectionTitle>
-            <div className='grid grid-cols-1 md:grid-cols-2  gap-8'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:container  mx-auto gap-8 '>
                 {
                     offersProducts.map(offerProduct => <ProductsCard
                         key={offerProduct._id}

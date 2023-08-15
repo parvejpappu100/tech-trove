@@ -24,13 +24,13 @@
         ]
     },
     {
-        "name": "Monitor",
+        "name": "Havite Headphone",
         "image": "https://i.ibb.co/bgGL1TM/offer.png",
-        "rating": 4.5,
-        "price": 42,
-        "offer": 25,
-        "availability": "In Stock (12)",
-        "code": "L343-12",
+        "rating": 5,
+        "price": 33,
+        "offer": 12,
+        "availability": "In Stock (65)",
+        "code": "L343-87",
         "description":{
             "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
             "features":[
@@ -40,9 +40,9 @@
         "reviews": [
             {
                 "name": "Carlos Disuja",
-                "date": "21 july, 2023",
+                "date": "11 March, 2023",
                 "img": "https://i.ibb.co/ydS8hbV/collection-1-068eda16.png",
-                "rating": 4.5,
+                "rating": 5,
                 "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
             }
         ]
