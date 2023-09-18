@@ -84,6 +84,7 @@ const Checkout = () => {
                                     </label>
                                     <textarea name="message" placeholder='Message' className='p-5 border' id="" cols="30" rows="5"></textarea>
                                 </div>
+                                <input type="submit" className='btn btn-primary w-full' value="Submit" />
                             </form>
                         </div>
                     </div>

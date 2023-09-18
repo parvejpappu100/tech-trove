@@ -34,8 +34,10 @@ const SearchBar = () => {
                 </div>
                 <div className='text-3xl flex gap-5 items-center'>
                     <div className='text-[#F75298] indicator'>
-                        <span className="indicator-item indicator-start badge badge-secondary">+ {saved?.length || 0}</span>
-                        <button><FaHeart></FaHeart></button>
+                        <Link to="/wishlist">
+                            <span className="indicator-item indicator-start badge badge-secondary">+ {saved?.length || 0}</span>
+                            <button><FaHeart></FaHeart></button>
+                        </Link>
                     </div>
                     <div className=' indicator'>
                         <Link to="/myCart">
