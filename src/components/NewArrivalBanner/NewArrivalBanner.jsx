@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const NewArrivalBanner = () => {
     return (
-        <div className=' lg:container mx-auto my-24 bg-[#E3EFED] py-12 px-5'>
-            <div className='flex gap-12 md:gap-0 flex-col md:flex-row justify-around items-center'>
+        <div className='  mx-auto my-24 bg-[#E3EFED] py-12 px-5'>
+            <div className='lg:container px-4 mx-auto flex gap-12 md:gap-0 flex-col md:flex-row justify-around items-center'>
                 <div className=' w-full flex justify-center'>
                     <img src="https://i.ibb.co/ydS8hbV/collection-1-068eda16.png" alt="" />
                 </div>

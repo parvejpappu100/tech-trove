@@ -4,20 +4,19 @@ import useCart from '../../hooks/useCart';
 import CartsTotal from '../../components/CartsTotal/CartsTotal';
 import Services from '../../components/Services/Services';
 import { Helmet } from 'react-helmet-async';
+import { useForm } from 'react-hook-form';
+import usePrice from '../../hooks/usePrice';
 
 const Checkout = () => {
 
-    const [cart, refetch] = useCart();
+    const [payAblePrice ,subTotal , shipping , vat] = usePrice();
 
-    let totalPrice = 0;
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
-    for (const product of cart) {
-        const productTotal = product.price * product.productQuantity;
-        totalPrice += productTotal;
-    };
-
-    const shipping = totalPrice >= 50 ? 0 : 5;
-    const vat = totalPrice * 10 / 100;
+    const onSubmit = data => {
+        console.log(data)
+        
+    }
 
     return (
         <div>
@@ -25,43 +24,48 @@ const Checkout = () => {
                 <title>Checkout | Tech Trove</title>
             </Helmet>
             <PageTitle currentPage={"Checkout"}></PageTitle>
-            <div className='lg:container mx-auto py-16'>
+            <div className='lg:container px-4 mx-auto py-16'>
                 <div className='flex gap-10 lg:gap-0 flex-col lg:flex-row items-start'>
                     <div className='max-w-5xl w-full p-4 lg:p-0'>
                         <h3 className='font-semibold text-2xl '>Billing Details</h3>
                         <hr className='w-full my-3' />
                         <div>
-                            <form>
+                            <form onSubmit={handleSubmit(onSubmit)}>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text text-xl font-semibold">Name<span className='text-red-500'>*</span></span>
                                     </label>
-                                    <input type="text" placeholder="Name" className="input input-bordered rounded-none" />
+                                    <input type="text" placeholder="Name" {...register("name", { required: true })}  className="input input-bordered rounded-none" />
+                                    {errors.name && <span className='text-red-600'>Name is required</span>}
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text text-xl font-semibold">Email<span className='text-red-500'>*</span></span>
                                     </label>
-                                    <input type="email" placeholder="Your Email" className="input input-bordered rounded-none" />
+                                    <input type="email" placeholder="Your Email" {...register("email", { required: true })} className="input input-bordered rounded-none" />
+                                    {errors.email && <span className='text-red-600'>Email is required</span>}
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text text-xl font-semibold">Phone<span className='text-red-500'>*</span></span>
                                     </label>
-                                    <input type="number" placeholder="Phone" className="input input-bordered rounded-none" />
+                                    <input type="number" placeholder="Phone" {...register("phone", { required: true })} className="input input-bordered rounded-none" />
+                                    {errors.phone && <span className='text-red-600'>Phone is required</span>}
                                 </div>
                                 <div className='flex flex-col lg:flex-row gap-5'>
                                     <div className="form-control w-full">
                                         <label className="label">
                                             <span className="label-text text-xl font-semibold">Country<span className='text-red-500'>*</span></span>
                                         </label>
-                                        <input type="text" placeholder="Country" className="input input-bordered rounded-none" />
+                                        <input type="text" placeholder="Country" {...register("country", { required: true })} className="input input-bordered rounded-none" />
+                                        {errors.country && <span className='text-red-600'>Country is required</span>}
                                     </div>
                                     <div className="form-control w-full">
                                         <label className="label">
                                             <span className="label-text text-xl font-semibold">City/Town<span className='text-red-500'>*</span></span>
                                         </label>
-                                        <input type="text" placeholder="City" className="input input-bordered rounded-none" />
+                                        <input type="text" placeholder="City" {...register("city", { required: true })} className="input input-bordered rounded-none" />
+                                        {errors.city && <span className='text-red-600'>City is required</span>}
                                     </div>
                                 </div>
                                 <div className='flex flex-col lg:flex-row gap-5'>
@@ -69,30 +73,33 @@ const Checkout = () => {
                                         <label className="label">
                                             <span className="label-text text-xl font-semibold">Address<span className='text-red-500'>*</span></span>
                                         </label>
-                                        <input type="text" placeholder="Address" className="input input-bordered rounded-none" />
+                                        <input type="text" placeholder="Address" {...register("address", { required: true })} className="input input-bordered rounded-none" />
+                                        {errors.address && <span className='text-red-600'>Address is required</span>}
                                     </div>
                                     <div className="form-control w-full">
                                         <label className="label">
                                             <span className="label-text text-xl font-semibold">Post Code<span className='text-red-500'>*</span></span>
                                         </label>
-                                        <input type="text" placeholder="Post Code" className="input input-bordered rounded-none" />
+                                        <input type="text" placeholder="Post Code" {...register("postCode", { required: true })} className="input input-bordered rounded-none" />
+                                        {errors.postCode && <span className='text-red-600'>Post Code is required</span>}
                                     </div>
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label">
-                                        <span className="label-text text-xl font-semibold">Notes</span>
+                                        <span className="label-text text-xl font-semibold">Notes(<sup>optional</sup>)</span>
                                     </label>
-                                    <textarea name="message" placeholder='Message' className='p-5 border' id="" cols="30" rows="5"></textarea>
+                                    <textarea name="message" placeholder='Message' {...register("message", { required: false })} className='p-5 border' id="" cols="30" rows="5"></textarea>
                                 </div>
-                                <input type="submit" className='btn btn-primary w-full' value="Submit" />
+                                <input className='btn w-full bg-[#113366] hover:bg-[#292929] text-white rounded font-semibold mt-5 ' type="submit" value="Proceed To Payment" />
                             </form>
                         </div>
                     </div>
                     <div className='w-full'>
                         <CartsTotal
-                            totalPrice={totalPrice}
+                            subTotal={subTotal}
                             shipping={shipping}
                             vat={vat}
+                            payAblePrice={payAblePrice}
                         ></CartsTotal>
                     </div>
                 </div>

@@ -17,7 +17,7 @@ const SearchBar = () => {
 
     return (
         <div className='bg-[#15407F] py-2 lg:py-5 text-white '>
-            <div className='lg:container mx-auto flex flex-col lg:flex-row gap-5 lg:gap-0  justify-between items-center'>
+            <div className='lg:container px-4 mx-auto flex flex-col lg:flex-row gap-5 lg:gap-0  justify-between items-center'>
                 <div>
                     <h5 className='text-4xl font-bold hidden lg:block'>TechTrove</h5>
                 </div>
@@ -42,7 +42,7 @@ const SearchBar = () => {
                     <div className=' indicator'>
                         <Link to="/myCart">
                             <button>
-                                <span className="indicator-item badge badge-secondary">+ {cart?.length || 0}</span>
+                                <span className="indicator-item indicator-start badge badge-secondary">+ {cart?.length || 0}</span>
                                 <FaCartArrowDown></FaCartArrowDown>
                             </button>
                         </Link>

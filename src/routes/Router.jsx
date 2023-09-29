@@ -11,6 +11,7 @@ import ProductDetails from "../components/ProductDetails/ProductDetails";
 import MyCart from "../pages/MyCart/MyCart";
 import Wishlist from "../pages/Wishlist/Wishlist";
 import Checkout from "../pages/Checkout/Checkout";
+import Payment from "../pages/Payment/Payment";
 
 
 const router = createBrowserRouter([
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
             {
                 path: "checkout",
                 element: <PrivateRoutes><Checkout></Checkout></PrivateRoutes>
+            },
+            {
+                path: "payment/:data",
+                element: <PrivateRoutes><Payment></Payment></PrivateRoutes>
             }
         ]
     },

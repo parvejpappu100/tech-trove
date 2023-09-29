@@ -31,7 +31,7 @@ const HeaderInfo = () => {
 
     return (
         <div className='bg-[#113366] text-white py-2 '>
-            <div className='lg:container mx-auto flex flex-col md:flex-row md:px-4 lg:px-0 items-center justify-between '>
+            <div className='lg:container px-4 mx-auto flex flex-col md:flex-row md:px-4 lg:px-0 items-center justify-between '>
                 <div className='flex items-center gap-3 '>
                     <FaCheck></FaCheck>
                     <h4>Free shipping on all orders over 50$</h4>

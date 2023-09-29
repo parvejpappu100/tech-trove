@@ -57,7 +57,7 @@ const BestSellers = () => {
     };
 
     return (
-        <div className='lg:container mx-auto my-12'>
+        <div className='lg:container px-4 mx-auto my-12'>
             {shopPage || <SectionTitle title={"Bestsellers"}></SectionTitle>}
             <div>
                 <Tabs defaultIndex={tabIndex == -1 ? 0 : tabIndex} onSelect={(index => setTabIndex(index))}>

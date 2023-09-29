@@ -13,7 +13,7 @@ const SpecialDiscount = () => {
     }, [])
 
     return (
-        <div className='lg:container mx-auto my-20 grid grid-cols-1 md:grid-cols-2 gap-5'>
+        <div className='lg:container px-4 mx-auto my-20 grid grid-cols-1 md:grid-cols-2 gap-5'>
             {
                 products.map(product => <div key={product._id}>
                     <div className="card lg:card-side bg-[#F0E9EA] rounded-none p-5">

@@ -32,7 +32,7 @@ const Navbar = () => {
                     <h5 className='text-2xl text-[#15407F] font-bold lg:hidden'>TechTrove</h5>
                 </div>
             </div>
-            <nav className='flex items-center justify-between lg:container mx-auto pb-2 lg:pb-0 '>
+            <nav className='flex items-center justify-between lg:container px-4 mx-auto pb-2 lg:pb-0 '>
                 <div className='py-1 bg-[#113366] hidden lg:block'>
                     <select className=" select bg-[#113366]  text-white rounded-none w-full max-w-xs  focus:outline-none " value={selectedCategory} onChange={handleCategoryChange}>
                         <option disabled value="">All Categories</option>

@@ -28,7 +28,7 @@ const BannerCarousel = () => {
                 {sliders.map(slider => <SwiperSlide
                     key={slider._id}
                 >
-                    <div className='flex flex-col lg:flex-row lg:gap-10 px-4 lg:px-0 justify-between lg:container mx-auto items-center '>
+                    <div className='flex flex-col lg:flex-row lg:gap-10 px-4 lg:px-0 justify-between lg:container px-4 mx-auto items-center '>
                         <div className='w-full'>
                             <p className='text-red-500'>Big sale offer</p>
                             <h3 className='text-2xl my-3 md:my-0 lg:text-7xl font-semibold'>{slider.title}</h3>

@@ -113,7 +113,7 @@ const ProductsCard = ({ product }) => {
     return (
         <div className={` ${product.offer ? "border border-black" : "bg-white"}`}>
             <div className={`relative transition duration-1000 transform p-6 ${product.offer ? "hover:-translate-y-0" : "hover:-translate-y-2"} hover:shadow-md`}>
-                <img className='max-w-xs h-72' src={image} alt={name} />
+                <img className=' h-72' src={image} alt={name} />
                 <h4 className='text-xl font-semibold my-4'>{name}</h4>
                 <div className='flex items-center gap-2 my-1'>
                     <Rating style={{ maxWidth: 100 }} value={rating} readOnly />

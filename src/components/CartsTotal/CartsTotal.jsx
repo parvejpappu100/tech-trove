@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const CartsTotal = ({ totalPrice, shipping, vat, disable }) => {
+const CartsTotal = ({  subTotal, shipping, vat, disable , payAblePrice }) => {
 
     const location = useLocation();
 
@@ -14,7 +14,7 @@ const CartsTotal = ({ totalPrice, shipping, vat, disable }) => {
                 <hr className='my-3' />
                 <div className='flex justify-between font-bold '>
                     <h3>Subtotal</h3>
-                    <p>${totalPrice}</p>
+                    <p>${subTotal}</p>
                 </div>
                 <hr className='my-3' />
                 <div className='flex justify-between font-bold '>
@@ -29,7 +29,7 @@ const CartsTotal = ({ totalPrice, shipping, vat, disable }) => {
                 <hr className='my-3' />
                 <div className='flex justify-between font-bold '>
                     <h3>Payable Total</h3>
-                    <p>${totalPrice + shipping + vat}</p>
+                    <p>${payAblePrice}</p>
                 </div>
                 <hr className='my-3' />
                 {

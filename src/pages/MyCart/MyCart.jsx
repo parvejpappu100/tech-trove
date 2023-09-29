@@ -5,24 +5,14 @@ import MyCartProducts from '../../components/MyCartProducts/MyCartProducts';
 import { Link } from 'react-router-dom';
 import CartsTotal from '../../components/CartsTotal/CartsTotal';
 import { Helmet } from 'react-helmet-async';
+import usePrice from '../../hooks/usePrice';
 
 const MyCart = () => {
 
     const [cart, refetch] = useCart();
+    const [payAblePrice ,subTotal , shipping , vat] = usePrice();
     const [disable, setDisable] = useState(false);
 
-
-    let totalPrice = 0;
-
-    for (const product of cart) {
-        const productTotal = product.price * product.productQuantity;
-        totalPrice += productTotal;
-    };
-
-    const shipping = totalPrice >= 50 ? 0 : 5;
-    const vat = totalPrice * 10 / 100;
-
-    console.log(totalPrice)
 
     return (
         <div className='bg-[#F5F5F5]'>
@@ -30,7 +20,7 @@ const MyCart = () => {
                 <title>My Cart | Tech Trove</title>
             </Helmet>
             <PageTitle currentPage={"My Cart"}></PageTitle>
-            <div className='lg:container mx-auto py-16'>
+            <div className='lg:container px-4 mx-auto py-16'>
                 <div className='flex gap-10 lg:gap-0 flex-col lg:flex-row items-start'>
                     <div className='max-w-5xl w-full'>
                         {
@@ -41,10 +31,11 @@ const MyCart = () => {
                     </div>
                     <div className='w-full'>
                         <CartsTotal 
-                        totalPrice={totalPrice} 
+                        subTotal={subTotal} 
                         shipping={shipping}
                         vat={vat}
                         disable={disable}
+                        payAblePrice={payAblePrice}
                         ></CartsTotal>
                     </div>
                 </div>

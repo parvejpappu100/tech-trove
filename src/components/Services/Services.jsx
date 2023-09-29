@@ -3,7 +3,7 @@ import { FaDollarSign, FaHeadset, FaShippingFast, FaUnlockAlt } from 'react-icon
 
 const Services = () => {
     return (
-        <div className='lg:container mx-auto bg-white px-8 py-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
+        <div className='lg:container px-4 mx-auto bg-white px-8 py-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
             <div className='flex items-center gap-2 text-xl text-[#292929] md:border-r'>
                 <FaShippingFast className='text-5xl text-[#113366]'></FaShippingFast>
                 <h5>Free Shipping Worldwide</h5>

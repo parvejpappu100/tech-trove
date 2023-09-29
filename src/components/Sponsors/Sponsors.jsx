@@ -19,7 +19,7 @@ const Sponsors = () => {
 
     return (
         <div className='bg-[#F2F2F2] py-24'>
-            <div className='lg:container mx-auto'>
+            <div className='lg:container px-4 mx-auto'>
                 <Swiper
                     autoplay={true}
                     loop={true}
