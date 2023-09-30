@@ -6,16 +6,20 @@ import Services from '../../components/Services/Services';
 import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
 import usePrice from '../../hooks/usePrice';
+import { useNavigate } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const Checkout = () => {
 
-    const [payAblePrice ,subTotal , shipping , vat] = usePrice();
+    const [payAblePrice, subTotal, shipping, vat] = usePrice();
+    const { user } = useAuth();
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const navigate = useNavigate();
 
     const onSubmit = data => {
         console.log(data)
-        
+        navigate(`/payment`)
     }
 
     return (
@@ -35,15 +39,14 @@ const Checkout = () => {
                                     <label className="label">
                                         <span className="label-text text-xl font-semibold">Name<span className='text-red-500'>*</span></span>
                                     </label>
-                                    <input type="text" placeholder="Name" {...register("name", { required: true })}  className="input input-bordered rounded-none" />
+                                    <input type="text" placeholder="Name" {...register("name", { required: true })} className="input input-bordered rounded-none" />
                                     {errors.name && <span className='text-red-600'>Name is required</span>}
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text text-xl font-semibold">Email<span className='text-red-500'>*</span></span>
                                     </label>
-                                    <input type="email" placeholder="Your Email" {...register("email", { required: true })} className="input input-bordered rounded-none" />
-                                    {errors.email && <span className='text-red-600'>Email is required</span>}
+                                    <input type="email" defaultValue={user.email} readOnly placeholder="Your Email"  className="input input-bordered rounded-none" />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">

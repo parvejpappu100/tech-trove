@@ -60,7 +60,7 @@ const router = createBrowserRouter([
                 element: <PrivateRoutes><Checkout></Checkout></PrivateRoutes>
             },
             {
-                path: "payment/:data",
+                path: "payment",
                 element: <PrivateRoutes><Payment></Payment></PrivateRoutes>
             }
         ]

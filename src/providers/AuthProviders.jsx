@@ -45,7 +45,8 @@ const AuthProviders = ({ children }) => {
         logOut,
         createUser,
         singIn,
-        restPassword
+        restPassword,
+        setLoading
     };
 
     useEffect(() => {
