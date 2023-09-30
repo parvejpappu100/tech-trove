@@ -47,7 +47,7 @@ const SingUp = () => {
                         createUser(data.email, data.password)
                             .then(result => {
                                 const user = result.user;
-                                updateUserData(user, data.name, imgURL)
+                                updateUserData(user, data.name,imgURL, data.phone )
                                 setSingUpError("");
                                 sendVerificationEmail(user)
                                 navigate(from, { replace: true });
@@ -76,13 +76,26 @@ const SingUp = () => {
             })
     }
 
-    const updateUserData = (user, name, photoUrl) => {
+    const updateUserData = (user, name, photoUrl , phone) => {
         updateProfile(user, {
             displayName: name,
             photoURL: photoUrl
         })
             .then(() => {
+                const savedUser = { name: name, email: user.email, image: photoUrl, role: "user", phone: phone, country: "", city: "", address: "", postCode: "", message: "" };
+                fetch("http://localhost:5000/users", {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify(savedUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.insertedId) {
 
+                        }
+                    })
             })
             .catch(error => {
 
