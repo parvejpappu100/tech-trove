@@ -46,6 +46,7 @@ const AllUsers = () => {
         })
 
     };
+
     const handleMakeUser = (user) => {
         const updatedRole = { role: "user" };
         Swal.fire({
@@ -72,6 +73,36 @@ const AllUsers = () => {
                             Swal.fire(
                                 'Success!',
                                 `${user.name} is only user Now `,
+                                'success'
+                            )
+                        }
+                    })
+            }
+        })
+
+    };
+
+    const handleDeleteUser = (user) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, do it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/users/${user._id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire(
+                                'Success!',
+                                `Deleted Successful `,
                                 'success'
                             )
                         }
@@ -142,7 +173,7 @@ const AllUsers = () => {
                                         </div>
                                     </td>
                                     <td>
-                                        <button className="btn bg-red-700 duration-500 text-white hover:text-black border-none h-10 w-10 btn-xs">
+                                        <button onClick={() => handleDeleteUser(user)}  className="btn bg-red-700 duration-500 text-white hover:text-black border-none h-10 w-10 btn-xs">
                                             <FaTrashAlt></FaTrashAlt>
                                         </button>
                                     </td>
