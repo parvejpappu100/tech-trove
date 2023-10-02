@@ -1,25 +1,35 @@
 import React from 'react';
 import PageTitle from '../../components/PageTitle/PageTitle';
-import useCart from '../../hooks/useCart';
 import CartsTotal from '../../components/CartsTotal/CartsTotal';
 import Services from '../../components/Services/Services';
 import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
 import usePrice from '../../hooks/usePrice';
-import { useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import { useState } from 'react';
+import stripeLogo from "../../assets/images/stripe-logo.png";
+import paypalLogo from "../../assets/images/paypal-logo.png"
+import { Link } from 'react-router-dom';
+
 
 const Checkout = () => {
 
     const [payAblePrice, subTotal, shipping, vat] = usePrice();
-    const { user } = useAuth();
+    const { user, setAddress} = useAuth();
+    const [isDisable, setIsDisable] = useState(true);
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const navigate = useNavigate();
 
     const onSubmit = data => {
-        console.log(data)
-        navigate(`/payment`)
+        
+        if(Object.keys(errors).length == 0){
+            setIsDisable(false)
+        }
+        else{
+            setIsDisable(true)
+        }
+        const userAddress = { name: user.displayName, email: user.email, phone: data.phone, country: data.country, city: data.city, address: data.address, postCode: data.postCode, message: data.message , price: payAblePrice }
+        setAddress(userAddress);
     }
 
     return (
@@ -34,19 +44,18 @@ const Checkout = () => {
                         <h3 className='font-semibold text-2xl '>Billing Details</h3>
                         <hr className='w-full my-3' />
                         <div>
-                            <form onSubmit={handleSubmit(onSubmit)}>
+                            <form onChange={handleSubmit(onSubmit)}>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text text-xl font-semibold">Name<span className='text-red-500'>*</span></span>
                                     </label>
-                                    <input type="text" placeholder="Name" {...register("name", { required: true })} className="input input-bordered rounded-none" />
-                                    {errors.name && <span className='text-red-600'>Name is required</span>}
+                                    <input type="text" placeholder="Name" readOnly className="input input-bordered rounded-none" defaultValue={user.displayName} />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text text-xl font-semibold">Email<span className='text-red-500'>*</span></span>
                                     </label>
-                                    <input type="email" defaultValue={user.email} readOnly placeholder="Your Email"  className="input input-bordered rounded-none" />
+                                    <input type="email" defaultValue={user.email} readOnly placeholder="Your Email" className="input input-bordered rounded-none" />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
@@ -93,7 +102,6 @@ const Checkout = () => {
                                     </label>
                                     <textarea name="message" placeholder='Message' {...register("message", { required: false })} className='p-5 border' id="" cols="30" rows="5"></textarea>
                                 </div>
-                                <input className='btn w-full bg-[#113366] hover:bg-[#292929] text-white rounded font-semibold mt-5 ' type="submit" value="Proceed To Payment" />
                             </form>
                         </div>
                     </div>
@@ -104,6 +112,20 @@ const Checkout = () => {
                             vat={vat}
                             payAblePrice={payAblePrice}
                         ></CartsTotal>
+                        <div className='mt-12 bg-white p-10 max-w-[400px] mx-auto'>
+                            <h3 className='text-xl md:text-2xl lg:text-3xl font-semibold'>Payment Method</h3>
+                            <hr className='my-3' />
+                            <div className='flex gap-3 items-center'>
+                                <button disabled={isDisable} className={isDisable ? "tooltip tooltip-error tooltip-bottom" : ""} data-tip="Please fill up the form">
+                                    <img src={paypalLogo} className='w-[80px] border' alt="" />
+                                </button>
+                                <Link to={`/payment`}>
+                                    <button disabled={isDisable} className={isDisable ? "tooltip tooltip-error tooltip-bottom" : "tooltip tooltip-bottom"} data-tip={isDisable ? "Please fill up the form" : "Stripe"}>
+                                        <img src={stripeLogo} className='w-[80px] border' alt="" />
+                                    </button>
+                                </Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -15,7 +15,7 @@ const SocialLogin = () => {
         googleSingIn()
             .then(result => {
                 const user = result.user;
-                const savedUser = { name: user.displayName, email: user.email, image: user.photoURL, role: "user", phone: "", country: "", city: "", address: "", postCode: "", message: "" };
+                const savedUser = { name: user.displayName, email: user.email, image: user.photoURL, role: "user"};
                 fetch("http://localhost:5000/users", {
                     method: "POST",
                     headers: {

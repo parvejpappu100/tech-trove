@@ -12,6 +12,7 @@ import MyCart from "../pages/MyCart/MyCart";
 import Wishlist from "../pages/Wishlist/Wishlist";
 import Checkout from "../pages/Checkout/Checkout";
 import Payment from "../pages/Payment/Payment";
+import AllUsers from "../pages/AdminDashBoard/AllUsers/AllUsers";
 
 
 const router = createBrowserRouter([
@@ -62,6 +63,11 @@ const router = createBrowserRouter([
             {
                 path: "payment",
                 element: <PrivateRoutes><Payment></Payment></PrivateRoutes>
+            },
+            // * ADMIN DASHBOARD LINK :
+            {
+                path: "allUsers",
+                element: <PrivateRoutes><AllUsers></AllUsers></PrivateRoutes>
             }
         ]
     },

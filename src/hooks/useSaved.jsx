@@ -5,6 +5,7 @@ const useSaved = () => {
     const { user , loading} = useAuth();
     const { data: saved = [] , refetch: refetchSaved} = useQuery({
         queryKey: ["saved" , user?.email],
+        enabled: !loading,
         queryFn: async () => {
             const response = await fetch(`http://localhost:5000/saved?email=${user?.email}`)
             return response.json();

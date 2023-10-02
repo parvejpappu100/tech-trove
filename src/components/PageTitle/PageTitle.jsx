@@ -3,7 +3,7 @@ import React from 'react';
 const PageTitle = ({currentPage}) => {
     return (
         <div className='bg-[#F5F5F5] -mt-2'>
-            <div className='lg:container px-4 mx-auto flex justify-between items-center py-8 px-3 lg:px-0'>
+            <div className='lg:container  mx-auto flex justify-between items-center py-8 px-4'>
                 <div>
                     <h3 className='text-xl md:text-4xl font-semibold'>{currentPage}</h3>
                 </div>

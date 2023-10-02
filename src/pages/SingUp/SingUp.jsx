@@ -82,7 +82,7 @@ const SingUp = () => {
             photoURL: photoUrl
         })
             .then(() => {
-                const savedUser = { name: name, email: user.email, image: photoUrl, role: "user", phone: phone, country: "", city: "", address: "", postCode: "", message: "" };
+                const savedUser = { name: name, email: user.email, image: photoUrl, role: "user" };
                 fetch("http://localhost:5000/users", {
                     method: "POST",
                     headers: {

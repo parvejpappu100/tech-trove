@@ -14,10 +14,10 @@ const Navbar = () => {
         setSelectedCategory(event.target.value);
     };
 
-    const isAdmin = false;
+    const isAdmin = true;
 
     return (
-        <div className=' bg-white shadow lg:sticky lg:z-50 lg:top-0'>
+        <div className=' bg-white shadow lg:sticky lg:z-50 lg:top-0 px-4'>
             <div className="flex flex-row-reverse items-center justify-between lg:hidden">
                 <button onClick={() => setOpen(!open)}>
                     <span>
@@ -63,9 +63,6 @@ const Navbar = () => {
                             </ul>
                         </div>
                     </li>
-                    {isAdmin && <li>
-                        <Link className='link-hover-custom link-style' to="/dashboard">Dashboard</Link>
-                    </li>}
                     <li>
                         <Link className='link-hover-custom link-style' to="blog">Blog</Link>
                     </li>
@@ -87,6 +84,23 @@ const Navbar = () => {
                             </ul>
                         </div>
                     </li>
+                    {isAdmin && <li>
+                        <div className="dropdown dropdown-hover">
+                            <label tabIndex={0} className='link-hover-custom link-style flex items-center'><span>Dashboard</span> <FaAngleDown></FaAngleDown></label>
+                            <ul tabIndex={0} className="grid lg:grid-cols-3 dropdown-content z-50 menu shadow  bg-white lg:w-[500px]">
+                                <li><Link>Admin Home</Link></li>
+                                <li><Link>All Products</Link></li>
+                                <li><Link>Special Product</Link></li>
+                                <li><Link>Manage Sliders</Link></li>
+                                <li><Link>Discount Banner</Link></li>
+                                <li><Link>New Arrivals</Link></li>
+                                <li><Link to="/allUsers">Manage Users</Link></li>
+                                <li><Link>Order Status</Link></li>
+                                <li><Link>Manage Sponsors</Link></li>
+                                <li><Link>Blog</Link></li>
+                            </ul>
+                        </div>
+                    </li>}
                 </ul>
                 <div className='hidden lg:block'>
                     <p className='font-bold hover:text-red-600 '><span className='text-red-600'>Hotline : </span>+467247 - 94546</p>
