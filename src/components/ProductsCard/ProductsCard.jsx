@@ -8,11 +8,13 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
 import Swal from 'sweetalert2';
 import useSaved from '../../hooks/useSaved';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 
 const ProductsCard = ({ product }) => {
 
     const { name, image, rating, price } = product;
+    const [axiosSecure] = useAxiosSecure();
 
     const [showModal, setShowModal] = useState(false);
 
@@ -30,16 +32,9 @@ const ProductsCard = ({ product }) => {
     const handleAddToCart = () => {
         if (user && user.email) {
             const cartItem = { productId: product._id, productQuantity: 1, name: product.name, image: product.image, email: user.email, price: product.offer ? product.price - (product.price * product.offer / 100) : product.price }
-            fetch("http://localhost:5000/carts", {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json"
-                },
-                body: JSON.stringify(cartItem)
-            })
-                .then(res => res.json())
+            axiosSecure.post("/carts",cartItem)
                 .then(data => {
-                    if (data.insertedId) {
+                    if (data.data.insertedId) {
                         refetch();
                         Swal.fire({
                             position: 'top-end',
@@ -71,16 +66,9 @@ const ProductsCard = ({ product }) => {
     const handleSavedProduct = () => {
         if (user && user.email) {
             const savedItem = { productId: product._id, productQuantity: 1, name: product.name, image: product.image, email: user.email, price: product.offer ? product.price - (product.price * product.offer / 100) : product.price }
-            fetch("http://localhost:5000/saved", {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json"
-                },
-                body: JSON.stringify(savedItem)
-            })
-                .then(res => res.json())
+            axiosSecure.post("/saved", savedItem)
                 .then(data => {
-                    if (data.insertedId) {
+                    if (data.data.insertedId) {
                         refetchSaved();
                         Swal.fire({
                             position: 'top-end',

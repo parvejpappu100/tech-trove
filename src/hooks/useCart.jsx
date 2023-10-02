@@ -1,14 +1,18 @@
 import { useQuery } from 'react-query'
 import useAuth from './useAuth';
+import useAxiosSecure from './useAxiosSecure';
 
 const useCart = () => {
     const { user , loading} = useAuth();
+    const token = localStorage.getItem("access-token");
+    const [axiosSecure] = useAxiosSecure();
+
     const { data: cart = [] , refetch} = useQuery({
         queryKey: ["carts" , user?.email],
         enabled: !loading,
         queryFn: async () => {
-            const response = await fetch(`http://localhost:5000/carts?email=${user?.email}`)
-            return response.json();
+            const response = await axiosSecure(`/carts?email=${user?.email}`)
+            return response.data;
         }
     });
 

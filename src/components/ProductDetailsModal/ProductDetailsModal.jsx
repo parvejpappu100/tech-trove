@@ -6,10 +6,12 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
 import useCart from '../../hooks/useCart';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const ProductDetailsModal = ({ showModal, setShowModal, product, number }) => {
 
     const [quantity, setQuantity] = useState(1);
+    const [axiosSecure] = useAxiosSecure();
     const { user } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
@@ -30,16 +32,9 @@ const ProductDetailsModal = ({ showModal, setShowModal, product, number }) => {
     const handleAddToCart = () => {
         if (user && user.email) {
             const cartItem = {productId: product._id , productQuantity: quantity , name: product.name , image: product.image , email: user.email , price: product.offer ? product.price - (product.price * product.offer / 100) : product.price}
-            fetch("http://localhost:5000/carts", {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json"
-                },
-                body: JSON.stringify(cartItem)
-            })
-                .then(res => res.json())
+            axiosSecure.post("/carts", cartItem)
                 .then(data => {
-                    if (data.insertedId) {
+                    if (data.data.insertedId) {
                         refetch();
                         Swal.fire({
                             position: 'top-end',

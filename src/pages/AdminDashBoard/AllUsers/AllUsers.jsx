@@ -4,12 +4,15 @@ import { useQuery } from 'react-query';
 import { Helmet } from 'react-helmet-async';
 import { FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../../hooks/useAxiosSecure';
 
 const AllUsers = () => {
 
+    const [axiosSecure] = useAxiosSecure();
+
     const { data: users = [], refetch } = useQuery(["users"], async () => {
-        const res = await fetch("http://localhost:5000/users");
-        return res.json();
+        const res = await axiosSecure("/users");
+        return res.data;
     });
 
     const handleMakeAdmin = (user) => {
@@ -24,16 +27,9 @@ const AllUsers = () => {
             confirmButtonText: 'Yes, do it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/${user._id}`, {
-                    method: "PUT",
-                    headers: {
-                        "content-type": "application/json"
-                    },
-                    body: JSON.stringify(updatedRole)
-                })
-                    .then(res => res.json())
+                axiosSecure.put(`/users/${user._id}`, updatedRole)
                     .then(data => {
-                        if (data.modifiedCount > 0) {
+                        if (data.data.modifiedCount > 0) {
                             refetch();
                             Swal.fire(
                                 'Success!',
@@ -59,16 +55,9 @@ const AllUsers = () => {
             confirmButtonText: 'Yes, do it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/${user._id}`, {
-                    method: "PUT",
-                    headers: {
-                        "content-type": "application/json"
-                    },
-                    body: JSON.stringify(updatedRole)
-                })
-                    .then(res => res.json())
+                axiosSecure.put(`/users/${user._id}`, updatedRole)
                     .then(data => {
-                        if (data.modifiedCount > 0) {
+                        if (data.data.modifiedCount > 0) {
                             refetch();
                             Swal.fire(
                                 'Success!',
@@ -93,12 +82,9 @@ const AllUsers = () => {
             confirmButtonText: 'Yes, do it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/${user._id}`, {
-                    method: "DELETE"
-                })
-                    .then(res => res.json())
+                axiosSecure.delete(`/users/${user._id}`)
                     .then(data => {
-                        if (data.deletedCount > 0) {
+                        if (data.data.deletedCount > 0) {
                             refetch();
                             Swal.fire(
                                 'Success!',
@@ -155,7 +141,7 @@ const AllUsers = () => {
                                         {user.email}
                                     </td>
                                     <td>
-                                        <div className='flex gap-5'>
+                                        <div className='flex gap-5 items-center'>
                                             <div>
                                                 {
                                                     user.role === "admin" ? "Admin" : <button onClick={() => handleMakeAdmin(user)} className="btn normal-case btn-xs text-[12px]">
@@ -173,7 +159,7 @@ const AllUsers = () => {
                                         </div>
                                     </td>
                                     <td>
-                                        <button onClick={() => handleDeleteUser(user)}  className="btn bg-red-700 duration-500 text-white hover:text-black border-none h-10 w-10 btn-xs">
+                                        <button onClick={() => handleDeleteUser(user)} className="btn bg-red-700 duration-500 text-white hover:text-black border-none h-10 w-10 btn-xs">
                                             <FaTrashAlt></FaTrashAlt>
                                         </button>
                                     </td>

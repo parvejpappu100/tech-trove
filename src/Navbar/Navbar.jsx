@@ -4,6 +4,7 @@ import { FaAngleDown, FaBars } from 'react-icons/fa';
 import { FaXmark } from "react-icons/fa6";
 
 import { Link } from 'react-router-dom';
+import useAdmin from '../hooks/useAdmin';
 
 const Navbar = () => {
 
@@ -14,7 +15,7 @@ const Navbar = () => {
         setSelectedCategory(event.target.value);
     };
 
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
 
     return (
         <div className=' bg-white shadow lg:sticky lg:z-50 lg:top-0 px-4'>

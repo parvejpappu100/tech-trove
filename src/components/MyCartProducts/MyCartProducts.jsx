@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { FaMinus, FaPlus, FaRegHeart, FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 
 const MyCartProducts = ({ item, refetch , setDisable }) => {
 
     const [isDisable, setIsDisable] = useState(true);
     const [updating , setUpdating] = useState(false);
+    const [axiosSecure] = useAxiosSecure();
 
     const handleChangeQuantity = (event) => {
         console.log()
@@ -25,14 +27,7 @@ const MyCartProducts = ({ item, refetch , setDisable }) => {
         setUpdating(true)
         const quantity = parseInt(event.target.quantity.value);
         const updatedQuantity = { newQuantity: quantity }
-        fetch(`http://localhost:5000/carts/${item._id}`, {
-            method: "PUT",
-            headers: {
-                "content-type": "application/json"
-            },
-            body: JSON.stringify(updatedQuantity)
-        })
-            .then(res => res.json())
+        axiosSecure.put(`/carts/${item._id}`, updatedQuantity)
             .then(data => {
                 console.log(data)
                 refetch();
@@ -56,13 +51,9 @@ const MyCartProducts = ({ item, refetch , setDisable }) => {
         }).then((result) => {
             if (result.isConfirmed) {
                 console.log("delete confirm")
-                fetch(`http://localhost:5000/carts/${item._id}`, {
-                    method: "DELETE"
-                })
-                    .then(res => res.json())
+                axiosSecure.delete(`/carts/${item._id}`)
                     .then(data => {
-                        console.log(data)
-                        if (data.deletedCount > 0) {
+                        if (data.data.deletedCount > 0) {
                             refetch();
                             Swal.fire(
                                 'Deleted!',

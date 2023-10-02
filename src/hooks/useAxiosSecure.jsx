@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { useEffect } from 'react';
 import { config } from 'localforage';
+import useAuth from './useAuth';
+import { useNavigate } from 'react-router-dom';
 
 
 const axiosSecure = axios.create({
@@ -8,6 +10,9 @@ const axiosSecure = axios.create({
 });
 
 const useAxiosSecure = () => {
+
+    const { logOut } = useAuth();
+    const navigate = useNavigate();
 
     useEffect(() => {
         axiosSecure.interceptors.request.use((config) => {

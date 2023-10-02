@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form';
 import { sendEmailVerification, updateProfile } from 'firebase/auth';
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet-async';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_Token;
 const SingUp = () => {
@@ -16,6 +17,7 @@ const SingUp = () => {
     const [passError, setPassError] = useState("");
     const [singUpError, setSingUpError] = useState("");
     const { createUser } = useAuth();
+    const [axiosSecure] = useAxiosSecure();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
@@ -83,16 +85,9 @@ const SingUp = () => {
         })
             .then(() => {
                 const savedUser = { name: name, email: user.email, image: photoUrl, role: "user" };
-                fetch("http://localhost:5000/users", {
-                    method: "POST",
-                    headers: {
-                        "content-type": "application/json"
-                    },
-                    body: JSON.stringify(savedUser)
-                })
-                    .then(res => res.json())
+                axiosSecure.post("/users", savedUser)
                     .then(data => {
-                        if (data.insertedId) {
+                        if (data.data.insertedId) {
 
                         }
                     })

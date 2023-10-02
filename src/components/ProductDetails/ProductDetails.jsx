@@ -11,10 +11,12 @@ import { Helmet } from 'react-helmet-async';
 import useAuth from '../../hooks/useAuth';
 import useCart from '../../hooks/useCart';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const ProductDetails = () => {
 
     const [product, loading] = useProduct();
+    const [axiosSecure] = useAxiosSecure();
 
     const { id } = useParams();
 
@@ -46,16 +48,9 @@ const ProductDetails = () => {
     const handleAddToCart = (product) => {
         if (user && user.email) {
             const cartItem = { productId: product._id, productQuantity: quantity, name: product.name, image: product.image, email: user.email, price: product.price, offer: product.offer ? product.offer : 0 }
-            fetch("http://localhost:5000/carts", {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json"
-                },
-                body: JSON.stringify(cartItem)
-            })
-                .then(res => res.json())
+            axiosSecure.post("/carts", cartItem)
                 .then(data => {
-                    if (data.insertedId) {
+                    if (data.data.insertedId) {
                         refetch();
                         Swal.fire({
                             position: 'top-end',
