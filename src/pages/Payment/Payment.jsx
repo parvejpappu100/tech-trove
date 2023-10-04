@@ -19,9 +19,9 @@ const Payment = () => {
             </Helmet>
             <PageTitle currentPage={"Payment"}></PageTitle>
             <div className='max-w-md mx-auto my-24 px-4'>
-                {/* <Elements stripe={stripePromise}>
+                <Elements stripe={stripePromise}>
                     <CheckOutForm price={price}></CheckOutForm>
-                </Elements> */}
+                </Elements>
             </div>
         </div>
     );

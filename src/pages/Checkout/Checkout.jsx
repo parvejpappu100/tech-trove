@@ -20,7 +20,8 @@ const Checkout = () => {
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
-    const onSubmit = data => {
+    const onSubmit = (data , event) => {
+        event.preventDefault()
         
         if(Object.keys(errors).length == 0){
             setIsDisable(false)
@@ -116,11 +117,11 @@ const Checkout = () => {
                             <h3 className='text-xl md:text-2xl lg:text-3xl font-semibold'>Payment Method</h3>
                             <hr className='my-3' />
                             <div className='flex gap-3 items-center'>
-                                <button disabled={isDisable} className={isDisable ? "tooltip tooltip-error tooltip-bottom" : ""} data-tip="Please fill up the form">
+                                <button disabled={isDisable} className={isDisable ? "tooltip tooltip-error tooltip-bottom cursor-not-allowed" : ""} data-tip="Please fill up the form">
                                     <img src={paypalLogo} className='w-[80px] border' alt="" />
                                 </button>
-                                <Link to={`/payment`}>
-                                    <button disabled={isDisable} className={isDisable ? "tooltip tooltip-error tooltip-bottom" : "tooltip tooltip-bottom"} data-tip={isDisable ? "Please fill up the form" : "Stripe"}>
+                                <Link to={`/payment`} >
+                                    <button disabled={isDisable} className={isDisable ? "tooltip tooltip-error tooltip-bottom cursor-not-allowed" : "tooltip tooltip-bottom"} data-tip={isDisable ? "Please fill up the form" : "Stripe"}>
                                         <img src={stripeLogo} className='w-[80px] border' alt="" />
                                     </button>
                                 </Link>

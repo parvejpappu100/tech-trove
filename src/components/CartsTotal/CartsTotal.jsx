@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const CartsTotal = ({  subTotal, shipping, vat, disable , payAblePrice }) => {
+const CartsTotal = ({ subTotal, shipping, vat, disable, payAblePrice }) => {
 
     const location = useLocation();
 
@@ -34,11 +34,13 @@ const CartsTotal = ({  subTotal, shipping, vat, disable , payAblePrice }) => {
                 <hr className='my-3' />
                 {
                     checkoutPage == false ? <div>
-                        <Link to={"/checkout"}>
-                            <button disabled={disable} className='btn w-full bg-[#113366] hover:bg-[#292929] text-white rounded-none font-semibold'>
-                                Proceed To Checkout
+                        <div className={disable == true ? "cursor-not-allowed" : ""}>
+                            <button disabled={disable || payAblePrice <= 5} className={`btn w-full bg-[#113366] hover:bg-[#292929] text-white rounded-none font-semibold`}>
+                                <Link to={"/checkout"}>
+                                    Proceed To Checkout
+                                </Link>
                             </button>
-                        </Link>
+                        </div>
                         {disable && <p className='text-red-500 font-bold text-center'>Please update the price...</p>}
                     </div> : ""
                 }

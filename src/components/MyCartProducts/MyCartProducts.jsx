@@ -50,7 +50,6 @@ const MyCartProducts = ({ item, refetch , setDisable }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                console.log("delete confirm")
                 axiosSecure.delete(`/carts/${item._id}`)
                     .then(data => {
                         if (data.data.deletedCount > 0) {

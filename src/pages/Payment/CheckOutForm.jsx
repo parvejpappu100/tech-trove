@@ -1,31 +1,32 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
+import useAuth from '../../hooks/useAuth';
+import Swal from 'sweetalert2';
+import useCart from '../../hooks/useCart';
 
-const CheckOutForm = ({price}) => {
+const CheckOutForm = ({ price }) => {
 
+    const [axiosSecure] = useAxiosSecure();
+    const [, refetch] = useCart();
+    const { user, address } = useAuth();
     const [cardError, setCardError] = useState("");
     const [processing, setProcessing] = useState(false);
     const [clientSecret, setClientSecret] = useState("");
+    const [transactionId, setTransactionId] = useState("");
     const stripe = useStripe();
     const elements = useElements();
-    console.log(price)
-   
+    console.log(address);
+    const { name, email, phone, city, country, message, postCode, address: userAddress } = address;
 
-    // useEffect(() => {
-    //     if (price > 0) {
-    //         fetch("http://localhost:5000/create-payment-intent", {
-    //             method: "POST",
-    //             headers: {
-    //                 "content-type": "application/json"
-    //             },
-    //             body: JSON.stringify({price})
-    //         })
-    //             .then(res => res.json())
-    //             .then(data => {
-    //                 setClientSecret(data.clientSecret)
-    //             })
-    //     }
-    // }, [price])
+    useEffect(() => {
+        if (price > 5) {
+            axiosSecure.post("/create-payment-intent", { price })
+                .then(res => {
+                    setClientSecret(res.data.clientSecret)
+                })
+        }
+    }, [price, axiosSecure])
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -53,7 +54,59 @@ const CheckOutForm = ({price}) => {
 
         setProcessing(true);
 
-        
+        const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(
+            clientSecret,
+            {
+                payment_method: {
+                    card: card,
+                    billing_details: {
+                        name: user?.displayName || "unknown",
+                        email: user?.email || "anonymous"
+                    },
+                },
+            },
+        );
+
+        if (confirmError) {
+            setCardError(confirmError.message)
+        }
+
+        console.log(paymentIntent)
+        setProcessing(false)
+
+        if (paymentIntent.status === "succeeded") {
+            const transactionId = paymentIntent.id;
+            setTransactionId(transactionId);
+            const payment = {
+                email,
+                transactionId,
+                price,
+                date: new Date(),
+                name,
+                phone,
+                city,
+                country,
+                userAddress,
+                message,
+                postCode,
+                status: "Pending"
+            }
+
+            axiosSecure.post("/payments", payment)
+                .then(res => {
+                    if (res.data.insertResult.insertedId && res.data.deletedResult.deletedCount) {
+                        refetch();
+                        Swal.fire({
+                            position: 'top',
+                            icon: 'success',
+                            title: 'Payment successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                })
+        }
+
 
     }
 
@@ -85,13 +138,18 @@ const CheckOutForm = ({price}) => {
                     </div>
                 </div>
                 <button
-                    className='btn bg-[#113366] hover:bg-[#292929] text-white  font-semibold rounded disabled:bg-gray-400 disabled:cursor-not-allowed'
-                    type="submit"
+                    className={`btn bg-[#113366] hover:bg-[#292929] text-white  font-semibold rounded disabled:bg-gray-400 disabled:cursor-not-allowed ${processing == true ? "cursor-not-allowed" : ""}`}
+                    type="submit" disabled={!stripe || !clientSecret || processing}
                 >
-                    Pay
+                    {processing ? 'Processing...' : 'Pay'}
                 </button>
             </form>
             {cardError && <p className="text-red-500 font-semibold mt-4">{cardError}</p>}
+            {transactionId && (
+                <p className="text-green-500 font-semibold mt-4">
+                    Transaction complete with transactionId: {transactionId}
+                </p>
+            )}
         </div>
     );
 };

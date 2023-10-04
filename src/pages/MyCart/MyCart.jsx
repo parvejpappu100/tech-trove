@@ -10,9 +10,8 @@ import usePrice from '../../hooks/usePrice';
 const MyCart = () => {
 
     const [cart, refetch] = useCart();
-    const [payAblePrice ,subTotal , shipping , vat] = usePrice();
+    const [payAblePrice, subTotal, shipping, vat] = usePrice();
     const [disable, setDisable] = useState(false);
-
 
     return (
         <div className='bg-[#F5F5F5]'>
@@ -30,12 +29,12 @@ const MyCart = () => {
                         }
                     </div>
                     <div className='w-full'>
-                        <CartsTotal 
-                        subTotal={subTotal} 
-                        shipping={shipping}
-                        vat={vat}
-                        disable={disable}
-                        payAblePrice={payAblePrice}
+                        <CartsTotal
+                            subTotal={subTotal}
+                            shipping={shipping}
+                            vat={vat}
+                            disable={disable}
+                            payAblePrice={payAblePrice}
                         ></CartsTotal>
                     </div>
                 </div>
