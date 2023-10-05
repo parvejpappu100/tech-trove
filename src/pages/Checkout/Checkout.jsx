@@ -10,27 +10,42 @@ import { useState } from 'react';
 import stripeLogo from "../../assets/images/stripe-logo.png";
 import paypalLogo from "../../assets/images/paypal-logo.png"
 import { Link } from 'react-router-dom';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 
 const Checkout = () => {
 
     const [payAblePrice, subTotal, shipping, vat] = usePrice();
-    const { user, setAddress} = useAuth();
+    const { user } = useAuth();
     const [isDisable, setIsDisable] = useState(true);
+    const [userInfo, setUserInfo] = useState(null);
+    const [axiosSecure] = useAxiosSecure();
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
-    const onSubmit = (data , event) => {
+    const onSubmit = (data, event) => {
         event.preventDefault()
-        
-        if(Object.keys(errors).length == 0){
+
+        if (Object.keys(errors).length == 0) {
             setIsDisable(false)
         }
-        else{
+        else {
             setIsDisable(true)
         }
-        const userAddress = { name: user.displayName, email: user.email, phone: data.phone, country: data.country, city: data.city, address: data.address, postCode: data.postCode, message: data.message , price: payAblePrice }
-        setAddress(userAddress);
+        const userAddress = { name: user.displayName, email: user.email, phone: data.phone, country: data.country, city: data.city, address: data.address, postCode: data.postCode, message: data.message, price: payAblePrice }
+        setUserInfo(userAddress);
+    }
+
+    const handleUpdateUserInfo = () => {
+        const { phone, country, city, address, postCode, message, email } = userInfo;
+        const updateUserInfo = { phone, country, city, address, postCode, message, email };
+        axiosSecure.put(`/update-user-info/${user?.email}`, updateUserInfo)
+            .then(data => {
+                if (data.data.modifiedCount > 0) {
+                    alert("update successful")
+                }
+            })
+
     }
 
     return (
@@ -121,7 +136,7 @@ const Checkout = () => {
                                     <img src={paypalLogo} className='w-[80px] border' alt="" />
                                 </button>
                                 <Link to={`/payment`} >
-                                    <button disabled={isDisable} className={isDisable ? "tooltip tooltip-error tooltip-bottom cursor-not-allowed" : "tooltip tooltip-bottom"} data-tip={isDisable ? "Please fill up the form" : "Stripe"}>
+                                    <button onClick={handleUpdateUserInfo} disabled={isDisable} className={isDisable ? "tooltip tooltip-error tooltip-bottom cursor-not-allowed" : "tooltip tooltip-bottom"} data-tip={isDisable ? "Please fill up the form" : "Stripe"}>
                                         <img src={stripeLogo} className='w-[80px] border' alt="" />
                                     </button>
                                 </Link>

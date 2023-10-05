@@ -21,7 +21,6 @@ const ProductDetails = () => {
     const { id } = useParams();
 
     const productDetail = product.find(pd => pd._id == id);
-    console.log(productDetail)
 
     const productCurrentQuantity = productDetail?.availability;
     const number = parseInt(productCurrentQuantity?.split('(')[1], 10);
@@ -47,7 +46,7 @@ const ProductDetails = () => {
 
     const handleAddToCart = (product) => {
         if (user && user.email) {
-            const cartItem = { productId: product._id, productQuantity: quantity, name: product.name, image: product.image, email: user.email, price: product.price, offer: product.offer ? product.offer : 0 }
+            const cartItem = { productId: product._id, productQuantity: quantity, name: product.name, image: product.image, email: user.email, price: product.price, offer: product.offer ? product.offer : 0, availability: product.availability }
             axiosSecure.post("/carts", cartItem)
                 .then(data => {
                     if (data.data.insertedId) {

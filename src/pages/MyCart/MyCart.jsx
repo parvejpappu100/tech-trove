@@ -10,6 +10,7 @@ import usePrice from '../../hooks/usePrice';
 const MyCart = () => {
 
     const [cart, refetch] = useCart();
+    console.log(cart)
     const [payAblePrice, subTotal, shipping, vat] = usePrice();
     const [disable, setDisable] = useState(false);
 

@@ -4,20 +4,22 @@ import useAxiosSecure from '../../hooks/useAxiosSecure';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
 import useCart from '../../hooks/useCart';
+import useUserInfo from '../../hooks/useUserInfo';
 
 const CheckOutForm = ({ price }) => {
 
     const [axiosSecure] = useAxiosSecure();
-    const [, refetch] = useCart();
-    const { user, address } = useAuth();
+    const [cart, refetch] = useCart();
+    const [userInfo] = useUserInfo();
+    const { user } = useAuth();
     const [cardError, setCardError] = useState("");
     const [processing, setProcessing] = useState(false);
     const [clientSecret, setClientSecret] = useState("");
     const [transactionId, setTransactionId] = useState("");
     const stripe = useStripe();
     const elements = useElements();
-    console.log(address);
-    const { name, email, phone, city, country, message, postCode, address: userAddress } = address;
+
+    const { name, email, phone, city, country, message, postCode, address: userAddress } = userInfo;
 
     useEffect(() => {
         if (price > 5) {
@@ -89,7 +91,8 @@ const CheckOutForm = ({ price }) => {
                 userAddress,
                 message,
                 postCode,
-                status: "Pending"
+                status: "Pending",
+                cart
             }
 
             axiosSecure.post("/payments", payment)

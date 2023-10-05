@@ -31,7 +31,7 @@ const ProductsCard = ({ product }) => {
 
     const handleAddToCart = () => {
         if (user && user.email) {
-            const cartItem = { productId: product._id, productQuantity: 1, name: product.name, image: product.image, email: user.email, price: product.offer ? product.price - (product.price * product.offer / 100) : product.price }
+            const cartItem = { productId: product._id, productQuantity: 1, name: product.name, image: product.image, email: user.email, price: product.offer ? product.price - (product.price * product.offer / 100) : product.price, availability: product.availability }
             axiosSecure.post("/carts",cartItem)
                 .then(data => {
                     if (data.data.insertedId) {
@@ -65,7 +65,7 @@ const ProductsCard = ({ product }) => {
 
     const handleSavedProduct = () => {
         if (user && user.email) {
-            const savedItem = { productId: product._id, productQuantity: 1, name: product.name, image: product.image, email: user.email, price: product.offer ? product.price - (product.price * product.offer / 100) : product.price }
+            const savedItem = { productId: product._id, productQuantity: 1, name: product.name, image: product.image, email: user.email, price: product.offer ? product.price - (product.price * product.offer / 100) : product.price , availability: product.availability }
             axiosSecure.post("/saved", savedItem)
                 .then(data => {
                     if (data.data.insertedId) {

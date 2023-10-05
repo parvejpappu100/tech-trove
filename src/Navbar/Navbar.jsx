@@ -61,6 +61,7 @@ const Navbar = () => {
                                 <li className='shop-dropdown'><Link to="/myCart">My Cart</Link></li>
                                 <li className='shop-dropdown'><Link to="/wishlist">Wishlist</Link></li>
                                 <li className='shop-dropdown'><Link to="/checkout">Checkout</Link></li>
+                                <li className='shop-dropdown'><Link>My Order</Link></li>
                             </ul>
                         </div>
                     </li>
@@ -73,7 +74,7 @@ const Navbar = () => {
                     <li>
                         <div className="dropdown dropdown-hover">
                             <label tabIndex={0} className='link-hover-custom link-style flex items-center'><span>Pages</span> <FaAngleDown></FaAngleDown></label>
-                            <ul tabIndex={0} className="grid lg:grid-cols-3 lg:gap-5 dropdown-content z-50 menu shadow  bg-white lg:w-[400px]">
+                            <ul tabIndex={0} className="grid lg:grid-cols-3  dropdown-content z-50 menu shadow  bg-white lg:w-[400px]">
                                 <li><Link>About Us</Link></li>
                                 <li><Link>FAQ'S</Link></li>
                                 <li><Link>Our Team</Link></li>

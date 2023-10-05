@@ -83,12 +83,13 @@ const SingUp = () => {
             displayName: name,
             photoURL: photoUrl
         })
+        // name, email, phone, city, country, message, postCode, address: userAddress
             .then(() => {
-                const savedUser = { name: name, email: user.email, image: photoUrl, role: "user" };
+                const savedUser = { name: name, email: user.email, image: photoUrl, role: "user" , phone: phone , city: "" , country: "" , message: "" , postCode: "", address: "" };
                 axiosSecure.post("/users", savedUser)
                     .then(data => {
                         if (data.data.insertedId) {
-
+                            
                         }
                     })
             })

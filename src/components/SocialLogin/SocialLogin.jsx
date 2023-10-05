@@ -17,7 +17,8 @@ const SocialLogin = () => {
         googleSingIn()
             .then(result => {
                 const user = result.user;
-                const savedUser = { name: user.displayName, email: user.email, image: user.photoURL, role: "user"};
+                // name, email, phone, city, country, message, postCode, address: userAddress
+                const savedUser = { name: user.displayName, email: user.email, image: user.photoURL, role: "user", phone: "", city: "" , country: "", message: "", postCode: "", address: ""};
                 axiosSecure.post("/users", savedUser)
                     .then(data => {
                         if (data.data.insertedId) {
