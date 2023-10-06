@@ -15,6 +15,7 @@ import AllUsers from "../pages/AdminDashBoard/AllUsers/AllUsers";
 import AdminRoutes from "./AdminRoutes";
 import PaymentHistory from "../pages/PaymentHistory/PaymentHistory";
 import MyOrder from "../pages/MyOrder/MyOrder";
+import ManageOrders from "../pages/AdminDashBoard/ManageOrders/ManageOrders";
 
 
 const router = createBrowserRouter([
@@ -74,6 +75,10 @@ const router = createBrowserRouter([
             {
                 path: "allUsers",
                 element: <PrivateRoutes><AdminRoutes><AllUsers></AllUsers></AdminRoutes></PrivateRoutes>
+            },
+            {
+                path: "manageOrders",
+                element: <PrivateRoutes><AdminRoutes><ManageOrders></ManageOrders></AdminRoutes></PrivateRoutes>
             }
         ]
     },

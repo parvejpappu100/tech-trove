@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const MyOrder = () => {
 
-    const [paymentData, paymentRefetch] = usePayment();
+    const [paymentData] = usePayment();
 
     return (
         <div>
@@ -17,7 +17,7 @@ const MyOrder = () => {
                     paymentData.map(data => <div key={data._id}>
                         <div className='my-12 bg-white p-8'>
                             <div className='text-center'>
-                                <button className='btn'>{data.status}</button>
+                                <button className='btn  bg-[#113366] hover:bg-[#292929] text-white  font-semibold rounded disabled:bg-gray-400 cursor-not-allowed'>{data.status}</button>
                             </div>
                             <div className='grid grid-cols-2 gap-3 lg:grid-cols-3'>
                                 {data.cart.map(pd => <div className='mt-5 p-5 border' key={pd._id}>

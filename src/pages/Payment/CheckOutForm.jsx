@@ -108,7 +108,7 @@ const CheckOutForm = ({ price }) => {
                             showConfirmButton: false,
                             timer: 1500
                         })
-                        navigate("/payment-history")
+                        navigate("/myOrder")
                     }
                 })
         }
