@@ -61,7 +61,8 @@ const Navbar = () => {
                                 <li className='shop-dropdown'><Link to="/myCart">My Cart</Link></li>
                                 <li className='shop-dropdown'><Link to="/wishlist">Wishlist</Link></li>
                                 <li className='shop-dropdown'><Link to="/checkout">Checkout</Link></li>
-                                <li className='shop-dropdown'><Link>My Order</Link></li>
+                                <li className='shop-dropdown'><Link to={"/myOrder"}>My Order</Link></li>
+                                <li className='shop-dropdown'><Link to={"/payment-history"}>Payment History</Link></li>
                             </ul>
                         </div>
                     </li>

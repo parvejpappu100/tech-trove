@@ -13,6 +13,8 @@ import Checkout from "../pages/Checkout/Checkout";
 import Payment from "../pages/Payment/Payment";
 import AllUsers from "../pages/AdminDashBoard/AllUsers/AllUsers";
 import AdminRoutes from "./AdminRoutes";
+import PaymentHistory from "../pages/PaymentHistory/PaymentHistory";
+import MyOrder from "../pages/MyOrder/MyOrder";
 
 
 const router = createBrowserRouter([
@@ -59,6 +61,14 @@ const router = createBrowserRouter([
             {
                 path: "payment",
                 element: <PrivateRoutes><Payment></Payment></PrivateRoutes>
+            },
+            {
+                path: "payment-history",
+                element: <PrivateRoutes><PaymentHistory></PaymentHistory></PrivateRoutes>
+            },
+            {
+                path: "myOrder",
+                element: <MyOrder></MyOrder>
             },
             // * ADMIN DASHBOARD LINK :
             {

@@ -41,9 +41,9 @@ const Checkout = () => {
         const updateUserInfo = { phone, country, city, address, postCode, message, email };
         axiosSecure.put(`/update-user-info/${user?.email}`, updateUserInfo)
             .then(data => {
-                if (data.data.modifiedCount > 0) {
-                    alert("update successful")
-                }
+                // if (data.data.modifiedCount > 0) {
+                    
+                // }
             })
 
     }

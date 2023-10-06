@@ -5,6 +5,7 @@ import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
 import useCart from '../../hooks/useCart';
 import useUserInfo from '../../hooks/useUserInfo';
+import { useNavigate } from 'react-router-dom';
 
 const CheckOutForm = ({ price }) => {
 
@@ -16,6 +17,7 @@ const CheckOutForm = ({ price }) => {
     const [processing, setProcessing] = useState(false);
     const [clientSecret, setClientSecret] = useState("");
     const [transactionId, setTransactionId] = useState("");
+    const navigate = useNavigate();
     const stripe = useStripe();
     const elements = useElements();
 
@@ -106,6 +108,7 @@ const CheckOutForm = ({ price }) => {
                             showConfirmButton: false,
                             timer: 1500
                         })
+                        navigate("/payment-history")
                     }
                 })
         }

@@ -10,9 +10,9 @@ const MyCartProducts = ({ item, refetch, setDisable }) => {
     const [updating, setUpdating] = useState(false);
     const [axiosSecure] = useAxiosSecure();
     const [error, setError] = useState(null);
-
+    
     const productCurrentQuantity = item.availability;
-    const number = parseInt(productCurrentQuantity.split('(')[1], 10);
+    const number = parseInt(productCurrentQuantity?.split('(')[1], 10);
 
 
     const handleChangeQuantity = (event) => {
