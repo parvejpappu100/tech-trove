@@ -2,6 +2,7 @@ import React from 'react';
 import PageTitle from '../../components/PageTitle/PageTitle';
 import usePayment from '../../hooks/usePayment';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const MyOrder = () => {
 
@@ -10,6 +11,9 @@ const MyOrder = () => {
     return (
         <div>
             <PageTitle currentPage={"My Order"}></PageTitle>
+            <Helmet>
+                <title>My Order | Tech Trove</title>
+            </Helmet>
             {paymentData.length == 0 ? <div className='bg-[#15407F] max-w-[1120px] mx-auto mt-5 py-3 text-white ps-5 font-semibold'>
                 <h3>No payment history yet ! <Link className='text-red-500' to={`/myCart`}>Complete Payment</Link></h3>
             </div> : <div className='max-w-[1120px] mx-auto px-4 my-24 '>

@@ -2,13 +2,39 @@ import React from 'react';
 import { FaShoppingCart, FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import useCart from '../../hooks/useCart';
 
 const SavedProduct = ({ refetchSaved, item }) => {
 
     const [axiosSecure] = useAxiosSecure();
+    const [, refetch] = useCart();
 
-    const handleAddToCart = (item) => {
-        
+    const handleAddToCart = (productItem) => {
+
+        const item = {
+            productId: productItem.productId,
+            productQuantity: productItem.productQuantity,
+            name: productItem.name,
+            image: productItem.image,
+            email: productItem.email,
+            price: productItem.price,
+            availability: productItem.availability
+        };
+
+        axiosSecure.post("/add-saved-product", item)
+            .then(res => {
+                if (res.data.insertResult.insertedId && res.data.deletedResult.deletedCount) {
+                    refetchSaved();
+                    refetch();
+                    Swal.fire({
+                        position: 'top',
+                        icon: 'success',
+                        title: 'Product Added successfully',
+                        showConfirmButton: false,
+                        timer: 1000
+                    })
+                }
+            })
     }
 
     const handleDeleteItem = (item) => {
