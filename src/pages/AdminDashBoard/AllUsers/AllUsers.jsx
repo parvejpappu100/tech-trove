@@ -105,7 +105,7 @@ const AllUsers = () => {
             </Helmet>
             <PageTitle currentPage={"All Users"}></PageTitle>
             <div className='max-w-[1120px] mx-auto my-24 px-4'>
-                <h3 className='text-2xl font-semibold'>Total Users : {users.length}</h3>
+                <h3 className='text-2xl font-semibold'>Total Users : {users?.length}</h3>
                 <div className="overflow-x-auto w-full  mt-12">
                     <table className="table w-full">
                         {/* head */}

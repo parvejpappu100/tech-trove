@@ -17,7 +17,10 @@ const MyOrder = () => {
                     paymentData.map(data => <div key={data._id}>
                         <div className='my-12 bg-white p-8'>
                             <div className='text-center'>
-                                <button className='btn  bg-[#113366] hover:bg-[#292929] text-white  font-semibold rounded disabled:bg-gray-400 cursor-not-allowed'>{data.status}</button>
+                                <button className='btn normal-case bg-[#113366] hover:bg-[#292929] text-white  font-semibold rounded disabled:bg-gray-400 cursor-not-allowed'>{data.status}</button>
+                                {data.status == "Pending" ? <p className='text-red-500 font-bold my-2'>Order is pending...</p> : ""}
+                                {data.status == "Processing" ? <p className='text-red-500 font-bold my-2'>Order is processing...</p> : ""}
+                                {data.status == "Delivered" ? <p className='text-green-500 font-bold my-2'>Order Delivered.</p> : ""}
                             </div>
                             <div className='grid grid-cols-2 gap-3 lg:grid-cols-3'>
                                 {data.cart.map(pd => <div className='mt-5 p-5 border' key={pd._id}>
