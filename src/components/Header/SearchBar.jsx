@@ -32,7 +32,10 @@ const SearchBar = () => {
                         <input type="text" placeholder="Type here" className="input input-bordered w-full rounded-none text-black" />
                     </div>
                 </div>
-                <div className='text-3xl flex gap-5 items-center'>
+                <div className='hidden lg:block'>
+                    <p className=' font-semibold hover:text-red-500 duration-500'>Hot Line : <span className='text-red-500'>+5345 345432</span></p>
+                </div>
+                <div className='text-3xl flex gap-5 items-center lg:hidden'>
                     <div className='text-[#F75298] indicator'>
                         <Link to="/wishlist">
                             <span className="indicator-item indicator-start badge badge-secondary">+ {saved?.length || 0}</span>

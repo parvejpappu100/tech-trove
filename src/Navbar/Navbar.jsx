@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import "./Navbar.css"
-import { FaAngleDown, FaBars } from 'react-icons/fa';
+import { FaAngleDown, FaBars, FaCartArrowDown, FaHeart } from 'react-icons/fa';
 import { FaXmark } from "react-icons/fa6";
 
 import { Link } from 'react-router-dom';
 import useAdmin from '../hooks/useAdmin';
+import useCart from '../hooks/useCart';
+import useSaved from '../hooks/useSaved';
 
 const Navbar = () => {
 
     const [open, setOpen] = useState(false);
-    const [selectedCategory, setSelectedCategory] = useState('');
-
-    const handleCategoryChange = event => {
-        setSelectedCategory(event.target.value);
-    };
+    const [cart] = useCart();
+    const [saved] = useSaved();
 
     const [isAdmin] = useAdmin();
 
@@ -34,20 +33,19 @@ const Navbar = () => {
                 </div>
             </div>
             <nav className='flex items-center justify-between lg:container px-4 mx-auto pb-2 lg:pb-0 '>
-                <div className='py-1 bg-[#113366] hidden lg:block'>
-                    <select className=" select bg-[#113366]  text-white rounded-none w-full max-w-xs  focus:outline-none " value={selectedCategory} onChange={handleCategoryChange}>
-                        <option disabled value="">All Categories</option>
-                        <option value="c">Cameras</option>
-                        <option value="e">Electronics</option>
-                        <option value="a">Audio</option>
-                        <option value="co">Computers</option>
-                        <option value="ac">Accessories</option>
-                        <option value="l">Laptop</option>
-                        <option value="w">Watches</option>
-                        <option value="m">Mobile</option>
-                        <option value="h">Headphone</option>
-                    </select>
-
+                <div className="dropdown hidden lg:block">
+                    <label tabIndex={0} className="btn normal-case  border-none rounded-none text-white lg:px-8 hover:bg-[#113366]  duration-500 bg-[#113366]">Categories <FaAngleDown></FaAngleDown></label>
+                    <ul tabIndex={0} className="dropdown-content z-40 font-semibold menu p-2 shadow bg-base-100 w-52">
+                        <li><Link to="/shop/Cameras">Cameras</Link></li>
+                        <li><Link to="/shop/Electronics">Electronics</Link></li>
+                        <li><Link to={"/shop/Audio"}>Audio</Link></li>
+                        <li><Link to={"/shop/Computers"}>Computers</Link></li>
+                        <li><Link to={"/shop/Accessories"}>Accessories</Link></li>
+                        <li><Link to={"/shop/Laptop"}>Laptop</Link></li>
+                        <li><Link to={"/shop/Watches"}>Watches</Link></li>
+                        <li><Link to={"/shop/Mobile"}>Mobile</Link></li>
+                        <li><Link to={"/shop/Headphone"}>Headphone</Link></li>
+                    </ul>
                 </div>
                 <ul className={`z-50 rounded-bl-md lg:flex justify-center items-center text-xl absolute lg:static duration-500 ${open ? `top-[270px] md:top-[247px] right-0 w-40 duration-[1s]` : `-top-[400px] right-0 duration-[1s] w-40`} font-semibold text-xl bg-white text-black space-y-5 lg:space-y-0 py-4 lg:py-0 `}>
                     <li>
@@ -106,7 +104,22 @@ const Navbar = () => {
                     </li>}
                 </ul>
                 <div className='hidden lg:block'>
-                    <p className='font-bold hover:text-red-600 '><span className='text-red-600'>Hotline : </span>+467247 - 94546</p>
+                    <div className='text-3xl flex gap-5 items-center'>
+                        <div className='text-[#F75298] indicator'>
+                            <Link to="/wishlist">
+                                <span className="indicator-item indicator-start badge badge-secondary">+ {saved?.length || 0}</span>
+                                <button><FaHeart></FaHeart></button>
+                            </Link>
+                        </div>
+                        <div className=' indicator'>
+                            <Link to="/myCart">
+                                <button>
+                                    <span className="indicator-item indicator-start badge badge-secondary">+ {cart?.length || 0}</span>
+                                    <FaCartArrowDown></FaCartArrowDown>
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </nav>
         </div>
