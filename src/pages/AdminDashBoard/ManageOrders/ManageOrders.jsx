@@ -3,6 +3,7 @@ import PageTitle from '../../../components/PageTitle/PageTitle';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useQuery } from 'react-query';
 import ManageOrderProducts from '../ManageOrderProducts/ManageOrderProducts';
+import { Helmet } from 'react-helmet-async';
 
 const ManageOrders = () => {
 
@@ -13,11 +14,12 @@ const ManageOrders = () => {
         return res.data;
     });
 
-    console.log(usersPaymentData)
-
     return (
         <div>
             <PageTitle currentPage={"Manage Orders"}></PageTitle>
+            <Helmet>
+                <title>Manage Orders | Tech Trove</title>
+            </Helmet>
             {usersPaymentData.length == 0 ? <div className='bg-[#15407F] max-w-[1120px] mx-auto mt-5 py-3 text-white ps-5 font-semibold'>
                 <h3>No orders data yet !</h3>
             </div> : <div className='max-w-[1120px] mx-auto px-4 my-24 '>

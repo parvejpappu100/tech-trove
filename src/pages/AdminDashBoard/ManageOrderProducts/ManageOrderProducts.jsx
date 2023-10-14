@@ -1,13 +1,12 @@
 import React from 'react';
-import { useState } from 'react';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
 
 const ManageOrderProducts = ({ data, refetch }) => {
 
     const [axiosSecure] = useAxiosSecure();
-    const [isProcessing, setIsProcessing] = useState(false);
-    const [isDelivered, setIsDelivered] = useState(false);
+    const isProcessing = data.status == "Processing";
+    const isDelivered = data.status == "Delivered";
 
     const handleProcessing = () => {
         const updateStatus = { status: "Processing" };
@@ -25,7 +24,6 @@ const ManageOrderProducts = ({ data, refetch }) => {
                     .then(data => {
                         if (data.data.modifiedCount > 0) {
                             refetch();
-                            setIsProcessing(true);
                             Swal.fire(
                                 'Success!',
                                 `Order Delivered `,
@@ -53,8 +51,6 @@ const ManageOrderProducts = ({ data, refetch }) => {
                     .then(data => {
                         if (data.data.modifiedCount > 0) {
                             refetch();
-                            setIsDelivered(true);
-                            setIsProcessing(true)
                             Swal.fire(
                                 'Success!',
                                 `Order is processing `,
@@ -70,7 +66,7 @@ const ManageOrderProducts = ({ data, refetch }) => {
         <div className='my-12 bg-white p-8'>
             <div className='text-center'>
                 <button disabled={true} className='btn  bg-[#113366] hover:bg-[#292929] text-white  font-semibold rounded disabled:bg-gray-400'>Pending</button>
-                <button disabled={isProcessing} onClick={handleProcessing} className='btn  bg-[#113366] hover:bg-[#292929] text-white  font-semibold rounded disabled:bg-gray-400 mx-3'>Processing...</button>
+                <button disabled={isProcessing || isDelivered} onClick={handleProcessing} className='btn  bg-[#113366] hover:bg-[#292929] text-white  font-semibold rounded disabled:bg-gray-400 mx-3'>Processing...</button>
                 <button disabled={isDelivered} onClick={handleDelivered} className='btn  bg-[#113366] hover:bg-[#292929] text-white  font-semibold rounded disabled:bg-gray-400'>Delivered</button>
                 {data.status == "Pending" ? <p className='text-red-500 font-bold my-2'>Order is pending...</p> : "" }
                 {data.status == "Processing" ? <p className='text-red-500 font-bold my-2'>Order is processing...</p> : "" }
@@ -87,7 +83,7 @@ const ManageOrderProducts = ({ data, refetch }) => {
                 <h3 className='font-semibold'>Message :  {data.message ? data.message : "No Message"}</h3>
             </div>
             <div className='grid grid-cols-2 gap-3 lg:grid-cols-3'>
-                {data.cart.map(pd => <div className='mt-5 p-5 border' key={pd._id}>
+                {data?.cart?.map(pd => <div className='mt-5 p-5 border' key={pd._id}>
                     <div className='flex flex-col md:flex-row gap-5 mb-12 md:mb-0 md:gap-0 justify-between'>
                         <img className='w-[80px] h-[80px] border' src={pd.image} alt="" />
                         <div>

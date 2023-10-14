@@ -82,7 +82,7 @@ const Navbar = () => {
                                 <li><Link to="/login">Login</Link></li>
                                 <li><Link to="/singUp">Register</Link></li>
                                 <li><Link>My Account</Link></li>
-                                <li><Link>404 Error</Link></li>
+                                <li><Link to={"/404"}>404 Error</Link></li>
                                 <li><Link>Coming Soon</Link></li>
                             </ul>
                         </div>

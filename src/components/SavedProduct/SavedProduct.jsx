@@ -3,14 +3,16 @@ import { FaShoppingCart, FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import useCart from '../../hooks/useCart';
+import { useState } from 'react';
 
 const SavedProduct = ({ refetchSaved, item }) => {
 
     const [axiosSecure] = useAxiosSecure();
     const [, refetch] = useCart();
+    const [isDisable, setDisable] = useState(false);
 
     const handleAddToCart = (productItem) => {
-
+        setDisable(true);
         const item = {
             productId: productItem.productId,
             productQuantity: productItem.productQuantity,
@@ -26,6 +28,7 @@ const SavedProduct = ({ refetchSaved, item }) => {
                 if (res.data.insertResult.insertedId && res.data.deletedResult.deletedCount) {
                     refetchSaved();
                     refetch();
+                    setDisable(false)
                     Swal.fire({
                         position: 'top',
                         icon: 'success',
@@ -48,9 +51,11 @@ const SavedProduct = ({ refetchSaved, item }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
+                setDisable(true);
                 axiosSecure.delete(`/saved-delete/${item._id}`)
                     .then(data => {
                         if (data.data.deletedCount > 0) {
+                            setDisable(false);
                             refetchSaved();
                             Swal.fire(
                                 'Deleted!',
@@ -70,7 +75,7 @@ const SavedProduct = ({ refetchSaved, item }) => {
             <h5 className='text-xl font-semibold'>{item.availability}</h5>
             <p className='my-2 text-xl font-semibold'>Price : ${item.price}</p>
             <div className='flex justify-between'>
-                <button onClick={() => handleAddToCart(item)} className='btn'>
+                <button disabled={isDisable} onClick={() => handleAddToCart(item)} className={`btn `}>
                     <FaShoppingCart></FaShoppingCart>
                     <span>Add To Cart</span>
                 </button>

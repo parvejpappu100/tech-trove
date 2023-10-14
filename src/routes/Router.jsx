@@ -16,12 +16,14 @@ import AdminRoutes from "./AdminRoutes";
 import PaymentHistory from "../pages/PaymentHistory/PaymentHistory";
 import MyOrder from "../pages/MyOrder/MyOrder";
 import ManageOrders from "../pages/AdminDashBoard/ManageOrders/ManageOrders";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
@@ -69,7 +71,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "myOrder",
-                element: <MyOrder></MyOrder>
+                element: <PrivateRoutes><MyOrder></MyOrder></PrivateRoutes>
             },
             // * ADMIN DASHBOARD LINK :
             {
