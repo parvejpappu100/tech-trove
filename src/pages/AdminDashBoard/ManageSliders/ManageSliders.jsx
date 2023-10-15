@@ -4,6 +4,7 @@ import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const ManageSliders = () => {
 
@@ -15,7 +16,29 @@ const ManageSliders = () => {
     });
 
     const handleDelete = (slider) => {
-        console.log(slider._id)
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, do it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axiosSecure.delete(`/deleteSlider/${slider._id}`)
+                    .then(data => {
+                        if (data.data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire(
+                                'Success!',
+                                `Deleted Successful `,
+                                'success'
+                            )
+                        }
+                    })
+            }
+        })
     }
 
     return (
@@ -26,6 +49,9 @@ const ManageSliders = () => {
                     <Link to="/addSlider">
                         <button className='btn  bg-[#113366] border-none rounded-none text-white lg:px-8 hover:bg-[#15407F] hover:text-white normal-case duration-500'>Add New Slider</button>
                     </Link>
+                </div>
+                <div>
+                    <h3 className='text-2xl font-semibold'>Total Slider : {sliders.length}</h3>
                 </div>
                 <div>
                     {
