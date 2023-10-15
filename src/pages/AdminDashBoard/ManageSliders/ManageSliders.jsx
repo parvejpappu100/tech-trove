@@ -64,7 +64,9 @@ const ManageSliders = () => {
                                 <h5 className='text-xl font-semibold my-3'>Category :  {slider.category}</h5>
                                 <p>{slider.details}</p>
                                 <div className='flex gap-5 mt-8'>
-                                    <button className='btn  bg-[#113366] border-none rounded-none text-white lg:px-8 hover:bg-[#15407F] hover:text-white  duration-500'>Update <FaEdit></FaEdit></button>
+                                    <Link to={`/updateSlider/${slider._id}`}>
+                                        <button className='btn  bg-[#113366] border-none rounded-none text-white lg:px-8 hover:bg-[#15407F] hover:text-white  duration-500'>Update <FaEdit></FaEdit></button>
+                                    </Link>
                                     <button onClick={() => handleDelete(slider)} className='btn  bg-[#113366] border-none rounded-none text-white lg:px-8 hover:bg-red-700 hover:text-white  duration-500'>Delete <FaTrashAlt></FaTrashAlt></button>
                                 </div>
                             </div>

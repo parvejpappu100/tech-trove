@@ -19,6 +19,7 @@ import ManageOrders from "../pages/AdminDashBoard/ManageOrders/ManageOrders";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import ManageSliders from "../pages/AdminDashBoard/ManageSliders/ManageSliders";
 import AddNewSlider from "../pages/AdminDashBoard/AddNewSlider/AddNewSlider";
+import UpdateSlider from "../pages/AdminDashBoard/UpdateSlider/UpdateSlider";
 
 
 const router = createBrowserRouter([
@@ -91,6 +92,10 @@ const router = createBrowserRouter([
             {
                 path: "addSlider",
                 element: <PrivateRoutes><AdminRoutes><AddNewSlider></AddNewSlider></AdminRoutes></PrivateRoutes>
+            },
+            {
+                path: "updateSlider/:id",
+                element: <PrivateRoutes><AdminRoutes><UpdateSlider></UpdateSlider></AdminRoutes></PrivateRoutes>
             }
         ]
     },
