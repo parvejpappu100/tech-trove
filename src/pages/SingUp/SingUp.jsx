@@ -16,6 +16,7 @@ const SingUp = () => {
     const [checked, setChecked] = useState(false);
     const [passError, setPassError] = useState("");
     const [singUpError, setSingUpError] = useState("");
+    const [isDisable, setIsDisable] = useState(false);
     const { createUser } = useAuth();
     const [axiosSecure] = useAxiosSecure();
     const navigate = useNavigate();
@@ -30,7 +31,7 @@ const SingUp = () => {
     const image_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
 
     const onSubmit = data => {
-        console.log(data);
+        setIsDisable(true);
 
         if (data.password === data.confirmPassword) {
             setPassError("");
@@ -49,14 +50,16 @@ const SingUp = () => {
                         createUser(data.email, data.password)
                             .then(result => {
                                 const user = result.user;
-                                updateUserData(user, data.name,imgURL, data.phone )
+                                updateUserData(user, data.name, imgURL, data.phone)
                                 setSingUpError("");
                                 sendVerificationEmail(user)
                                 navigate(from, { replace: true });
                                 reset();
+                                setIsDisable(false);
                             })
                             .catch(error => {
-                                setSingUpError(error.message)
+                                setSingUpError(error.message);
+                                setIsDisable(false);
                             })
                     }
                 })
@@ -64,6 +67,7 @@ const SingUp = () => {
         }
         else {
             setPassError("Password dose not match . Please provide same password");
+            setIsDisable(false)
             return;
         }
     };
@@ -78,18 +82,18 @@ const SingUp = () => {
             })
     }
 
-    const updateUserData = (user, name, photoUrl , phone) => {
+    const updateUserData = (user, name, photoUrl, phone) => {
         updateProfile(user, {
             displayName: name,
             photoURL: photoUrl
         })
-        // name, email, phone, city, country, message, postCode, address: userAddress
+            // name, email, phone, city, country, message, postCode, address: userAddress
             .then(() => {
-                const savedUser = { name: name, email: user.email, image: photoUrl, role: "user" , phone: phone , city: "" , country: "" , message: "" , postCode: "", address: "" };
+                const savedUser = { name: name, email: user.email, image: photoUrl, role: "user", phone: phone, city: "", country: "", message: "", postCode: "", address: "" };
                 axiosSecure.post("/users", savedUser)
                     .then(data => {
                         if (data.data.insertedId) {
-                            
+
                         }
                     })
             })
@@ -161,7 +165,7 @@ const SingUp = () => {
                                     {errors.image && <span className='text-red-600'>Image is required</span>}
                                 </div>
                                 <div className="form-control mt-6">
-                                    <input className='bg-[#113366] text-white font-semibold py-3 rounded cursor-pointer hover:bg-[#ED1D24] duration-700' type="submit" value="Sing Up" />
+                                    <input disabled={isDisable} className='bg-[#113366] text-white font-semibold py-3 rounded cursor-pointer hover:bg-[#ED1D24] duration-700 disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-400' type="submit" value="Sing Up" />
                                 </div>
                             </form>
                             <p className="text-red-400 text-center font-semibold my-3">{singUpError}</p>

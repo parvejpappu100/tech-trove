@@ -17,6 +17,8 @@ import PaymentHistory from "../pages/PaymentHistory/PaymentHistory";
 import MyOrder from "../pages/MyOrder/MyOrder";
 import ManageOrders from "../pages/AdminDashBoard/ManageOrders/ManageOrders";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
+import ManageSliders from "../pages/AdminDashBoard/ManageSliders/ManageSliders";
+import AddNewSlider from "../pages/AdminDashBoard/AddNewSlider/AddNewSlider";
 
 
 const router = createBrowserRouter([
@@ -81,6 +83,14 @@ const router = createBrowserRouter([
             {
                 path: "manageOrders",
                 element: <PrivateRoutes><AdminRoutes><ManageOrders></ManageOrders></AdminRoutes></PrivateRoutes>
+            },
+            {
+                path: "sliders",
+                element: <PrivateRoutes><AdminRoutes><ManageSliders></ManageSliders></AdminRoutes></PrivateRoutes>
+            },
+            {
+                path: "addSlider",
+                element: <PrivateRoutes><AdminRoutes><AddNewSlider></AddNewSlider></AdminRoutes></PrivateRoutes>
             }
         ]
     },

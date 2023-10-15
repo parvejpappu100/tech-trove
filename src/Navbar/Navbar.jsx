@@ -92,7 +92,7 @@ const Navbar = () => {
                                 <li><Link>Admin Home</Link></li>
                                 <li><Link to={"/manageOrders"}>Manage Orders</Link></li>
                                 <li><Link>All Products</Link></li>
-                                <li><Link>Manage Sliders</Link></li>
+                                <li><Link to="/sliders">Manage Sliders</Link></li>
                                 <li><Link>Discount Banner</Link></li>
                                 <li><Link>New Arrivals</Link></li>
                                 <li><Link to="/allUsers">Manage Users</Link></li>
