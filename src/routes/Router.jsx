@@ -20,6 +20,8 @@ import ErrorPage from "../components/ErrorPage/ErrorPage";
 import ManageSliders from "../pages/AdminDashBoard/ManageSliders/ManageSliders";
 import AddNewSlider from "../pages/AdminDashBoard/AddNewSlider/AddNewSlider";
 import UpdateSlider from "../pages/AdminDashBoard/UpdateSlider/UpdateSlider";
+import AdminHome from "../pages/AdminDashBoard/AdmimHome/AdminHome";
+import ManageSponsors from "../pages/AdminDashBoard/ManageSponsors/ManageSponsors";
 
 
 const router = createBrowserRouter([
@@ -96,6 +98,14 @@ const router = createBrowserRouter([
             {
                 path: "updateSlider/:id",
                 element: <PrivateRoutes><AdminRoutes><UpdateSlider></UpdateSlider></AdminRoutes></PrivateRoutes>
+            },
+            {
+                path: "adminHome",
+                element: <PrivateRoutes><AdminRoutes><AdminHome></AdminHome></AdminRoutes></PrivateRoutes>
+            },
+            {
+                path: "manageSponsor",
+                element: <PrivateRoutes><AdminRoutes><ManageSponsors></ManageSponsors></AdminRoutes></PrivateRoutes>
             }
         ]
     },

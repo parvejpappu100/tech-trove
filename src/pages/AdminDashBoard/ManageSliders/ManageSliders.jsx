@@ -5,6 +5,7 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const ManageSliders = () => {
 
@@ -43,6 +44,9 @@ const ManageSliders = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Manage Sliders | Tech Trove</title>
+            </Helmet>
             <PageTitle currentPage={"Manage Slider"}></PageTitle>
             <div className='max-w-[1120px] mx-auto px-4 my-24'>
                 <div className='text-center mb-12'>
@@ -67,7 +71,7 @@ const ManageSliders = () => {
                                     <Link to={`/updateSlider/${slider._id}`}>
                                         <button className='btn  bg-[#113366] border-none rounded-none text-white lg:px-8 hover:bg-[#15407F] hover:text-white  duration-500'>Update <FaEdit></FaEdit></button>
                                     </Link>
-                                    <button onClick={() => handleDelete(slider)} className='btn  bg-[#113366] border-none rounded-none text-white lg:px-8 hover:bg-red-700 hover:text-white  duration-500'>Delete <FaTrashAlt></FaTrashAlt></button>
+                                    <button onClick={() => handleDelete(slider)} className='btn  hover:bg-[#113366] border-none rounded-none text-white lg:px-8 bg-red-700 hover:text-white  duration-500'>Delete <FaTrashAlt></FaTrashAlt></button>
                                 </div>
                             </div>
                         </div>)

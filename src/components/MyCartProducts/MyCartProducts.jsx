@@ -66,7 +66,7 @@ const MyCartProducts = ({ item, refetch, setDisable }) => {
 
     const handleSavedProduct = (item) => {
         if (user && user.email) {
-            const savedItem = { productId: item.productId, productQuantity: item.productQuantity, name: item.name, image: item.image, email: user.email, price: item.price, availability: item.availability }
+            const savedItem = { productId: item.productId, productQuantity: item.productQuantity, name: item.name, image: item.image, email: user.email, price: item.price, availability: item.availability , category: item.category }
             axiosSecure.post("/saved", savedItem)
                 .then(data => {
                     if (data.data.insertedId) {

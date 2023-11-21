@@ -89,7 +89,7 @@ const Navbar = () => {
                         <div className="dropdown dropdown-hover">
                             <label tabIndex={0} className='link-hover-custom link-style flex items-center'><span>Dashboard</span> <FaAngleDown></FaAngleDown></label>
                             <ul tabIndex={0} className="grid lg:grid-cols-3 dropdown-content z-50 menu shadow  bg-white lg:w-[500px]">
-                                <li><Link>Admin Home</Link></li>
+                                <li><Link to={"/adminHome"}>Admin Home</Link></li>
                                 <li><Link to={"/manageOrders"}>Manage Orders</Link></li>
                                 <li><Link>All Products</Link></li>
                                 <li><Link to="/sliders">Manage Sliders</Link></li>
@@ -97,7 +97,7 @@ const Navbar = () => {
                                 <li><Link>New Arrivals</Link></li>
                                 <li><Link to="/allUsers">Manage Users</Link></li>
                                 <li><Link>Special Product</Link></li>
-                                <li><Link>Manage Sponsors</Link></li>
+                                <li><Link to={"manageSponsor"}>Manage Sponsors</Link></li>
                                 <li><Link>Blog</Link></li>
                             </ul>
                         </div>

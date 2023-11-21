@@ -27,11 +27,10 @@ const ProductsCard = ({ product }) => {
     const [, refetch] = useCart();
     const [saved, refetchSaved] = useSaved();
     const savedProduct = saved.find(sp => sp.productId == product._id);
-    
 
     const handleAddToCart = () => {
         if (user && user.email) {
-            const cartItem = { productId: product._id, productQuantity: 1, name: product.name, image: product.image, email: user.email, price: product.offer ? product.price - (product.price * product.offer / 100) : product.price, availability: product.availability }
+            const cartItem = { productId: product._id, productQuantity: 1, name: product.name, image: product.image, email: user.email, price: product.offer ? product.price - (product.price * product.offer / 100) : product.price, availability: product.availability , category: product.category }
             axiosSecure.post("/carts",cartItem)
                 .then(data => {
                     if (data.data.insertedId) {
@@ -65,7 +64,7 @@ const ProductsCard = ({ product }) => {
 
     const handleSavedProduct = () => {
         if (user && user.email) {
-            const savedItem = { productId: product._id, productQuantity: 1, name: product.name, image: product.image, email: user.email, price: product.offer ? product.price - (product.price * product.offer / 100) : product.price , availability: product.availability }
+            const savedItem = { productId: product._id, productQuantity: 1, name: product.name, image: product.image, email: user.email, price: product.offer ? product.price - (product.price * product.offer / 100) : product.price , availability: product.availability, category: product.category }
             axiosSecure.post("/saved", savedItem)
                 .then(data => {
                     if (data.data.insertedId) {

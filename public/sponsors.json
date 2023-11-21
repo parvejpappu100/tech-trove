@@ -1,24 +1,30 @@
 [
-    
-    {
-        "img": "https://i.ibb.co/7yGknvL/figma.png"
-    },
-    {
-        "img": "https://i.ibb.co/6r0SStb/google.png"
-    },
-    {
-        "img": "https://i.ibb.co/GCB9tf9/spotify.png"
-    },
-    {
-        "img": "https://i.ibb.co/PhZBpq2/telerama.png"
-    },
-    {
-        "img": "https://i.ibb.co/7yGknvL/figma.png"
-    },
-    {
-        "img": "https://i.ibb.co/4s3x5XX/amazon.png"
-    },
-    {
-        "img": "https://i.ibb.co/GCB9tf9/spotify.png"
-    }
+  {
+    "title": "Figma",
+    "img": "https://i.ibb.co/7yGknvL/figma.png"
+  },
+  {
+    "title": "Google",
+    "img": "https://i.ibb.co/6r0SStb/google.png"
+  },
+  {
+    "title": "Spotify",
+    "img": "https://i.ibb.co/GCB9tf9/spotify.png"
+  },
+  {
+    "title": "Telegram",
+    "img": "https://i.ibb.co/PhZBpq2/telerama.png"
+  },
+  {
+    "title": "Figma",
+    "img": "https://i.ibb.co/7yGknvL/figma.png"
+  },
+  {
+    "title": "Amazon",
+    "img": "https://i.ibb.co/4s3x5XX/amazon.png"
+  },
+  {
+    "title": "Spotify",
+    "img": "https://i.ibb.co/GCB9tf9/spotify.png"
+  }
 ]

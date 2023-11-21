@@ -11,6 +11,7 @@ const CheckOutForm = ({ price }) => {
 
     const [axiosSecure] = useAxiosSecure();
     const [cart, refetch] = useCart();
+    console.log(cart)
     const [userInfo] = useUserInfo();
     const { user } = useAuth();
     const [cardError, setCardError] = useState("");

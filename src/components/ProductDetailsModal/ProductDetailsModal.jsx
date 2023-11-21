@@ -31,7 +31,7 @@ const ProductDetailsModal = ({ showModal, setShowModal, product, number }) => {
 
     const handleAddToCart = () => {
         if (user && user.email) {
-            const cartItem = {productId: product._id , productQuantity: quantity , name: product.name , image: product.image , email: user.email , price: product.offer ? product.price - (product.price * product.offer / 100) : product.price , availability: product.availability}
+            const cartItem = {productId: product._id , productQuantity: quantity , name: product.name , image: product.image , email: user.email , price: product.offer ? product.price - (product.price * product.offer / 100) : product.price , availability: product.availability , category: product.category}
             axiosSecure.post("/carts", cartItem)
                 .then(data => {
                     if (data.data.insertedId) {
