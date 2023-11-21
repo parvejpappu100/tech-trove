@@ -90,6 +90,32 @@ const ManageSponsors = () => {
                 }
             })
 
+    };
+
+    const handleDelete = (sponsor) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, do it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axiosSecure.delete(`/deleteSponsor/${sponsor._id}`)
+                    .then(data => {
+                        if (data.data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire(
+                                'Success!',
+                                `Deleted Successful `,
+                                'success'
+                            )
+                        }
+                    })
+            }
+        })
     }
 
     return (
@@ -115,7 +141,7 @@ const ManageSponsors = () => {
                                 <div>
                                     <h3 className='text-2xl font-semibold my-5'>{sponsor.title}</h3>
                                     <div className=' mt-8'>
-                                        <button className='btn btn-sm  hover:bg-[#113366] border-none rounded-none text-white lg:px-8 bg-red-700 hover:text-white  duration-500'>Delete <FaTrashAlt></FaTrashAlt></button>
+                                        <button onClick={() => handleDelete(sponsor)} className='btn btn-sm  hover:bg-[#113366] border-none rounded-none text-white lg:px-8 bg-red-700 hover:text-white  duration-500'>Delete <FaTrashAlt></FaTrashAlt></button>
                                     </div>
                                 </div>
                             </div>
